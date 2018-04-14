@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swift_Json
 
 class LoginViewController: UIViewController, RequestDelegate {
     @IBOutlet fileprivate weak var domainUrlTextField: UITextField!
@@ -50,6 +51,15 @@ class LoginViewController: UIViewController, RequestDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    fileprivate func saveValidCredentials() {
+        self.sessionController.credentials = createBasicCredentials(self.usernameTextField.text ?? "", self.passwordTextField.text ?? "")
+        self.sessionController.save()
+    }
+    
+    fileprivate func openProjectsViewController(_ projects: ProjectResult) {
+        
+    }
+    
     // MARK: Buttons events
     
     @IBAction fileprivate func loginButton(_ sender: UIButton) {
@@ -64,10 +74,13 @@ class LoginViewController: UIViewController, RequestDelegate {
     // MARK: RequestDelegate
     
     func request(_ request: Request, didFinishWithContent content: String?) {
-        self.sessionController.credentials = createBasicCredentials(self.usernameTextField.text ?? "", self.passwordTextField.text ?? "")
-        self.sessionController.save()
-        print(#function)
-        print(content ?? "")
+        guard let projects: ProjectResult = ApiResultProcessor.processResult(content: content) else {
+            self.request(request, didFailWithError: .statusCode(code: 404, content: content))
+            return
+        }
+        
+        self.saveValidCredentials()
+        self.openProjectsViewController(projects)
     }
     
     func request(_ request: Request, didFailWithError error: RequestError) {

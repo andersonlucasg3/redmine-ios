@@ -47,6 +47,16 @@ class Request {
     func addBasicAuthorizationHeader(username: String, password: String) {
         if self.headers == nil {
             self.headers = [ "Authorization" : createBasicCredentials(username, password) ]
+        } else {
+            self.headers?["Authorization"] = createBasicCredentials(username, password)
+        }
+    }
+    
+    func addBasicAuthorizationHeader(credentials: String) {
+        if self.headers == nil {
+            self.headers = [ "Authorization" : credentials ]
+        } else {
+            self.headers?["Authorization"] = credentials
         }
     }
     

@@ -19,6 +19,9 @@
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
 		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
+		71A3110220824CA600D79771 /* ProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectResult.swift */; };
+		71A3110420824D6700D79771 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
+		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
 		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
+		71A3110120824CA600D79771 /* ProjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResult.swift; sourceTree = "<group>"; };
+		71A3110320824D6700D79771 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +100,8 @@
 		7111F2762081A568003AD03E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				71A3110520824E3600D79771 /* Processors */,
+				71A310FB20823FDC00D79771 /* Model */,
 				7111F2862081B777003AD03E /* Ambients */,
 				7111F2832081B0B6003AD03E /* Helpers */,
 				7111F2802081AB5E003AD03E /* Requests */,
@@ -151,6 +159,7 @@
 		7111F2802081AB5E003AD03E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				71A310FC2082400D00D79771 /* Model */,
 				7111F2812081AB71003AD03E /* Request.swift */,
 			);
 			path = Requests;
@@ -170,6 +179,30 @@
 				7111F2872081B78C003AD03E /* Ambients.swift */,
 			);
 			path = Ambients;
+			sourceTree = "<group>";
+		};
+		71A310FB20823FDC00D79771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71A3110320824D6700D79771 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71A310FC2082400D00D79771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71A3110120824CA600D79771 /* ProjectResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71A3110520824E3600D79771 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				71A3110620824E3F00D79771 /* ApiResultProcessor.swift */,
+			);
+			path = Processors;
 			sourceTree = "<group>";
 		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
@@ -321,12 +354,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A3110220824CA600D79771 /* ProjectResult.swift in Sources */,
 				7111F2882081B78C003AD03E /* Ambients.swift in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
+				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
+				71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */,
 				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
 			);
