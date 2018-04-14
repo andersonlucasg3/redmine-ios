@@ -21,6 +21,9 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGk-Jj-AgX">
                                 <rect key="frame" x="40" y="257" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="BFo-kD-FlA"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
@@ -34,28 +37,37 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-dm-o1y">
                                 <rect key="frame" x="120" y="349" width="80" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="9tj-95-mCw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="9tj-95-mCw"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uqh-YE-1o7"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://redmine.org" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iPl-As-IXa">
+                                <rect key="frame" x="40" y="211" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="url"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OGk-Jj-AgX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2Jn-j0-NaK"/>
                             <constraint firstItem="OGk-Jj-AgX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.925" id="8rw-Nz-0GB"/>
                             <constraint firstItem="eSc-jF-i75" firstAttribute="centerX" secondItem="OGk-Jj-AgX" secondAttribute="centerX" id="9ul-oP-YQ4"/>
                             <constraint firstItem="CFA-dm-o1y" firstAttribute="centerX" secondItem="eSc-jF-i75" secondAttribute="centerX" id="FGJ-z5-qdO"/>
                             <constraint firstItem="eSc-jF-i75" firstAttribute="top" secondItem="OGk-Jj-AgX" secondAttribute="bottom" constant="16" id="MZH-XW-4bf"/>
+                            <constraint firstItem="iPl-As-IXa" firstAttribute="centerX" secondItem="OGk-Jj-AgX" secondAttribute="centerX" id="R6n-KF-qua"/>
                             <constraint firstItem="CFA-dm-o1y" firstAttribute="top" secondItem="eSc-jF-i75" secondAttribute="bottom" constant="16" id="XCV-5h-4lB"/>
+                            <constraint firstItem="OGk-Jj-AgX" firstAttribute="top" secondItem="iPl-As-IXa" secondAttribute="bottom" constant="16" id="Z9h-AI-Uj9"/>
+                            <constraint firstItem="OGk-Jj-AgX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Zci-e0-UrQ"/>
                             <constraint firstItem="eSc-jF-i75" firstAttribute="width" secondItem="OGk-Jj-AgX" secondAttribute="width" id="apo-Jt-Eyd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OGk-Jj-AgX" secondAttribute="trailing" constant="40" id="e4n-Wy-qKG"/>
+                            <constraint firstItem="iPl-As-IXa" firstAttribute="width" secondItem="OGk-Jj-AgX" secondAttribute="width" id="gyQ-hW-7Ne"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="domainUrlTextField" destination="iPl-As-IXa" id="Xew-Pd-ozu"/>
                         <outlet property="loginButton" destination="CFA-dm-o1y" id="xaL-qG-Yo5"/>
                         <outlet property="passwordTextField" destination="eSc-jF-i75" id="HTw-mg-gEB"/>
                         <outlet property="usernameTextField" destination="OGk-Jj-AgX" id="uAa-VJ-Ttb"/>

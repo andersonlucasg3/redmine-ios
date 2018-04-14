@@ -13,9 +13,9 @@ extension UIViewController {
         let clsName = self.className
         let parts = clsName.split(separator: ".")
         if parts.count > 1 {
-            return String(parts[1])
+            return String(parts[1].replacingOccurrences(of: "ViewController", with: ""))
         }
-        return clsName
+        return clsName.replacingOccurrences(of: "ViewController", with: "")
     }
     
     static func getStoryboard() -> UIStoryboard {

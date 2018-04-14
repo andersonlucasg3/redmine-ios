@@ -11,14 +11,20 @@ import Alamofire
 import Reachability
 
 enum RequestError {
-    case noResponse
     case statusCode(code: Int, content: String?)
+    case failure(error: Error)
     case noInternetConnection
 }
 
 protocol RequestDelegate : class {
     func request(_ request: Request, didFinishWithContent content: String?)
     func request(_ request: Request, didFailWithError error: RequestError)
+}
+
+func createBasicCredentials(_ username: String, _ password: String) -> String {
+    let userCredentials = "\(username):\(password)"
+    let data = userCredentials.data(using: .utf8)
+    return "Basic \(data?.base64EncodedString() ?? "failed")"
 }
 
 class Request {
@@ -32,10 +38,16 @@ class Request {
     
     weak var delegate: RequestDelegate?
     
-    init(_ url: String, method: HTTPMethod) {
+    init(url: String, method: HTTPMethod) {
         self.url = url
         self.method = method
         
+    }
+    
+    func addBasicAuthorizationHeader(username: String, password: String) {
+        if self.headers == nil {
+            self.headers = [ "Authorization" : createBasicCredentials(username, password) ]
+        }
     }
     
     func start() {
@@ -50,14 +62,11 @@ class Request {
                                                           encoding: self.parameters?.encoding ?? URLEncoding.default,
                                                           headers: self.headers)
         self.dataRequest?.responseString(completionHandler: { [weak self] in
-            guard let response = $0.response else {
-                self?.dispatchError(.noResponse)
-                return
-            }
-            if self?.checkSuccess($0.response) ?? false {
-                self?.dispatchSuccess($0.value)
-            } else {
-                self?.dispatchError(.statusCode(code: response.statusCode, content: $0.value))
+            switch $0.result {
+            case .success(let value):
+                self?.dispatchSuccess(value)
+            case .failure(let error):
+                self?.dispatchError(.failure(error: error))
             }
         })
     }

@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.7.1)
+  - KeychainAccess (3.1.0)
   - Reachability (3.2)
   - Swift.Json (1.6.3)
   - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - KeychainAccess
   - Reachability
   - Swift.Json
   - SwiftyTimer
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Swift.Json: d6bb2144974741e738a06c48af962964bc862f60
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 84e492d48092c9c452b7734168d92bd4ccf58a17
+PODFILE CHECKSUM: 08c47c08e93aad6958d5bc6be82cc3c6cf6dffb1
 
 COCOAPODS: 1.4.0

@@ -10,5 +10,6 @@ target 'Redmine' do
   pod 'Alamofire'
   pod 'SwiftyTimer'
   pod 'Reachability'
+  pod 'KeychainAccess'
 
 end

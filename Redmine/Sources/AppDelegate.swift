@@ -15,15 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        if self.checkHasSession() {
+            // TODO: go to the main screen.
+            exit(0)
+        } else {
+            self.createNavigationController(with: LoginViewController.instantiate()!)
+        }
         
-        // TODO: if logged then shit happens
-        self.createNavigationController(with: LoginViewController.instantiate()!)
+        self.createWindow()
         
         return true
     }
     
+    fileprivate func createWindow() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = self.navigationController
+        self.window?.makeKeyAndVisible()
+    }
+    
     fileprivate func createNavigationController(with root: UIViewController) {
         self.navigationController = UINavigationController(rootViewController: root)
+    }
+    
+    fileprivate func checkHasSession() -> Bool {
+        return SessionController().isValid
     }
 }
 

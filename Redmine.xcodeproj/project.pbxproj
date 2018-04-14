@@ -17,6 +17,8 @@
 		7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F27E2081A751003AD03E /* NSObject+className.swift */; };
 		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
+		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		7111F27E2081A751003AD03E /* NSObject+className.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+className.swift"; sourceTree = "<group>"; };
 		7111F2812081AB71003AD03E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
+		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
+		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
+		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +83,7 @@
 		7111F2632081A560003AD03E /* Redmine */ = {
 			isa = PBXGroup;
 			children = (
+				7111F2892081B876003AD03E /* Redmine.entitlements */,
 				7111F2782081A578003AD03E /* Resources */,
 				7111F2762081A568003AD03E /* Sources */,
 				7111F2792081A585003AD03E /* Supporting Files */,
@@ -88,6 +94,7 @@
 		7111F2762081A568003AD03E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7111F2862081B777003AD03E /* Ambients */,
 				7111F2832081B0B6003AD03E /* Helpers */,
 				7111F2802081AB5E003AD03E /* Requests */,
 				7111F27B2081A72E003AD03E /* Extensions */,
@@ -101,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7111F2662081A560003AD03E /* LoginViewController.swift */,
+				71A310F92081BCCB00D79771 /* SessionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +164,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7111F2862081B777003AD03E /* Ambients */ = {
+			isa = PBXGroup;
+			children = (
+				7111F2872081B78C003AD03E /* Ambients.swift */,
+			);
+			path = Ambients;
+			sourceTree = "<group>";
+		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +215,11 @@
 				TargetAttributes = {
 					7111F2602081A560003AD03E = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -242,6 +263,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
@@ -249,6 +271,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
@@ -298,7 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7111F2882081B78C003AD03E /* Ambients.swift in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
+				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
@@ -448,6 +473,7 @@
 			baseConfigurationReference = C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
@@ -455,7 +481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.Redmine;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,6 +493,7 @@
 			baseConfigurationReference = 19FA2A3A12DE19CDA55AC6DA /* Pods-Redmine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
@@ -474,7 +501,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.Redmine;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
