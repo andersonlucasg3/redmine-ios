@@ -15,6 +15,8 @@
 		7111F26F2081A562003AD03E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111F26D2081A562003AD03E /* LaunchScreen.storyboard */; };
 		7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F27C2081A73C003AD03E /* UIViewController+instantiate.swift */; };
 		7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F27E2081A751003AD03E /* NSObject+className.swift */; };
+		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
+		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7111F2702081A562003AD03E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7111F27C2081A73C003AD03E /* UIViewController+instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+instantiate.swift"; sourceTree = "<group>"; };
 		7111F27E2081A751003AD03E /* NSObject+className.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+className.swift"; sourceTree = "<group>"; };
+		7111F2812081AB71003AD03E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +88,8 @@
 		7111F2762081A568003AD03E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7111F2832081B0B6003AD03E /* Helpers */,
+				7111F2802081AB5E003AD03E /* Requests */,
 				7111F27B2081A72E003AD03E /* Extensions */,
 				7111F2772081A570003AD03E /* Controllers */,
 				7111F2642081A560003AD03E /* AppDelegate.swift */,
@@ -132,6 +138,22 @@
 				7111F27E2081A751003AD03E /* NSObject+className.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7111F2802081AB5E003AD03E /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7111F2812081AB71003AD03E /* Request.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		7111F2832081B0B6003AD03E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7111F2842081B0C0003AD03E /* GlobalFunc.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
@@ -220,12 +242,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 			);
@@ -274,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7111F2822081AB71003AD03E /* Request.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
+				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

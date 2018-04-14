@@ -9,5 +9,6 @@ target 'Redmine' do
   pod 'Swift.Json'
   pod 'Alamofire'
   pod 'SwiftyTimer'
+  pod 'Reachability'
 
 end
