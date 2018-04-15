@@ -56,7 +56,7 @@ class LoginViewController: UIViewController, RequestProtocol {
         self.sessionController.save()
     }
     
-    fileprivate func openProjectsViewController(_ projects: ProjectResult) {
+    fileprivate func openProjectsViewController(_ projects: ProjectsResult) {
         
     }
     
@@ -74,7 +74,7 @@ class LoginViewController: UIViewController, RequestProtocol {
     // MARK: RequestDelegate
     
     func request(_ request: Request, didFinishWithContent content: String?) {
-        guard let projects: ProjectResult = ApiResultProcessor.processResult(content: content) else {
+        guard let projects: ProjectsResult = ApiResultProcessor.processResult(content: content) else {
             self.request(request, didFailWithError: .statusCode(code: 404, content: content))
             return
         }

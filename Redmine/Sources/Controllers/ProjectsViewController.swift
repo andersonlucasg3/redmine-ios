@@ -25,7 +25,7 @@ class ProjectsViewController: UIViewController, GenericDelegateDataSourceProtoco
         return request
     }()
     
-    var project: ProjectResult! {
+    var project: ProjectsResult! {
         didSet {
             self.setupDataSourceIfPossible()
         }
@@ -95,7 +95,7 @@ class ProjectsViewController: UIViewController, GenericDelegateDataSourceProtoco
     // MARK: RequestProtocol
     
     func request(_ request: Request, didFinishWithContent content: String?) {
-        guard let project: ProjectResult = ApiResultProcessor.processResult(content: content) else {
+        guard let project: ProjectsResult = ApiResultProcessor.processResult(content: content) else {
             self.request(request, didFailWithError: .statusCode(code: 404, content: content))
             return
         }

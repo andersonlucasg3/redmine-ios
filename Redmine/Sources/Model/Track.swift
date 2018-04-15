@@ -1,5 +1,5 @@
 //
-//  ProjectResult.swift
+//  Track.swift
 //  Redmine
 //
 //  Created by Anderson Lucas de Castro Ramos on 14/04/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-class ProjectResult: NSObject {
-    @objc var project: Project?
+@objc(Track)
+class Track: NSObject {
+    @objc var id: Int = 0
+    @objc var name: String?
 }

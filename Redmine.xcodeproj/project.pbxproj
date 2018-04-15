@@ -19,7 +19,7 @@
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
 		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
-		71A3110220824CA600D79771 /* ProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectResult.swift */; };
+		71A3110220824CA600D79771 /* ProjectsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectsResult.swift */; };
 		71A3110420824D6700D79771 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
 		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
 		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
@@ -30,6 +30,8 @@
 		71D6ABB02082E0D700FE5447 /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */; };
 		71D6ABB22082E0F300FE5447 /* ProjectIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */; };
 		71D6ABB52082EEAD00FE5447 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB42082EEAD00FE5447 /* Colors.swift */; };
+		71D6ABB72082F17600FE5447 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB62082F17600FE5447 /* Track.swift */; };
+		71D6ABB92082F1B300FE5447 /* ProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB82082F1B300FE5447 /* ProjectResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,7 @@
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
 		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
-		71A3110120824CA600D79771 /* ProjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResult.swift; sourceTree = "<group>"; };
+		71A3110120824CA600D79771 /* ProjectsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResult.swift; sourceTree = "<group>"; };
 		71A3110320824D6700D79771 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
 		71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIssuesViewController.swift; sourceTree = "<group>"; };
 		71D6ABB42082EEAD00FE5447 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		71D6ABB62082F17600FE5447 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		71D6ABB82082F1B300FE5447 /* ProjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResult.swift; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				71A3110320824D6700D79771 /* Project.swift */,
+				71D6ABB62082F17600FE5447 /* Track.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,7 +220,8 @@
 		71A310FC2082400D00D79771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				71A3110120824CA600D79771 /* ProjectResult.swift */,
+				71A3110120824CA600D79771 /* ProjectsResult.swift */,
+				71D6ABB82082F1B300FE5447 /* ProjectResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,9 +411,11 @@
 				71D6ABB52082EEAD00FE5447 /* Colors.swift in Sources */,
 				71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */,
 				71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */,
+				71D6ABB72082F17600FE5447 /* Track.swift in Sources */,
 				71D6ABB22082E0F300FE5447 /* ProjectIssuesViewController.swift in Sources */,
-				71A3110220824CA600D79771 /* ProjectResult.swift in Sources */,
+				71A3110220824CA600D79771 /* ProjectsResult.swift in Sources */,
 				7111F2882081B78C003AD03E /* Ambients.swift in Sources */,
+				71D6ABB92082F1B300FE5447 /* ProjectResult.swift in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
 				71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */,
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
@@ -567,7 +575,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -584,7 +595,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
