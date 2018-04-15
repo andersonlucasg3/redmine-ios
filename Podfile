@@ -14,5 +14,6 @@ target 'Redmine' do
   pod 'KeychainAccess'
   pod 'GenericDataSourceSwift'
   pod 'PKHUD'
+  pod 'UIColor-HexString'
 
 end
