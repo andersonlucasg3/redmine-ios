@@ -97,6 +97,7 @@ class LoginViewController: UIViewController, RequestProtocol {
     func request(_ request: Request, didFailWithError error: RequestError) {
         print(#function)
         print(error)
+        // TODO: show error to the user
         
         HUD.show(.error, onView: self.view)
         HUD.hide(afterDelay: 1.0)
