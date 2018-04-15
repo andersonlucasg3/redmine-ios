@@ -8,6 +8,7 @@
 
 import UIKit
 import Swift_Json
+import PKHUD
 
 class LoginViewController: UIViewController, RequestProtocol {
     @IBOutlet fileprivate weak var domainUrlTextField: UITextField!
@@ -31,8 +32,13 @@ class LoginViewController: UIViewController, RequestProtocol {
         return self.domainUrlTextField.text ?? ""
     }
     
+    fileprivate func fixDomainIfNeeded() -> String {
+        let domain = self.getDomain()
+        return domain.contains("://") ? domain : "http://\(domain)"
+    }
+    
     fileprivate func createRequest() {
-        self.sessionController.domain = self.getDomain()
+        self.sessionController.domain = self.fixDomainIfNeeded()
         self.loginRequest = Request(url: Ambients.getProjectsPath(with: self.sessionController), method: .get)
         self.loginRequest.addBasicAuthorizationHeader(username: self.usernameTextField.text ?? "",
                                                  password: self.passwordTextField.text ?? "")
@@ -57,13 +63,15 @@ class LoginViewController: UIViewController, RequestProtocol {
     }
     
     fileprivate func openProjectsViewController(_ projects: ProjectsResult) {
-        
+        self.navigationController?.pushViewController(ProjectsViewController.instantiate()!, animated: true)
     }
     
     // MARK: Buttons events
     
     @IBAction fileprivate func loginButton(_ sender: UIButton) {
         if self.checkCanLogin() {
+            HUD.show(.progress, onView: self.view)
+            
             self.createRequest()
             self.loginRequest.start()
         } else {
@@ -81,11 +89,17 @@ class LoginViewController: UIViewController, RequestProtocol {
         
         self.saveValidCredentials()
         self.openProjectsViewController(projects)
+        
+        HUD.show(.success, onView: self.view)
+        HUD.hide(afterDelay: 1.0)
     }
     
     func request(_ request: Request, didFailWithError error: RequestError) {
         print(#function)
         print(error)
+        
+        HUD.show(.error, onView: self.view)
+        HUD.hide(afterDelay: 1.0)
     }
 }
 
