@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if self.checkHasSession() {
-            // TODO: go to the main screen.
-            exit(0)
+            self.createNavigationController(with: ProjectsViewController.instantiate()!)
         } else {
             self.createNavigationController(with: LoginViewController.instantiate()!)
         }

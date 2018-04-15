@@ -12,5 +12,7 @@ target 'Redmine' do
   pod 'SwiftyTimer'
   pod 'Reachability'
   pod 'KeychainAccess'
+  pod 'GenericDataSourceSwift'
+  pod 'PKHUD'
 
 end

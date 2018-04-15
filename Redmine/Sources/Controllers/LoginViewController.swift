@@ -9,7 +9,7 @@
 import UIKit
 import Swift_Json
 
-class LoginViewController: UIViewController, RequestDelegate {
+class LoginViewController: UIViewController, RequestProtocol {
     @IBOutlet fileprivate weak var domainUrlTextField: UITextField!
     @IBOutlet fileprivate weak var usernameTextField: UITextField!
     @IBOutlet fileprivate weak var passwordTextField: UITextField!

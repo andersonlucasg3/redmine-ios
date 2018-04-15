@@ -1,24 +1,40 @@
 PODS:
   - Alamofire (4.7.1)
+  - GenericDataSourceSwift (0.1.1)
   - KeychainAccess (3.1.0)
+  - PKHUD (5.0.0)
   - Reachability (3.2)
-  - Swift.Json (1.7.0)
+  - Swift.Json (1.7.1)
   - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - GenericDataSourceSwift
   - KeychainAccess
+  - PKHUD
   - Reachability
   - Swift.Json
   - SwiftyTimer
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - GenericDataSourceSwift
+    - KeychainAccess
+    - PKHUD
+    - Reachability
+    - Swift.Json
+    - SwiftyTimer
+
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  GenericDataSourceSwift: 64a63efdbecfd75a3e18227c806f740ab5a0ef40
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  Swift.Json: 068e05d5eb59321d740512319cfc08cc1448b44c
+  Swift.Json: ddb6ab8c26cb3898a212b892638e431d9e6dad84
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 067cc8bb9aab02d9733f6a26b0ded8b813f803ea
+PODFILE CHECKSUM: 33e991ad7bb4164a8bd3568010d5cd70a992bbbc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

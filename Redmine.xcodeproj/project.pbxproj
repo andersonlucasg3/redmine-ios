@@ -22,6 +22,11 @@
 		71A3110220824CA600D79771 /* ProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectResult.swift */; };
 		71A3110420824D6700D79771 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
 		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
+		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
+		71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */; };
+		71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */; };
+		71D6ABAC2082C5B900FE5447 /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D6ABAB2082C5B900FE5447 /* Projects.storyboard */; };
+		71D6ABAE2082D47500FE5447 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +48,11 @@
 		71A3110120824CA600D79771 /* ProjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResult.swift; sourceTree = "<group>"; };
 		71A3110320824D6700D79771 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
+		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSection.swift; sourceTree = "<group>"; };
+		71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		71D6ABAB2082C5B900FE5447 /* Projects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Projects.storyboard; sourceTree = "<group>"; };
+		71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +110,8 @@
 		7111F2762081A568003AD03E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				71D6ABA72082C56000FE5447 /* Views */,
+				71D6ABA42082C54100FE5447 /* Sections */,
 				71A3110520824E3600D79771 /* Processors */,
 				71A310FB20823FDC00D79771 /* Model */,
 				7111F2862081B777003AD03E /* Ambients */,
@@ -115,8 +127,9 @@
 		7111F2772081A570003AD03E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7111F2662081A560003AD03E /* LoginViewController.swift */,
 				71A310F92081BCCB00D79771 /* SessionController.swift */,
+				7111F2662081A560003AD03E /* LoginViewController.swift */,
+				71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,8 +154,9 @@
 		7111F27A2081A5A0003AD03E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7111F2682081A560003AD03E /* Login.storyboard */,
 				7111F26D2081A562003AD03E /* LaunchScreen.storyboard */,
+				7111F2682081A560003AD03E /* Login.storyboard */,
+				71D6ABAB2082C5B900FE5447 /* Projects.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -205,6 +219,31 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
+		71D6ABA42082C54100FE5447 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		71D6ABA72082C56000FE5447 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABA82082C56500FE5447 /* Cells */,
+				71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71D6ABA82082C56500FE5447 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +264,6 @@
 				7111F25E2081A560003AD03E /* Frameworks */,
 				7111F25F2081A560003AD03E /* Resources */,
 				17D2B95B1405EB7F59DA46D4 /* [CP] Embed Pods Frameworks */,
-				79DF076EA877A9C7EAE320CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D6ABAC2082C5B900FE5447 /* Projects.storyboard in Resources */,
 				7111F26F2081A562003AD03E /* LaunchScreen.storyboard in Resources */,
 				7111F26C2081A562003AD03E /* Assets.xcassets in Resources */,
 				7111F26A2081A560003AD03E /* Login.storyboard in Resources */,
@@ -296,7 +335,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GenericDataSourceSwift/GenericDataSourceSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
@@ -304,7 +345,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericDataSourceSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
@@ -312,21 +355,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		79DF076EA877A9C7EAE320CE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C014F5062CAAC289367AF479 /* [CP] Check Pods Manifest.lock */ = {
@@ -354,9 +382,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D6ABAE2082D47500FE5447 /* ConfigurableView.swift in Sources */,
+				71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */,
+				71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */,
 				71A3110220824CA600D79771 /* ProjectResult.swift in Sources */,
 				7111F2882081B78C003AD03E /* Ambients.swift in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
+				71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */,
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,

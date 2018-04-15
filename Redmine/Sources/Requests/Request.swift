@@ -16,7 +16,7 @@ enum RequestError {
     case noInternetConnection
 }
 
-protocol RequestDelegate : class {
+protocol RequestProtocol : class {
     func request(_ request: Request, didFinishWithContent content: String?)
     func request(_ request: Request, didFailWithError error: RequestError)
 }
@@ -36,7 +36,7 @@ class Request {
     var parameters: (params: Parameters, encoding: ParameterEncoding)?
     var headers: HTTPHeaders?
     
-    weak var delegate: RequestDelegate?
+    weak var delegate: RequestProtocol?
     
     init(url: String, method: HTTPMethod) {
         self.url = url
