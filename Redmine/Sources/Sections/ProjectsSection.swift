@@ -9,7 +9,14 @@
 import Foundation
 import GenericDataSourceSwift
 
-class ProjectsSection: Section {
+protocol ProjectsSectionProtocol: class {
+    func openProjectInfo(for project: Project)
+    func openIssues(for project: Project)
+}
+
+class ProjectsSection: Section, ProjectTableViewCellProtocol {
+    weak var delegate: ProjectsSectionProtocol?
+    
     override func cellType(for index: Int) -> UITableViewCell.Type {
         return ProjectTableViewCell.self
     }
@@ -20,5 +27,21 @@ class ProjectsSection: Section {
     
     override func estimatedCellHeight(for index: Int) -> CGFloat {
         return 88
+    }
+    
+    func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
+        let projectCell = cell as! ProjectTableViewCell
+        projectCell.tag = indexPath.row
+        projectCell.delegate = self
+    }
+    
+    // MARK: ProjectTableViewCellProtocol
+    
+    func didTapProjectInfoButton(in cell: ProjectTableViewCell) {
+        self.delegate?.openProjectInfo(for: self.getItem(for: cell.tag))
+    }
+    
+    func didTapOpenIssuesButton(in cell: ProjectTableViewCell) {
+        self.delegate?.openIssues(for: self.getItem(for: cell.tag))
     }
 }

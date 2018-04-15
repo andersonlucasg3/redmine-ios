@@ -9,14 +9,32 @@
 import UIKit
 import GenericDataSourceSwift
 
+protocol ProjectTableViewCellProtocol: class {
+    func didTapProjectInfoButton(in cell: ProjectTableViewCell)
+    func didTapOpenIssuesButton(in cell: ProjectTableViewCell)
+}
+
 class ProjectTableViewCell: UITableViewCell, Setupable {
     typealias DataType = Project
     
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var subtitleLabel: UILabel!
     
+    @IBOutlet weak var projectInfoButton: UIButton!
+    @IBOutlet weak var openIssuesButton: UIButton!
+    
+    weak var delegate: ProjectTableViewCellProtocol?
+    
     func setup(with data: Project) {
         self.titleLabel.text = data.name
         self.subtitleLabel.text = data.subtitle
+    }
+    
+    @IBAction fileprivate func projectInfoButton(sender: UIButton) {
+        self.delegate?.didTapProjectInfoButton(in: self)
+    }
+    
+    @IBAction fileprivate func openIssuesButton(sender: UIButton) {
+        self.delegate?.didTapOpenIssuesButton(in: self)
     }
 }

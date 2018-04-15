@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,49 +32,76 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-bV-pJ2" customClass="ConfigurableView" customModule="Redmine" customModuleProvider="target">
                                                     <rect key="frame" x="6" y="6" width="363" height="75.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0R-bz-WwV">
+                                                            <rect key="frame" x="276" y="9.5" width="79" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="79" id="37i-2W-efP"/>
+                                                                <constraint firstAttribute="height" constant="26" id="xbC-ep-Pb3"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Project Info"/>
+                                                            <connections>
+                                                                <action selector="projectInfoButtonWithSender:" destination="7qq-nO-YAo" eventType="touchUpInside" id="3nn-KG-UgQ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-dP-ga0">
+                                                            <rect key="frame" x="270" y="42.5" width="85" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="26" id="UBN-D6-162"/>
+                                                                <constraint firstAttribute="width" constant="85" id="asD-x0-Aqv"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Open Issues"/>
+                                                            <connections>
+                                                                <action selector="openIssuesButtonWithSender:" destination="7qq-nO-YAo" eventType="touchUpInside" id="tvs-tO-fw4"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePV-J9-tf1">
+                                                            <rect key="frame" x="8" y="13" width="43" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRL-0N-gXX">
+                                                            <rect key="frame" x="8" y="38" width="35.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="E0R-bz-WwV" secondAttribute="trailing" constant="8" id="12T-DY-XbC"/>
+                                                        <constraint firstItem="sdw-dP-ga0" firstAttribute="top" secondItem="E0R-bz-WwV" secondAttribute="bottom" constant="7" id="6aH-8g-EWQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="sdw-dP-ga0" secondAttribute="trailing" constant="8" id="H8I-7X-KOe"/>
+                                                        <constraint firstItem="E0R-bz-WwV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ePV-J9-tf1" secondAttribute="trailing" constant="8" id="HwY-oO-0YV"/>
+                                                        <constraint firstItem="ePV-J9-tf1" firstAttribute="top" secondItem="5Tj-bV-pJ2" secondAttribute="top" constant="13" id="LSx-16-FIW"/>
+                                                        <constraint firstItem="ePV-J9-tf1" firstAttribute="leading" secondItem="5Tj-bV-pJ2" secondAttribute="leading" constant="8" id="Rz1-UF-uky"/>
+                                                        <constraint firstItem="KRL-0N-gXX" firstAttribute="leading" secondItem="5Tj-bV-pJ2" secondAttribute="leading" constant="8" id="cnp-iY-MI7"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KRL-0N-gXX" secondAttribute="bottom" constant="16" id="eje-L1-yqn"/>
+                                                        <constraint firstItem="E0R-bz-WwV" firstAttribute="centerY" secondItem="5Tj-bV-pJ2" secondAttribute="centerY" multiplier="0.62" id="tYm-hT-VxE"/>
+                                                        <constraint firstItem="KRL-0N-gXX" firstAttribute="leading" secondItem="ePV-J9-tf1" secondAttribute="leading" id="v9x-iu-ViL"/>
+                                                        <constraint firstItem="sdw-dP-ga0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KRL-0N-gXX" secondAttribute="trailing" constant="8" id="x0p-P3-sUJ"/>
+                                                        <constraint firstItem="KRL-0N-gXX" firstAttribute="top" secondItem="ePV-J9-tf1" secondAttribute="bottom" constant="4" id="yfI-fJ-uc4"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="12"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="0.33333333329999998" alpha="0.50053510273972601" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePV-J9-tf1">
-                                                    <rect key="frame" x="15" y="20" width="43" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRL-0N-gXX">
-                                                    <rect key="frame" x="15" y="43" width="35.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="ePV-J9-tf1" firstAttribute="top" secondItem="19f-s9-d9F" secondAttribute="top" constant="20" id="31m-mO-E4S"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KRL-0N-gXX" secondAttribute="bottom" constant="20" id="7sZ-cx-8U5"/>
                                                 <constraint firstItem="5Tj-bV-pJ2" firstAttribute="top" secondItem="19f-s9-d9F" secondAttribute="top" constant="6" id="9gE-2x-WHl"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KRL-0N-gXX" secondAttribute="trailing" constant="15" id="BMk-4v-gbX"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ePV-J9-tf1" secondAttribute="trailing" constant="15" id="HxD-j5-jFU"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Tj-bV-pJ2" secondAttribute="trailing" constant="6" id="a9K-Lx-PN1"/>
-                                                <constraint firstItem="KRL-0N-gXX" firstAttribute="top" secondItem="ePV-J9-tf1" secondAttribute="bottom" constant="2" id="asP-te-tXI"/>
-                                                <constraint firstItem="KRL-0N-gXX" firstAttribute="leading" secondItem="ePV-J9-tf1" secondAttribute="leading" id="bQf-jz-QZt"/>
                                                 <constraint firstItem="5Tj-bV-pJ2" firstAttribute="leading" secondItem="19f-s9-d9F" secondAttribute="leading" constant="6" id="fPP-DK-Egc"/>
-                                                <constraint firstItem="ePV-J9-tf1" firstAttribute="leading" secondItem="19f-s9-d9F" secondAttribute="leading" constant="15" id="kcG-Wt-lmk"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Tj-bV-pJ2" secondAttribute="bottom" constant="6" id="yva-rg-92j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="openIssuesButton" destination="sdw-dP-ga0" id="Vmr-0E-2RG"/>
+                                            <outlet property="projectInfoButton" destination="E0R-bz-WwV" id="wrQ-2b-GIq"/>
                                             <outlet property="subtitleLabel" destination="KRL-0N-gXX" id="aih-l2-GLv"/>
                                             <outlet property="titleLabel" destination="ePV-J9-tf1" id="9wZ-iZ-YNp"/>
                                         </connections>
