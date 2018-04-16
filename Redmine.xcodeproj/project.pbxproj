@@ -18,6 +18,18 @@
 		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		716354402084110A0099930A /* RefreshableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163543F2084110A0099930A /* RefreshableTableViewController.swift */; };
+		71635442208414D90099930A /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635441208414D90099930A /* Issue.swift */; };
+		716354442084151A0099930A /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716354432084151A0099930A /* Basic.swift */; };
+		71635446208418290099930A /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635445208418290099930A /* CustomField.swift */; };
+		716354482084194E0099930A /* IssuesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716354472084194E0099930A /* IssuesResult.swift */; };
+		7163544A208419710099930A /* BasicResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635449208419710099930A /* BasicResult.swift */; };
+		7163544C20841EF10099930A /* IssuesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163544B20841EF10099930A /* IssuesSection.swift */; };
+		7163544E20841F4B0099930A /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163544D20841F4B0099930A /* IssueTableViewCell.swift */; };
+		7163545020841F710099930A /* ProjectIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163544F20841F710099930A /* ProjectIssues.storyboard */; };
+		71635452208424650099930A /* DateStringProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635451208424650099930A /* DateStringProcessor.swift */; };
+		7163545420842C090099930A /* NoContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163545320842C090099930A /* NoContent.storyboard */; };
+		7163545620842C510099930A /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163545520842C510099930A /* NoContentViewController.swift */; };
 		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
 		71A3110220824CA600D79771 /* ProjectsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectsResult.swift */; };
 		71A3110420824D6700D79771 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
@@ -49,6 +61,18 @@
 		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
+		7163543F2084110A0099930A /* RefreshableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableTableViewController.swift; sourceTree = "<group>"; };
+		71635441208414D90099930A /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		716354432084151A0099930A /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
+		71635445208418290099930A /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
+		716354472084194E0099930A /* IssuesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesResult.swift; sourceTree = "<group>"; };
+		71635449208419710099930A /* BasicResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResult.swift; sourceTree = "<group>"; };
+		7163544B20841EF10099930A /* IssuesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesSection.swift; sourceTree = "<group>"; };
+		7163544D20841F4B0099930A /* IssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
+		7163544F20841F710099930A /* ProjectIssues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectIssues.storyboard; sourceTree = "<group>"; };
+		71635451208424650099930A /* DateStringProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringProcessor.swift; sourceTree = "<group>"; };
+		7163545320842C090099930A /* NoContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoContent.storyboard; sourceTree = "<group>"; };
+		7163545520842C510099930A /* NoContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentViewController.swift; sourceTree = "<group>"; };
 		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		71A3110120824CA600D79771 /* ProjectsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResult.swift; sourceTree = "<group>"; };
 		71A3110320824D6700D79771 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -139,10 +163,12 @@
 			isa = PBXGroup;
 			children = (
 				71A310F92081BCCB00D79771 /* SessionController.swift */,
+				7163543F2084110A0099930A /* RefreshableTableViewController.swift */,
 				7111F2662081A560003AD03E /* LoginViewController.swift */,
 				71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */,
 				71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */,
 				71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */,
+				7163545520842C510099930A /* NoContentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +196,8 @@
 				7111F26D2081A562003AD03E /* LaunchScreen.storyboard */,
 				7111F2682081A560003AD03E /* Login.storyboard */,
 				71D6ABAB2082C5B900FE5447 /* Projects.storyboard */,
+				7163544F20841F710099930A /* ProjectIssues.storyboard */,
+				7163545320842C090099930A /* NoContent.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -211,8 +239,11 @@
 		71A310FB20823FDC00D79771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				716354432084151A0099930A /* Basic.swift */,
 				71A3110320824D6700D79771 /* Project.swift */,
 				71D6ABB62082F17600FE5447 /* Track.swift */,
+				71635441208414D90099930A /* Issue.swift */,
+				71635445208418290099930A /* CustomField.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,8 +251,10 @@
 		71A310FC2082400D00D79771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				71635449208419710099930A /* BasicResult.swift */,
 				71A3110120824CA600D79771 /* ProjectsResult.swift */,
 				71D6ABB82082F1B300FE5447 /* ProjectResult.swift */,
+				716354472084194E0099930A /* IssuesResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				71A3110620824E3F00D79771 /* ApiResultProcessor.swift */,
+				71635451208424650099930A /* DateStringProcessor.swift */,
 			);
 			path = Processors;
 			sourceTree = "<group>";
@@ -238,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */,
+				7163544B20841EF10099930A /* IssuesSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -255,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */,
+				7163544D20841F4B0099930A /* IssueTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -343,7 +379,9 @@
 				71D6ABAC2082C5B900FE5447 /* Projects.storyboard in Resources */,
 				7111F26F2081A562003AD03E /* LaunchScreen.storyboard in Resources */,
 				7111F26C2081A562003AD03E /* Assets.xcassets in Resources */,
+				7163545420842C090099930A /* NoContent.storyboard in Resources */,
 				7111F26A2081A560003AD03E /* Login.storyboard in Resources */,
+				7163545020841F710099930A /* ProjectIssues.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,13 +446,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D6ABAE2082D47500FE5447 /* ConfigurableView.swift in Sources */,
+				7163544C20841EF10099930A /* IssuesSection.swift in Sources */,
+				71635442208414D90099930A /* Issue.swift in Sources */,
 				71D6ABB52082EEAD00FE5447 /* Colors.swift in Sources */,
+				71635446208418290099930A /* CustomField.swift in Sources */,
 				71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */,
+				716354482084194E0099930A /* IssuesResult.swift in Sources */,
 				71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */,
+				7163544A208419710099930A /* BasicResult.swift in Sources */,
 				71D6ABB72082F17600FE5447 /* Track.swift in Sources */,
+				716354402084110A0099930A /* RefreshableTableViewController.swift in Sources */,
+				7163545620842C510099930A /* NoContentViewController.swift in Sources */,
 				71D6ABB22082E0F300FE5447 /* ProjectIssuesViewController.swift in Sources */,
 				71A3110220824CA600D79771 /* ProjectsResult.swift in Sources */,
 				7111F2882081B78C003AD03E /* Ambients.swift in Sources */,
+				716354442084151A0099930A /* Basic.swift in Sources */,
 				71D6ABB92082F1B300FE5447 /* ProjectResult.swift in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
 				71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */,
@@ -427,6 +473,8 @@
 				71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */,
 				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
+				71635452208424650099930A /* DateStringProcessor.swift in Sources */,
+				7163544E20841F4B0099930A /* IssueTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,7 @@
 import Foundation
 
 @objc(Project)
-class Project: NSObject {
-    @objc var id: Int = 0
-    @objc var name: String?
+class Project: Basic {
     @objc var identifier: String?
     @objc var subtitle: String? // every description in json turns to subtitle
     @objc var homepage: String?

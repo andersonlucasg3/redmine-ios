@@ -72,6 +72,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="E0R-bz-WwV" secondAttribute="trailing" constant="8" id="12T-DY-XbC"/>
                                                         <constraint firstItem="sdw-dP-ga0" firstAttribute="top" secondItem="E0R-bz-WwV" secondAttribute="bottom" constant="7" id="6aH-8g-EWQ"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="Ec6-VL-oEx"/>
                                                         <constraint firstAttribute="trailing" secondItem="sdw-dP-ga0" secondAttribute="trailing" constant="8" id="H8I-7X-KOe"/>
                                                         <constraint firstItem="E0R-bz-WwV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ePV-J9-tf1" secondAttribute="trailing" constant="8" id="HwY-oO-0YV"/>
                                                         <constraint firstItem="ePV-J9-tf1" firstAttribute="top" secondItem="5Tj-bV-pJ2" secondAttribute="top" constant="13" id="LSx-16-FIW"/>

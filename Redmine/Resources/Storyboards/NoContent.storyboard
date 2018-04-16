@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PSP-gH-tu0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--No Content View Controller-->
+        <scene sceneID="KZn-bE-FZ0">
+            <objects>
+                <viewController id="PSP-gH-tu0" customClass="NoContentViewController" customModule="Redmine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="S2P-DV-vex" customClass="ConfigurableView" customModule="Redmine" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnn-iY-0cF">
+                                <rect key="frame" x="30.5" y="105" width="239.5" height="41"/>
+                                <string key="text">No content to display.
+Try pull to refresh the contents.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pnn-iY-0cF" firstAttribute="centerX" secondItem="tvK-W6-OTX" secondAttribute="centerX" id="2Jl-U3-c12"/>
+                            <constraint firstItem="tvK-W6-OTX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pnn-iY-0cF" secondAttribute="bottom" constant="8" id="SFb-71-Hke"/>
+                            <constraint firstItem="pnn-iY-0cF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tvK-W6-OTX" secondAttribute="top" constant="8" id="ely-gX-BjO"/>
+                            <constraint firstItem="tvK-W6-OTX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pnn-iY-0cF" secondAttribute="trailing" constant="8" id="f5y-uz-QWB"/>
+                            <constraint firstItem="pnn-iY-0cF" firstAttribute="centerY" secondItem="tvK-W6-OTX" secondAttribute="centerY" id="qIG-3m-aJz"/>
+                            <constraint firstItem="pnn-iY-0cF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tvK-W6-OTX" secondAttribute="leading" constant="8" id="sXk-x2-2wb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tvK-W6-OTX"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="250"/>
+                    <connections>
+                        <outlet property="noContentLabel" destination="pnn-iY-0cF" id="qqM-dn-3hs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbI-yx-CgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="-366"/>
+        </scene>
+    </scenes>
+</document>

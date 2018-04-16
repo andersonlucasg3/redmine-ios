@@ -10,12 +10,8 @@ import UIKit
 import GenericDataSourceSwift
 import PKHUD
 
-class ProjectsViewController: UIViewController, GenericDelegateDataSourceProtocol, RequestProtocol, ProjectsSectionProtocol {
-    @IBOutlet fileprivate weak var tableView: UITableView!
-    fileprivate weak var refreshControl: UIRefreshControl!
-    
+class ProjectsViewController: RefreshableTableViewController, ProjectsSectionProtocol, RequestProtocol {
     fileprivate var projectsDataSource: GenericDelegateDataSource!
-    
     fileprivate let sessionController = SessionController()
     
     fileprivate lazy var projectsRequest: Request = {
@@ -35,61 +31,31 @@ class ProjectsViewController: UIViewController, GenericDelegateDataSourceProtoco
         super.viewDidLoad()
         
         self.setupDataSourceIfPossible()
-        self.setupRefreshControl()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.reloadTableViewAnimated()
-    }
-    
-    fileprivate func setupRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        self.refreshControl = refreshControl
-        self.refreshControl.addTarget(self, action: #selector(self.refreshControl(sender:)), for: .valueChanged)
-        self.refreshControl.tintColor = Colors.applicationMainColor
-        self.tableView.addSubview(self.refreshControl)
-    }
-    
-    fileprivate func reloadTableViewAnimated() {
-        self.tableView?.reloadSections(IndexSet(integer: 0), with: .automatic)
     }
     
     fileprivate func setupDataSourceIfPossible() {
         if let project = self.project {
-            if let tableView = self.tableView {
+            if let tableView = self.tableView, project.projects?.count ?? 0 > 0 {
                 let dataSource: DataSource<Project> = DataSource()
                 dataSource.items = project.projects
                 
                 let sections = [ProjectsSection(dataSource: dataSource)]
                 self.projectsDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
-                self.projectsDataSource.delegate = self
+                sections.forEach({$0.delegate = self})
                 
-                self.tableView.delegate = self.projectsDataSource
-                self.tableView.dataSource = self.projectsDataSource
+                tableView.delegate = self.projectsDataSource
+                tableView.dataSource = self.projectsDataSource
+            } else {
+                self.showNoContentBackgroundView()
             }
         } else {
-            self.loadProjects()
+            self.startRefreshing()
         }
     }
     
-    fileprivate func loadProjects() {
-        HUD.show(.progress)
-        
+    override func startRefreshing() {
+        super.startRefreshing()
         self.projectsRequest.start()
-    }
-    
-    // MARK: RefreshControl
-    
-    @IBAction fileprivate func refreshControl(sender: UIRefreshControl) {
-        self.loadProjects()
-    }
-    
-    // MARK: GenericDelegateDataSourceProtocol
-    
-    func didSelectItem(at indexPath: IndexPath) {
-        // TODO: project selected
     }
     
     // MARK: RequestProtocol
@@ -104,27 +70,25 @@ class ProjectsViewController: UIViewController, GenericDelegateDataSourceProtoco
         self.setupDataSourceIfPossible()
         self.reloadTableViewAnimated()
         
-        HUD.show(.success)
-        HUD.hide(afterDelay: 1.0)
-        self.refreshControl.endRefreshing()
+        self.endRefreshing(with: true)
     }
     
     func request(_ request: Request, didFailWithError error: RequestError) {
         print(#function)
         print(error)
         
-        HUD.show(.error)
-        HUD.hide(afterDelay: 1.0)
-        self.refreshControl.endRefreshing()
+        self.endRefreshing(with: false)
     }
     
     // MARK: ProjectsSectionProtocol
     
     func openProjectInfo(for project: Project) {
-        
+        // TODO: Show project info
     }
     
     func openIssues(for project: Project) {
-        
+        let projectIssues: ProjectIssuesViewController = ProjectIssuesViewController.instantiate()!
+        projectIssues.project = project
+        self.navigationController?.pushViewController(projectIssues, animated: true)
     }
 }

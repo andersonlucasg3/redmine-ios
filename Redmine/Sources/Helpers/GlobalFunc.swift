@@ -12,12 +12,20 @@ func mainAsync(_ block: @escaping os_block_t) {
     DispatchQueue.main.async(execute: block)
 }
 
+func mainAsync(_ block: @escaping os_block_t, after: TimeInterval) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + after, execute: block)
+}
+
 func mainSync(_ block: @escaping os_block_t) {
     DispatchQueue.main.sync(execute: block)
 }
 
 func globalAsync(_ block: @escaping os_block_t) {
     DispatchQueue.global().async(execute: block)
+}
+
+func globalAsync(_ block: @escaping os_block_t, after: TimeInterval) {
+    DispatchQueue.global().asyncAfter(deadline: .now() + after, execute: block)
 }
 
 func globalSync(_ block: @escaping os_block_t) {

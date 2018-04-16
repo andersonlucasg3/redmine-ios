@@ -8,9 +8,6 @@
 
 import Foundation
 
-class ProjectsResult: NSObject {
+class ProjectsResult: BasicResult {
     @objc var projects: [Project]?
-    @objc var totalCount: Int = 0
-    @objc var offset: Int = 0
-    @objc var limit: Int = 0
 }

@@ -9,7 +9,4 @@
 import Foundation
 
 @objc(Track)
-class Track: NSObject {
-    @objc var id: Int = 0
-    @objc var name: String?
-}
+class Track: Basic {}
