@@ -15,5 +15,6 @@ target 'Redmine' do
   pod 'GenericDataSourceSwift'
   pod 'PKHUD'
   pod 'UIColor-HexString'
+  pod 'TPKeyboardAvoiding'
 
 end
