@@ -69,7 +69,7 @@ class ProjectIssuesViewController: RefreshableTableViewController, RequestProtoc
         
         self.issues = issues
         self.setupDataSourceIfPossible()
-        self.reloadTableViewAnimated()
+        self.reloadTableView()
         
         self.endRefreshing(with: true)
     }

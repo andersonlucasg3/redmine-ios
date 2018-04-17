@@ -40,11 +40,12 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
     fileprivate func setupSearchController() {
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.searchResultsUpdater = self
+        self.searchController.searchBar.placeholder = "Search Projects"
         if #available(iOS 9.1, *) {
             self.searchController.obscuresBackgroundDuringPresentation = false
         }
-        self.searchController.searchBar.placeholder = "Search Projects"
         self.definesPresentationContext = true
+        
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = self.searchController
         } else {
@@ -87,7 +88,7 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
         
         self.project = project
         self.setupDataSourceIfPossible()
-        self.reloadTableViewAnimated()
+        self.reloadTableView()
         
         self.endRefreshing(with: true)
     }
@@ -115,6 +116,6 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
     
     func updateSearchResults(for searchController: UISearchController) {
         self.dataSource.performSearch(searchController.searchBar.text)
-        self.reloadTableViewAnimated()
+        self.reloadTableView()
     }
 }

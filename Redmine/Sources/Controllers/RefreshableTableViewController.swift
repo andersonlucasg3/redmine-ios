@@ -24,7 +24,7 @@ class RefreshableTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.reloadTableViewAnimated()
+        self.reloadTableView()
     }
     
     fileprivate func setupRefreshControl() {
@@ -55,10 +55,10 @@ class RefreshableTableViewController: UIViewController {
         self.noContentViewController = nil
     }
     
-    func reloadTableViewAnimated() {
+    func reloadTableView() {
         guard let tableView = self.tableView else { return }
         if tableView.numberOfSections > 0 {
-            self.tableView?.reloadSections(IndexSet(integer: 0), with: .automatic)
+            self.tableView?.reloadData()
         } else {
             self.showNoContentBackgroundView()
         }
