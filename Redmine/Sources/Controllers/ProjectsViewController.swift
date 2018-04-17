@@ -10,7 +10,10 @@ import UIKit
 import GenericDataSourceSwift
 import PKHUD
 
-class ProjectsViewController: RefreshableTableViewController, ProjectsSectionProtocol, RequestProtocol {
+class ProjectsViewController: RefreshableTableViewController, ProjectsSectionProtocol, RequestProtocol, UISearchResultsUpdating {
+    fileprivate var searchController: UISearchController!
+    
+    fileprivate var dataSource: ProjectsDataSource!
     fileprivate var projectsDataSource: GenericDelegateDataSource!
     fileprivate let sessionController = SessionController()
     
@@ -31,15 +34,31 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
         super.viewDidLoad()
         
         self.setupDataSourceIfPossible()
+        self.setupSearchController()
+    }
+    
+    fileprivate func setupSearchController() {
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchResultsUpdater = self
+        if #available(iOS 9.1, *) {
+            self.searchController.obscuresBackgroundDuringPresentation = false
+        }
+        self.searchController.searchBar.placeholder = "Search Projects"
+        self.definesPresentationContext = true
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = self.searchController
+        } else {
+            self.tableView.tableHeaderView = self.searchController.searchBar
+        }
     }
     
     fileprivate func setupDataSourceIfPossible() {
         if let project = self.project {
             if let tableView = self.tableView, project.projects?.count ?? 0 > 0 {
-                let dataSource: DataSource<Project> = DataSource()
-                dataSource.items = project.projects
+                self.dataSource = ProjectsDataSource(project.projects ?? [])
+                self.dataSource.performSearch(self.searchController.searchBar.text)
                 
-                let sections = [ProjectsSection(dataSource: dataSource)]
+                let sections = [ProjectsSection(dataSource: self.dataSource)]
                 self.projectsDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
                 sections.forEach({$0.delegate = self})
                 
@@ -90,5 +109,12 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
         let projectIssues: ProjectIssuesViewController = ProjectIssuesViewController.instantiate()!
         projectIssues.project = project
         self.navigationController?.pushViewController(projectIssues, animated: true)
+    }
+    
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.dataSource.performSearch(searchController.searchBar.text)
+        self.reloadTableViewAnimated()
     }
 }

@@ -34,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func createNavigationController(with root: UIViewController) {
         self.navigationController = UINavigationController(rootViewController: root)
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
     
     fileprivate func checkHasSession() -> Bool {

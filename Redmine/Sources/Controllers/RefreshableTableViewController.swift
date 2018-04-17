@@ -32,7 +32,11 @@ class RefreshableTableViewController: UIViewController {
         self.refreshControl = refreshControl
         self.refreshControl.addTarget(self, action: #selector(self.refreshControl(sender:)), for: .valueChanged)
         self.refreshControl.tintColor = Colors.applicationMainColor
-        self.tableView.addSubview(self.refreshControl)
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = self.refreshControl
+        } else {
+            self.tableView.addSubview(self.refreshControl)
+        }
     }
     
     func showNoContentBackgroundView() {
@@ -63,6 +67,7 @@ class RefreshableTableViewController: UIViewController {
     func startRefreshing() {
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
+        self.refreshControl.beginRefreshing()
     }
     
     func endRefreshing(with success: Bool) {

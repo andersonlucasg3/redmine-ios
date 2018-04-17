@@ -42,13 +42,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geK-iF-cGV">
-                                                            <rect key="frame" x="83" y="8" width="33.5" height="26.5"/>
+                                                            <rect key="frame" x="83" y="8" width="33.5" height="22.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="32" estimatedRowHeight="32" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-CW-YX0">
-                                                            <rect key="frame" x="0.0" y="46" width="363" height="183"/>
+                                                            <rect key="frame" x="0.0" y="42" width="363" height="183"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="183" id="fwq-PA-OOl"/>
@@ -76,7 +76,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KY3-2j-jKa">
-                                                                                <rect key="frame" x="0.0" y="31" width="363" height="1"/>
+                                                                                <rect key="frame" x="15" y="31" width="333" height="1"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </view>
@@ -100,7 +100,7 @@
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="geK-iF-cGV" secondAttribute="trailing" constant="15" id="Z4Q-R4-jrJ"/>
                                                         <constraint firstItem="OJb-CW-YX0" firstAttribute="top" secondItem="geK-iF-cGV" secondAttribute="bottom" constant="11.5" id="nQu-6I-8HR"/>
                                                         <constraint firstItem="geK-iF-cGV" firstAttribute="leading" secondItem="Zmj-tt-EIL" secondAttribute="trailing" constant="8" id="qga-UX-oSA"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OJb-CW-YX0" secondAttribute="bottom" constant="2" id="t2b-34-R9F"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OJb-CW-YX0" secondAttribute="bottom" constant="6" id="t2b-34-R9F"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
