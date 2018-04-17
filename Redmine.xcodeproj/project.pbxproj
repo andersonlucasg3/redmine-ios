@@ -22,6 +22,8 @@
 		7126A6E520859BE700054ED2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DF20859BE700054ED2 /* TPKeyboardAvoidingTableView.m */; };
 		7126A6E620859BE700054ED2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E020859BE700054ED2 /* TPKeyboardAvoidingScrollView.m */; };
 		7126A6E720859BE700054ED2 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E120859BE700054ED2 /* TPKeyboardAvoidingCollectionView.m */; };
+		7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */; };
+		7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */; };
 		716354402084110A0099930A /* RefreshableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163543F2084110A0099930A /* RefreshableTableViewController.swift */; };
 		71635442208414D90099930A /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635441208414D90099930A /* Issue.swift */; };
 		716354442084151A0099930A /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716354432084151A0099930A /* Basic.swift */; };
@@ -76,6 +78,8 @@
 		7126A6E120859BE700054ED2 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		7126A6E220859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		7126A6E320859BE700054ED2 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailSection.swift; sourceTree = "<group>"; };
+		7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7163543F2084110A0099930A /* RefreshableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableTableViewController.swift; sourceTree = "<group>"; };
 		71635441208414D90099930A /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		716354432084151A0099930A /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 			children = (
 				71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */,
 				7163544B20841EF10099930A /* IssuesSection.swift */,
+				7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			children = (
 				71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */,
 				7163544D20841F4B0099930A /* IssueTableViewCell.swift */,
+				7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -516,7 +522,9 @@
 				71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */,
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
+				7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
+				7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
 				7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */,
@@ -675,7 +683,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
@@ -695,7 +706,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
