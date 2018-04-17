@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.createWindow()
-        
+
         return true
     }
     

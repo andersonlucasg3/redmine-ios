@@ -11,137 +11,142 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Redmine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Redmine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUK-G0-ZMZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZs-ZI-pkn" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkY-d1-3uj">
-                                        <rect key="frame" x="0.0" y="170" width="320" height="208"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-lB-ZEq">
+                                        <rect key="frame" x="0.0" y="163" width="320" height="222"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-hQ-6Rd" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
-                                                <rect key="frame" x="32" y="66" width="256" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-Qn-S8L">
+                                                <rect key="frame" x="32" y="162" width="255.5" height="40"/>
                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="NuI-72-jUi"/>
+                                                    <constraint firstAttribute="height" constant="40" id="dSu-3O-R3M"/>
                                                 </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="padding">
-                                                        <rect key="value" x="6" y="0.0" width="6" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYG-XL-mLy" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
-                                                <rect key="frame" x="32" y="112" width="256" height="30"/>
-                                                <color key="backgroundColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="padding">
-                                                        <rect key="value" x="6" y="0.0" width="6" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="12"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-gH-lzd">
-                                                <rect key="frame" x="120" y="158" width="80" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="QoM-yY-Hbs"/>
-                                                </constraints>
-                                                <state key="normal" title="Login"/>
                                                 <connections>
-                                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HxL-FR-noU"/>
+                                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUT-0t-Gnh"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="http://redmine.org" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-5L-ti6" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
-                                                <rect key="frame" x="32" y="20" width="256" height="30"/>
-                                                <color key="backgroundColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8X-2R-MQj" userLabel="RoundedView">
+                                                <rect key="frame" x="32" y="20" width="255.5" height="122"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="http://redmine.org" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxU-j1-rKB" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255.5" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="yK2-vX-orV"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="url"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="rect" keyPath="padding">
+                                                                <rect key="value" x="8" y="0.0" width="8" height="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-1W-uIH" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="41" width="255.5" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="rect" keyPath="padding">
+                                                                <rect key="value" x="8" y="0.0" width="8" height="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-80-KIH" customClass="PaddingTextField" customModule="Redmine" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="82" width="255.5" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="rect" keyPath="padding">
+                                                                <rect key="value" x="8" y="0.0" width="8" height="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="CBy-xD-rMc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SPi-80-KIH" secondAttribute="bottom" id="8JW-LO-g0O"/>
+                                                    <constraint firstItem="ZzG-1W-uIH" firstAttribute="height" secondItem="rxU-j1-rKB" secondAttribute="height" id="Cj0-5p-1MV"/>
+                                                    <constraint firstItem="rxU-j1-rKB" firstAttribute="leading" secondItem="H8X-2R-MQj" secondAttribute="leading" id="QyX-Lk-20y"/>
+                                                    <constraint firstItem="rxU-j1-rKB" firstAttribute="top" secondItem="H8X-2R-MQj" secondAttribute="top" id="SAC-DP-iiN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SPi-80-KIH" secondAttribute="trailing" id="Xr9-fU-g0s"/>
+                                                    <constraint firstItem="ZzG-1W-uIH" firstAttribute="top" secondItem="rxU-j1-rKB" secondAttribute="bottom" constant="1" id="Yv9-LZ-HAj"/>
+                                                    <constraint firstItem="SPi-80-KIH" firstAttribute="leading" secondItem="H8X-2R-MQj" secondAttribute="leading" id="eWX-8J-mhr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rxU-j1-rKB" secondAttribute="trailing" id="ejm-q3-VKk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZzG-1W-uIH" secondAttribute="trailing" id="gWD-YW-jtI"/>
+                                                    <constraint firstItem="SPi-80-KIH" firstAttribute="height" secondItem="rxU-j1-rKB" secondAttribute="height" id="jFA-8m-ScD"/>
+                                                    <constraint firstItem="SPi-80-KIH" firstAttribute="top" secondItem="ZzG-1W-uIH" secondAttribute="bottom" constant="1" id="oRA-hy-E4k"/>
+                                                    <constraint firstItem="ZzG-1W-uIH" firstAttribute="leading" secondItem="H8X-2R-MQj" secondAttribute="leading" id="rTW-94-hHK"/>
                                                 </constraints>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="url"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="padding">
-                                                        <rect key="value" x="6" y="0.0" width="6" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </textField>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="zTl-hQ-6Rd" firstAttribute="top" secondItem="hzP-5L-ti6" secondAttribute="bottom" constant="16" id="4JC-sb-VFC"/>
-                                            <constraint firstItem="qYG-XL-mLy" firstAttribute="centerX" secondItem="zTl-hQ-6Rd" secondAttribute="centerX" id="84S-SR-lGX"/>
-                                            <constraint firstAttribute="bottom" secondItem="JYx-gH-lzd" secondAttribute="bottom" constant="20" id="G4S-9I-2oQ"/>
-                                            <constraint firstItem="hzP-5L-ti6" firstAttribute="centerX" secondItem="zTl-hQ-6Rd" secondAttribute="centerX" id="Wgp-no-kzM"/>
-                                            <constraint firstItem="qYG-XL-mLy" firstAttribute="height" secondItem="hzP-5L-ti6" secondAttribute="height" id="bgY-7R-uFd"/>
-                                            <constraint firstItem="zTl-hQ-6Rd" firstAttribute="height" secondItem="hzP-5L-ti6" secondAttribute="height" id="iQV-ng-9oV"/>
-                                            <constraint firstItem="JYx-gH-lzd" firstAttribute="top" secondItem="qYG-XL-mLy" secondAttribute="bottom" constant="16" id="kRr-9w-DR7"/>
-                                            <constraint firstItem="hzP-5L-ti6" firstAttribute="top" secondItem="OkY-d1-3uj" secondAttribute="top" constant="20" id="m2b-jf-alX"/>
-                                            <constraint firstItem="qYG-XL-mLy" firstAttribute="top" secondItem="zTl-hQ-6Rd" secondAttribute="bottom" constant="16" id="q4A-75-ask"/>
-                                            <constraint firstItem="hzP-5L-ti6" firstAttribute="width" secondItem="zTl-hQ-6Rd" secondAttribute="width" id="qvg-l4-PF2"/>
-                                            <constraint firstItem="hzP-5L-ti6" firstAttribute="width" secondItem="OkY-d1-3uj" secondAttribute="width" multiplier="0.8" id="rWN-7j-yBE"/>
-                                            <constraint firstItem="qYG-XL-mLy" firstAttribute="width" secondItem="zTl-hQ-6Rd" secondAttribute="width" id="shy-6K-AdF"/>
-                                            <constraint firstItem="JYx-gH-lzd" firstAttribute="centerX" secondItem="qYG-XL-mLy" secondAttribute="centerX" id="tB1-WR-veA"/>
-                                            <constraint firstItem="hzP-5L-ti6" firstAttribute="centerX" secondItem="OkY-d1-3uj" secondAttribute="centerX" id="xgw-Wa-yKp"/>
+                                            <constraint firstItem="xcR-Qn-S8L" firstAttribute="centerX" secondItem="H8X-2R-MQj" secondAttribute="centerX" id="JF4-Ka-4mZ"/>
+                                            <constraint firstItem="H8X-2R-MQj" firstAttribute="top" secondItem="7hh-lB-ZEq" secondAttribute="top" constant="20" id="Jbf-AC-zLP"/>
+                                            <constraint firstItem="H8X-2R-MQj" firstAttribute="centerX" secondItem="7hh-lB-ZEq" secondAttribute="centerX" id="UXo-Er-cHy"/>
+                                            <constraint firstAttribute="bottom" secondItem="xcR-Qn-S8L" secondAttribute="bottom" constant="20" id="VPg-Jt-8zU"/>
+                                            <constraint firstItem="H8X-2R-MQj" firstAttribute="width" secondItem="7hh-lB-ZEq" secondAttribute="width" multiplier="0.8" id="VVg-NY-oNx"/>
+                                            <constraint firstItem="xcR-Qn-S8L" firstAttribute="top" secondItem="H8X-2R-MQj" secondAttribute="bottom" constant="20" id="xS3-zM-wMk"/>
+                                            <constraint firstItem="xcR-Qn-S8L" firstAttribute="width" secondItem="7hh-lB-ZEq" secondAttribute="width" multiplier="0.8" id="zxl-CA-8TA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="OkY-d1-3uj" firstAttribute="centerY" secondItem="OUK-G0-ZMZ" secondAttribute="centerY" id="G9E-Ib-6Wk"/>
-                                    <constraint firstAttribute="bottom" secondItem="OkY-d1-3uj" secondAttribute="bottom" id="Kak-gY-vrK"/>
-                                    <constraint firstAttribute="trailing" secondItem="OkY-d1-3uj" secondAttribute="trailing" id="May-Hg-5C7"/>
-                                    <constraint firstItem="OkY-d1-3uj" firstAttribute="leading" secondItem="OUK-G0-ZMZ" secondAttribute="leading" id="TnJ-OR-zCz"/>
-                                    <constraint firstItem="OkY-d1-3uj" firstAttribute="centerX" secondItem="OUK-G0-ZMZ" secondAttribute="centerX" id="anb-Bb-DCT"/>
-                                    <constraint firstItem="OkY-d1-3uj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OUK-G0-ZMZ" secondAttribute="top" id="uWj-qd-9by"/>
+                                    <constraint firstItem="7hh-lB-ZEq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nZs-ZI-pkn" secondAttribute="top" constant="163" id="3f3-0k-ZwV"/>
+                                    <constraint firstItem="7hh-lB-ZEq" firstAttribute="centerY" secondItem="nZs-ZI-pkn" secondAttribute="centerY" id="8JZ-oI-AOH"/>
+                                    <constraint firstAttribute="bottom" secondItem="7hh-lB-ZEq" secondAttribute="bottom" id="RqB-ra-c9R"/>
+                                    <constraint firstItem="7hh-lB-ZEq" firstAttribute="width" secondItem="nZs-ZI-pkn" secondAttribute="width" id="VaB-G8-h0B"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hh-lB-ZEq" secondAttribute="trailing" id="qFE-VY-cWj"/>
+                                    <constraint firstItem="7hh-lB-ZEq" firstAttribute="leading" secondItem="nZs-ZI-pkn" secondAttribute="leading" id="zMQ-id-zGD"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OUK-G0-ZMZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0tP-Cn-ef1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OUK-G0-ZMZ" secondAttribute="bottom" id="3Ob-fj-YMJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OUK-G0-ZMZ" secondAttribute="trailing" id="cOC-pt-cRP"/>
-                            <constraint firstItem="OUK-G0-ZMZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fYs-bR-Bl5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZs-ZI-pkn" secondAttribute="bottom" id="eiG-FJ-iVv"/>
+                            <constraint firstItem="nZs-ZI-pkn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gQ4-MA-vOi"/>
+                            <constraint firstAttribute="trailing" secondItem="nZs-ZI-pkn" secondAttribute="trailing" id="hVr-FN-ORb"/>
+                            <constraint firstItem="nZs-ZI-pkn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rfX-By-HCh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="domainUrlTextField" destination="hzP-5L-ti6" id="rSj-gx-dPH"/>
-                        <outlet property="loginButton" destination="JYx-gH-lzd" id="GaZ-ne-bXW"/>
-                        <outlet property="passwordTextField" destination="qYG-XL-mLy" id="NvM-AI-uBm"/>
-                        <outlet property="usernameTextField" destination="zTl-hQ-6Rd" id="UIT-uB-yYD"/>
+                        <outlet property="domainUrlTextField" destination="rxU-j1-rKB" id="1So-7C-N3G"/>
+                        <outlet property="loginButton" destination="xcR-Qn-S8L" id="qIf-Ta-uqR"/>
+                        <outlet property="passwordTextField" destination="SPi-80-KIH" id="D3F-e4-Qon"/>
+                        <outlet property="usernameTextField" destination="ZzG-1W-uIH" id="Vsj-zf-Vmf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

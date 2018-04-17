@@ -21,10 +21,6 @@ class LoginViewController: UIViewController, RequestProtocol {
     
     fileprivate let sessionController = SessionController()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     fileprivate func getDomain() -> String {
         if (self.domainUrlTextField.text ?? "").isEmpty {
             return self.defaultDomain
