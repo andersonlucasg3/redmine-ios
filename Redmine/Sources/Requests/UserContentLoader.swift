@@ -8,22 +8,26 @@
 
 import Foundation
 
-struct UserContentDefinition: RawRepresentable {
-    typealias RawValue = Int
+struct UserContentInfo {
+    // MARK: Static definitions
     
-    var rawValue: Int
-    
-    init?(rawValue: Int) {
-        self.rawValue = rawValue
+    static func projects() -> UserContentInfo {
+        return UserContentInfo(source: Ambients.getProjectsPath(with: SessionController()))
     }
-}
-
-enum UserContentType {
-//    case project =
+    
+    static func projectIssues(_ project: Project, _ assignedTo: String?) -> UserContentInfo {
+        return UserContentInfo(source: Ambients.getIssuesPath(with: SessionController(),
+                                                              forProject: project,
+                                                              assignedTo: assignedTo))
+    }
+    
+    // MARK: Properties definitions
+    
+    fileprivate var source: String
 }
 
 class UserContentLoader {
-    fileprivate var request: Request!
+    fileprivate var currentLoadinRequest: Request!
     
     init() {
         
