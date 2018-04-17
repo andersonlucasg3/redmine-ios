@@ -14,7 +14,7 @@
         <scene sceneID="KZn-bE-FZ0">
             <objects>
                 <viewController id="PSP-gH-tu0" customClass="NoContentViewController" customModule="Redmine" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="S2P-DV-vex" customClass="ConfigurableView" customModule="Redmine" customModuleProvider="target">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="S2P-DV-vex">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -8,8 +8,17 @@
 
 import UIKit
 
+protocol ConfigurableView: class {
+    var cornerRadius: CGFloat { get set }
+    var borderColor: UIColor? { get set }
+    var borderWidth: CGFloat { get set }
+    
+    var layer: CALayer { get }
+}
+
 @IBDesignable
-class ConfigurableView: UIView {
+extension UIView: ConfigurableView {
+    
     // MARK: Corners
     
     @IBInspectable var cornerRadius: CGFloat {
