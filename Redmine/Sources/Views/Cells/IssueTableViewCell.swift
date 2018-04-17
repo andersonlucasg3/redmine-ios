@@ -17,6 +17,7 @@ class IssueTableViewCell: UITableViewCell, Setupable {
     @IBOutlet fileprivate weak var typeLabel: UILabel!
     @IBOutlet fileprivate weak var situationLabel: UILabel!
     @IBOutlet fileprivate weak var priorityLabel: UILabel!
+    @IBOutlet fileprivate weak var assignedToLabel: UILabel!
     @IBOutlet fileprivate weak var authorLabel: UILabel!
     @IBOutlet fileprivate weak var updatedAtLabel: UILabel!
     
