@@ -14,20 +14,36 @@ class IssueTableViewCell: UITableViewCell, Setupable {
     
     @IBOutlet fileprivate weak var ticketLabel: UILabel!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var typeLabel: UILabel!
-    @IBOutlet fileprivate weak var situationLabel: UILabel!
-    @IBOutlet fileprivate weak var priorityLabel: UILabel!
-    @IBOutlet fileprivate weak var assignedToLabel: UILabel!
-    @IBOutlet fileprivate weak var authorLabel: UILabel!
-    @IBOutlet fileprivate weak var updatedAtLabel: UILabel!
+    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableViewHeightConstriant: NSLayoutConstraint!
+    
+    fileprivate var issueDetailDataSource: GenericDelegateDataSource!
     
     func setup(with data: Issue) {
         self.ticketLabel.text = "\(data.id)"
         self.titleLabel.text = data.subject
-        self.typeLabel.text = data.tracker?.name
-        self.situationLabel.text = data.status?.name
-        self.priorityLabel.text = data.priority?.name
-        self.authorLabel.text = data.author?.name
-        self.updatedAtLabel.text = DateStringProcessor.dateString(for: data.updatedOn ?? "")
+        
+        self.setupTableViewAndDataSource(for: data)
+    }
+    
+    fileprivate func setupTableViewAndDataSource(for issue: Issue) {
+        self.tableView.allowsSelection = false
+        
+        let dataSource: DataSource<IssueDetailKeyValue> = DataSource()
+        dataSource.items = [
+            (key: "Type:",                      value: issue.tracker?.name),
+            (key: "Situation:",                 value: issue.status?.name),
+            (key: "Priority:",                  value: issue.priority?.name),
+            (key: "Assigned to:",               value: issue.assignedTo?.name),
+            (key: "Author:",                    value: issue.author?.name),
+            (key: "Updated at:",                value: DateStringProcessor.dateString(for: issue.updatedOn ?? ""))
+        ].filter({ $0.value != nil })
+        
+        self.issueDetailDataSource = GenericDelegateDataSource(withSections: [IssueDetailSection(dataSource: dataSource)],
+                                                               andTableView: self.tableView)
+        self.tableView.delegate = self.issueDetailDataSource
+        self.tableView.dataSource = self.issueDetailDataSource
+        self.tableView.reloadData()
+        self.tableViewHeightConstriant.constant = self.tableView.contentSize.height
     }
 }
