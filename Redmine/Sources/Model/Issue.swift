@@ -9,7 +9,7 @@
 import Foundation
 
 @objc(Issue)
-class Issue: NSObject {
+class Issue: NSObject, Searchable {
     @objc var id: Int = 0
     @objc var project: IssueProject?
     @objc var tracker: IssueTracker?
@@ -27,6 +27,10 @@ class Issue: NSObject {
     @objc var customFields: [CustomField]?
     @objc var createdOn: String?
     @objc var updatedOn: String?
+    
+    var searchableValues: [String] {
+        return ["\(self.id)", self.subject ?? ""]
+    }
 }
 
 class IssueProject: Basic {}
