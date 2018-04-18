@@ -29,25 +29,28 @@
                                             <rect key="frame" x="6" y="6" width="363" height="231"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soA-p8-iYi">
-                                                    <rect key="frame" x="15" y="8" width="60" height="24"/>
+                                                    <rect key="frame" x="15" y="8" width="55" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" priority="999" constant="60" id="Ikl-jZ-mhX"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="g0B-NE-BOI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-nD-yGy">
-                                                    <rect key="frame" x="83" y="8" width="33.5" height="22.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="78" y="8" width="41" height="26.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="35" id="ZJE-4r-XhM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="32" estimatedRowHeight="32" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hsm-nf-eUb">
-                                                    <rect key="frame" x="0.0" y="42" width="363" height="183"/>
+                                                    <rect key="frame" x="0.0" y="46" width="363" height="179"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="183" id="1Ei-6t-4Bi"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="50" id="1Ei-6t-4Bi"/>
                                                     </constraints>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IssueDetailTableViewCell" textLabel="lP2-pb-eWE" detailTextLabel="3Se-9F-uGd" rowHeight="32" style="IBUITableViewCellStyleValue1" id="lMu-cN-e9c" customClass="IssueDetailTableViewCell" customModule="Redmine" customModuleProvider="target">
