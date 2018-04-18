@@ -11,6 +11,7 @@ import GenericDataSourceSwift
 
 protocol SearchableViewControllerProtocol: class {
     associatedtype SearchableType: Searchable
+    associatedtype SectionType: Section
     
     var tableView: UITableView! { get }
 
@@ -41,9 +42,11 @@ extension SearchableViewControllerProtocol where Self : RefreshableTableViewCont
     func setupDataSourceIfPossible(with items: [SearchableType]) {
         if let tableView = self.tableView, items.count > 0 {
             let dataSource = SearchableDataSource(items)
-            dataSource.performSearch(self.searchController.searchBar.text)
+            if let searchController = self.searchController {
+                dataSource.performSearch(searchController.searchBar.text)
+            }
             
-            let sections = [ProjectsSection(dataSource: dataSource)]
+            let sections = [SectionType(dataSource: dataSource)]
             self.delegateDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
             
             tableView.delegate = self.delegateDataSource
@@ -56,7 +59,7 @@ extension SearchableViewControllerProtocol where Self : RefreshableTableViewCont
     }
     
     func updateSearch(for controller: UISearchController) {
-        self.dataSource.performSearch(searchController.searchBar.text)
+        self.dataSource.performSearch(self.searchController.searchBar.text)
         self.reloadTableView()
     }
 }
