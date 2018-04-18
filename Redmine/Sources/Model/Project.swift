@@ -9,7 +9,7 @@
 import Foundation
 
 @objc(Project)
-class Project: Basic {
+class Project: Basic, Searchable {
     @objc var identifier: String?
     @objc var subtitle: String? // every description in json turns to subtitle
     @objc var homepage: String?
@@ -17,4 +17,8 @@ class Project: Basic {
     @objc var createdOn: String?
     @objc var updatedOn: String?
     @objc var trackers: [Track]?
+    
+    var searchableValues: [String] {
+        return ["\(self.id)", self.name ?? ""]
+    }
 }

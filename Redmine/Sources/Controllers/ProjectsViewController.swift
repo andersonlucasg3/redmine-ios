@@ -10,11 +10,10 @@ import UIKit
 import GenericDataSourceSwift
 import PKHUD
 
-class ProjectsViewController: RefreshableTableViewController, ProjectsSectionProtocol, RequestProtocol, UISearchResultsUpdating {
-    fileprivate var searchController: UISearchController!
+class ProjectsViewController: RefreshableTableViewController, SearchableViewControllerProtocol,
+        ProjectsSectionProtocol, RequestProtocol, UISearchResultsUpdating {
+    typealias SearchableType = Project
     
-    fileprivate var dataSource: ProjectsDataSource!
-    fileprivate var projectsDataSource: GenericDelegateDataSource!
     fileprivate let sessionController = SessionController()
     
     fileprivate lazy var projectsRequest: Request = {
@@ -24,11 +23,11 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
         return request
     }()
     
-    var project: ProjectsResult! {
-        didSet {
-            self.setupDataSourceIfPossible()
-        }
-    }
+    weak var searchController: UISearchController!
+    weak var dataSource: SearchableDataSource<Project>!
+    var delegateDataSource: GenericDelegateDataSource!
+    
+    var project: ProjectsResult!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,37 +36,10 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
         self.setupSearchController()
     }
     
-    fileprivate func setupSearchController() {
-        self.searchController = UISearchController(searchResultsController: nil)
-        self.searchController.searchResultsUpdater = self
-        self.searchController.searchBar.placeholder = "Search Projects"
-        if #available(iOS 9.1, *) {
-            self.searchController.obscuresBackgroundDuringPresentation = false
-        }
-        self.definesPresentationContext = true
-        
-        if #available(iOS 11.0, *) {
-            self.navigationItem.searchController = self.searchController
-        } else {
-            self.tableView.tableHeaderView = self.searchController.searchBar
-        }
-    }
-    
     fileprivate func setupDataSourceIfPossible() {
         if let project = self.project {
-            if let tableView = self.tableView, project.projects?.count ?? 0 > 0 {
-                self.dataSource = ProjectsDataSource(project.projects ?? [])
-                self.dataSource.performSearch(self.searchController.searchBar.text)
-                
-                let sections = [ProjectsSection(dataSource: self.dataSource)]
-                self.projectsDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
-                sections.forEach({$0.delegate = self})
-                
-                tableView.delegate = self.projectsDataSource
-                tableView.dataSource = self.projectsDataSource
-            } else {
-                self.showNoContentBackgroundView()
-            }
+            self.setupDataSourceIfPossible(with: project.projects ?? [])
+            self.delegateDataSource.sections.map({$0 as? ProjectsSection}).forEach({$0?.delegate = self})
         } else {
             self.startRefreshing()
         }
@@ -114,8 +86,7 @@ class ProjectsViewController: RefreshableTableViewController, ProjectsSectionPro
     
     // MARK: UISearchResultsUpdating
     
-    func updateSearchResults(for searchController: UISearchController) {
-        self.dataSource.performSearch(searchController.searchBar.text)
-        self.reloadTableView()
+    func updateSearchResults(for controller: UISearchController) {
+        self.updateSearch(for: controller)
     }
 }

@@ -8,7 +8,11 @@
 
 import GenericDataSourceSwift
 
-class SearchableDataSource<DataType>: DataSource<DataType> {
+protocol Searchable {
+    var searchableValues: [String] { get }
+}
+
+class SearchableDataSource<DataType: Searchable>: DataSource<DataType> {
     fileprivate var originalItems: [DataType]!
     
     fileprivate override init() {
@@ -21,8 +25,23 @@ class SearchableDataSource<DataType>: DataSource<DataType> {
         self.originalItems = items
     }
     
+    fileprivate func doesItemContainsQuery(_ item: String, _ query: String) -> Bool {
+        return item.contains(query)
+    }
+    
+    fileprivate func anyItemContainsQuery(_ items: [String], _ query: String) -> Bool {
+        for item in items {
+            if self.doesItemContainsQuery(item, query) {
+                return true
+            }
+        }
+        return false
+    }
+    
     func isQueryValid(_ query: String, for item: DataType) -> Bool {
-        return true
+        let lowerQuery = query.lowercased()
+        let loweredItems = item.searchableValues.map({$0.lowercased()})
+        return lowerQuery == "" || self.anyItemContainsQuery(loweredItems, lowerQuery)
     }
     
     func performSearch(_ query: String?) {
