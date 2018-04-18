@@ -12,31 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController?
+    
+    var navigationController: UINavigationController? {
+        return self.window?.rootViewController as? UINavigationController
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if self.checkHasSession() {
-            self.createNavigationController(with: ProjectsViewController.instantiate()!)
-        } else {
-            self.createNavigationController(with: LoginViewController.instantiate()!)
+            self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: false)
         }
-        
-        self.createWindow()
-
         return true
-    }
-    
-    fileprivate func createWindow() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = self.navigationController
-        self.window?.makeKeyAndVisible()
-    }
-    
-    fileprivate func createNavigationController(with root: UIViewController) {
-        self.navigationController = UINavigationController(rootViewController: root)
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        }
     }
     
     fileprivate func checkHasSession() -> Bool {
