@@ -20,7 +20,7 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
     var delegateDataSource: GenericDelegateDataSource!
     
     fileprivate lazy var issuesRequest: Request = {
-        let request = Request(url: Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, assignedTo: "me"), method: .get)
+        let request = Request(url: Ambients.getIssuesPath(with: self.sessionController, forProject: self.project), method: .get)
         request.delegate = self
         request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
         return request
@@ -32,10 +32,6 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
         didSet {
             self.updateProjectName()
         }
-    }
-    
-    override var shouldSetupRefreshControl: Bool {
-        return false
     }
     
     override func viewDidLoad() {

@@ -9,33 +9,24 @@
 import UIKit
 import PKHUD
 
-class RefreshableTableViewController: UIViewController {
-    @IBOutlet fileprivate(set) weak var tableView: UITableView!
-    fileprivate(set) weak var refreshControl: UIRefreshControl!
-    
+class RefreshableTableViewController: UITableViewController {
     fileprivate weak var noContentViewController: NoContentViewController?
-    
-    var shouldSetupRefreshControl: Bool {
-        return true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.shouldSetupRefreshControl {
-            self.setupRefreshControl()
-        }
+        self.setupRefreshControl()
     }
     
     fileprivate func setupRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        self.refreshControl = refreshControl
-        self.refreshControl.addTarget(self, action: #selector(self.refreshControl(sender:)), for: .valueChanged)
-        self.refreshControl.tintColor = Colors.applicationMainColor
-        if #available(iOS 10.0, *) {
-            self.tableView.refreshControl = self.refreshControl
-        } else {
-            self.tableView.addSubview(self.refreshControl)
+        if let refreshControl = self.refreshControl {
+            refreshControl.addTarget(self, action: #selector(self.refreshControl(sender:)), for: .valueChanged)
+            refreshControl.tintColor = Colors.applicationMainColor
+            if #available(iOS 10.0, *) {
+                self.tableView.refreshControl = refreshControl
+            } else {
+                self.tableView.addSubview(refreshControl)
+            }
         }
     }
     
@@ -67,7 +58,6 @@ class RefreshableTableViewController: UIViewController {
     func startRefreshing() {
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
-        self.refreshControl?.beginRefreshing()
     }
     
     func endRefreshing(with success: Bool) {

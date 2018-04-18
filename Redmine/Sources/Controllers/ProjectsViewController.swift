@@ -30,10 +30,6 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
     
     var project: ProjectsResult!
     
-    override var shouldSetupRefreshControl: Bool {
-        return false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

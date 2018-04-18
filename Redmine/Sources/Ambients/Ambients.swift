@@ -36,7 +36,7 @@ struct Ambients {
         return self.url(self.getFullUrl(session, path: self.projectsPath), with: self.getDefaultParams(limit, include))
     }
     
-    static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = "me", limit: Int = 25, include: String? = nil) -> String {
+    static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = nil, limit: Int = 25, include: String? = nil) -> String {
         var params = self.getDefaultParams(limit, include)
         params["project_id"] = "\(project.id)"
         if let trackers = project.trackers, let tracker = trackers.first {
