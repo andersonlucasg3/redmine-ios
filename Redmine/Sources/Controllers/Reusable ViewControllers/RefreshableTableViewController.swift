@@ -15,16 +15,16 @@ class RefreshableTableViewController: UIViewController {
     
     fileprivate weak var noContentViewController: NoContentViewController?
     
+    var shouldSetupRefreshControl: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupRefreshControl()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.reloadTableView()
+        if self.shouldSetupRefreshControl {
+            self.setupRefreshControl()
+        }
     }
     
     fileprivate func setupRefreshControl() {
@@ -67,12 +67,12 @@ class RefreshableTableViewController: UIViewController {
     func startRefreshing() {
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
-        self.refreshControl.beginRefreshing()
+        self.refreshControl?.beginRefreshing()
     }
     
     func endRefreshing(with success: Bool) {
         HUD.flash(success ? .success : .error)
-        self.refreshControl.endRefreshing()
+        self.refreshControl?.endRefreshing()
     }
     
     // MARK: UIRefreshControl

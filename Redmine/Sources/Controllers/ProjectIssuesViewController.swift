@@ -34,12 +34,16 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
         }
     }
     
+    override var shouldSetupRefreshControl: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateProjectName()
-        self.setupDataSourceIfPossible()
         self.setupSearchController()
+        self.setupDataSourceIfPossible()
     }
     
     fileprivate func updateProjectName() {

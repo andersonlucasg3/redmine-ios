@@ -29,12 +29,16 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
     var delegateDataSource: GenericDelegateDataSource!
     
     var project: ProjectsResult!
-        
+    
+    override var shouldSetupRefreshControl: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupDataSourceIfPossible()
         self.setupSearchController()
+        self.setupDataSourceIfPossible()
     }
     
     fileprivate func setupDataSourceIfPossible() {
