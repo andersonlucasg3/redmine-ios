@@ -13,6 +13,7 @@ import PKHUD
 class ProjectsViewController: RefreshableTableViewController, SearchableViewControllerProtocol,
         ProjectsSectionProtocol, RequestProtocol, UISearchResultsUpdating {
     typealias SearchableType = Project
+    typealias SectionType = ProjectsSection
     
     fileprivate let sessionController = SessionController()
     

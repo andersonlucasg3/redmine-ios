@@ -9,9 +9,15 @@
 import UIKit
 import GenericDataSourceSwift
 
-class ProjectIssuesViewController: RefreshableTableViewController, RequestProtocol {
+class ProjectIssuesViewController: RefreshableTableViewController, SearchableViewControllerProtocol, RequestProtocol, UISearchResultsUpdating {
+    typealias SearchableType = Issue
+    typealias SectionType = IssuesSection
+    
     fileprivate let sessionController = SessionController()
-    fileprivate var issuesDataSource: GenericDelegateDataSource!
+    
+    weak var searchController: UISearchController!
+    weak var dataSource: SearchableDataSource<Issue>!
+    var delegateDataSource: GenericDelegateDataSource!
     
     fileprivate lazy var issuesRequest: Request = {
         let request = Request(url: Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, assignedTo: "me"), method: .get)
@@ -32,7 +38,8 @@ class ProjectIssuesViewController: RefreshableTableViewController, RequestProtoc
         super.viewDidLoad()
         
         self.updateProjectName()
-        self.startRefreshing()
+        self.setupDataSourceIfPossible()
+        self.setupSearchController()
     }
     
     fileprivate func updateProjectName() {
@@ -40,17 +47,10 @@ class ProjectIssuesViewController: RefreshableTableViewController, RequestProtoc
     }
     
     fileprivate func setupDataSourceIfPossible() {
-        if let tableView = self.tableView, self.issues.issues?.count ?? 0 > 0 {
-            let dataSource: DataSource<Issue> = DataSource()
-            dataSource.items = self.issues.issues
-            
-            let sections = [IssuesSection(dataSource: dataSource)]
-            self.issuesDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
-            
-            tableView.delegate = self.issuesDataSource
-            tableView.dataSource = self.issuesDataSource
+        if let issues = self.issues {
+            self.setupDataSourceIfPossible(with: issues.issues ?? [])
         } else {
-            self.showNoContentBackgroundView()
+            self.startRefreshing()
         }
     }
     
@@ -76,5 +76,11 @@ class ProjectIssuesViewController: RefreshableTableViewController, RequestProtoc
     
     func request(_ request: Request, didFailWithError error: RequestError) {
         self.endRefreshing(with: false)
+    }
+    
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.updateSearch(for: searchController)
     }
 }
