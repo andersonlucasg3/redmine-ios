@@ -26,6 +26,11 @@ extension SearchableViewControllerProtocol where Self : RefreshableTableViewCont
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search Projects"
+        if #available(iOS 9.1, *) {
+            searchController.dimsBackgroundDuringPresentation = false
+            searchController.obscuresBackgroundDuringPresentation = false
+        }
+        self.definesPresentationContext = true
         
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
