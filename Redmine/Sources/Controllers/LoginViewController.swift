@@ -59,7 +59,7 @@ class LoginViewController: UIViewController, RequestProtocol {
     }
     
     fileprivate func openProjectsViewController(_ projects: ProjectsResult) {
-        self.navigationController?.pushViewController(ProjectsViewController.instantiate()!, animated: true)
+        self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: true)
     }
     
     // MARK: Buttons events
