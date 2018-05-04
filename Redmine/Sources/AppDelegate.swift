@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.configureNavigationBarAppearance()
+        
         if self.checkHasSession() {
             self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: false)
         }
@@ -26,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func checkHasSession() -> Bool {
         return SessionController().isValid
+    }
+    
+    fileprivate func configureNavigationBarAppearance() {
+        UINavigationBar.appearance().tintColor = Colors.applicationMainColor
     }
 }
 

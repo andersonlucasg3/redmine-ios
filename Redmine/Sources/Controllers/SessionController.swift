@@ -33,6 +33,10 @@ class SessionController {
         UserDefaults.standard.set(string, forKey: key.rawValue)
     }
     
+    fileprivate func remove(key: Keys) {
+        UserDefaults.standard.removeObject(forKey: key.rawValue)
+    }
+    
     fileprivate func loadContent() {
         self.domain = self.string(for: .domain)
         self.credentials = self.string(for: .credentials)
@@ -41,5 +45,10 @@ class SessionController {
     func save() {
         self.set(string: self.domain, for: .domain)
         self.set(string: self.credentials, for: .credentials)
+    }
+    
+    func logout() {
+        self.remove(key: .domain)
+        self.remove(key: .credentials)
     }
 }
