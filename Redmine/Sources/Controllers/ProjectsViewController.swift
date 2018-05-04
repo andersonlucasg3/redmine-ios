@@ -40,7 +40,7 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
     fileprivate func setupDataSourceIfPossible() {
         if let project = self.project {
             self.setupDataSourceIfPossible(with: project.projects ?? [])
-            self.delegateDataSource.sections.map({$0 as? ProjectsSection}).forEach({$0?.delegate = self})
+            self.delegateDataSource?.sections?.map({$0 as? ProjectsSection}).forEach({$0?.delegate = self})
         } else {
             self.startRefreshing()
         }

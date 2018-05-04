@@ -60,7 +60,7 @@ extension SearchableViewControllerProtocol where Self : RefreshableTableViewCont
     }
     
     func updateSearch(for controller: UISearchController) {
-        self.dataSource.performSearch(self.searchController.searchBar.text)
+        self.dataSource?.performSearch(self.searchController?.searchBar.text)
         self.reloadTableView()
     }
 }
