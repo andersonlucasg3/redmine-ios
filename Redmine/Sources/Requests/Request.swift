@@ -42,6 +42,7 @@ class Request {
         self.url = url
         self.method = method
         
+        SessionManager.default.session.configuration.requestCachePolicy = .reloadIgnoringCacheData
     }
     
     func addBasicAuthorizationHeader(username: String, password: String) {

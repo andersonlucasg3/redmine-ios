@@ -9,6 +9,7 @@
 import UIKit
 import Swift_Json
 import PKHUD
+import Reachability
 
 class LoginViewController: UIViewController, RequestProtocol {
     @IBOutlet fileprivate weak var domainUrlTextField: UITextField!
@@ -95,8 +96,11 @@ class LoginViewController: UIViewController, RequestProtocol {
         print(error)
         // TODO: show error to the user
         
-        HUD.show(.error, onView: self.view)
-        HUD.hide(afterDelay: 1.0)
+        let message: String = Reachability.forInternetConnection().isReachable() ?
+            "Wrong Username\nand/or Password." :
+            "Please, check for internet connection."
+        HUD.show(.labeledError(title: "Login failed", subtitle: message), onView: self.view)
+        HUD.hide(afterDelay: 2.0)
     }
 }
 
