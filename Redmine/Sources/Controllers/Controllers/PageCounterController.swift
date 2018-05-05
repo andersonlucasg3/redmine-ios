@@ -30,6 +30,6 @@ class PageCounterController {
     }
     
     fileprivate func canGoNextPage() -> Bool {
-        return self.currentPage * self.itemsPerPage < self.totalItems
+        return (self.currentPage + 1) * self.itemsPerPage < self.totalItems
     }
 }

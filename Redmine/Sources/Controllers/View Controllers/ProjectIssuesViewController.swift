@@ -19,12 +19,7 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
     weak var dataSource: SearchableDataSource<Issue>!
     var delegateDataSource: GenericDelegateDataSource!
     
-    fileprivate lazy var issuesRequest: Request = {
-        let request = Request(url: Ambients.getIssuesPath(with: self.sessionController, forProject: self.project), method: .get)
-        request.delegate = self
-        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
-        return request
-    }()
+    fileprivate var issuesRequest: Request?
     
     fileprivate var issues: IssuesResult!
     
@@ -42,6 +37,11 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
         self.setupDataSourceIfPossible()
     }
     
+    override func clearCurrentContent() {
+        self.pageCounter = nil
+        self.issues = nil
+    }
+    
     fileprivate func updateProjectName() {
         self.title = self.project?.name
     }
@@ -54,9 +54,17 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
         }
     }
     
+    fileprivate func createIssuesRequest() -> Request {
+        let request = Request(url: Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, page: self.pageCounter?.currentPage ?? 0), method: .get)
+        request.delegate = self
+        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
+        return request
+    }
+    
     override func startRefreshing() {
         super.startRefreshing()
-        self.issuesRequest.start()
+        self.issuesRequest = self.createIssuesRequest()
+        self.issuesRequest?.start()
     }
     
     // MARK: RequestProtocol
@@ -67,7 +75,13 @@ class ProjectIssuesViewController: RefreshableTableViewController, SearchableVie
             return
         }
         
-        self.issues = issues
+        if self.issues == nil {
+            self.issues = issues
+        } else {
+            self.issues.append(from: issues)
+        }
+        
+        self.setupPageCounterIfNeeded(totalItems: self.issues.totalCount)
         self.setupDataSourceIfPossible()
         self.reloadTableView()
         

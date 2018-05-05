@@ -10,4 +10,9 @@ import Foundation
 
 class IssuesResult: BasicResult {
     @objc var issues: [Issue]?
+    
+    func append(from obj: IssuesResult) {
+        super.append(from: obj)
+        self.issues?.append(contentsOf: obj.issues ?? [])
+    }
 }
