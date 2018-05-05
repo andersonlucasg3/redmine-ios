@@ -24,20 +24,20 @@ struct Ambients {
         return ( (try? query?.asURL() ?? url) ?? url ).absoluteString
     }
     
-    fileprivate static func getDefaultParams(_ limit: Int, _ include: String?) -> [String: String] {
-        var params = ["limit": "\(limit)"]
+    fileprivate static func getDefaultParams(_ limit: Int, _ page: Int, _ include: String?) -> [String: String] {
+        var params = ["limit": "\(limit)", "offset": "\(page * limit)"]
         if let include = include {
             params["include"] = include
         }
         return params
     }
     
-    static func getProjectsPath(with session: SessionController, limit: Int = 25, include: String? = nil) -> String {
-        return self.url(self.getFullUrl(session, path: self.projectsPath), with: self.getDefaultParams(limit, include))
+    static func getProjectsPath(with session: SessionController, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {
+        return self.url(self.getFullUrl(session, path: self.projectsPath), with: self.getDefaultParams(limit, page, include))
     }
     
-    static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = nil, limit: Int = 25, include: String? = nil) -> String {
-        var params = self.getDefaultParams(limit, include)
+    static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = nil, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {
+        var params = self.getDefaultParams(limit, page, include)
         params["project_id"] = "\(project.id)"
         if let trackers = project.trackers, let tracker = trackers.first {
             params["tracker_id"] = "\(tracker.id)"

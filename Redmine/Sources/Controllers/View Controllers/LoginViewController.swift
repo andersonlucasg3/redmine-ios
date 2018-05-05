@@ -94,7 +94,6 @@ class LoginViewController: UIViewController, RequestProtocol {
     func request(_ request: Request, didFailWithError error: RequestError) {
         print(#function)
         print(error)
-        // TODO: show error to the user
         
         let message: String = Reachability.forInternetConnection().isReachable() ?
             "Wrong Username\nand/or Password." :

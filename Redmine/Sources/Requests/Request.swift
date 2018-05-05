@@ -38,11 +38,14 @@ class Request {
     
     weak var delegate: RequestProtocol?
     
-    init(url: String, method: HTTPMethod) {
+    init(url: String, method: HTTPMethod, disableCaches: Bool = false) {
         self.url = url
         self.method = method
         
-        SessionManager.default.session.configuration.requestCachePolicy = .reloadIgnoringCacheData
+        if disableCaches {
+            SessionManager.default.session.configuration.requestCachePolicy = .reloadIgnoringCacheData
+            SessionManager.default.session.configuration.urlCache = nil
+        }
     }
     
     func addBasicAuthorizationHeader(username: String, password: String) {
@@ -67,7 +70,7 @@ class Request {
             return
         }
         
-        self.dataRequest = SessionManager.default.request(url,
+        self.dataRequest = SessionManager.default.request(self.url,
                                                           method: self.method,
                                                           parameters: self.parameters?.params,
                                                           encoding: self.parameters?.encoding ?? URLEncoding.default,

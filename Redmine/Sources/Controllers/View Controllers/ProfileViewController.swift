@@ -14,12 +14,13 @@ class ProfileViewController: UIViewController, ProfileSectionProtocol, GenericDe
     
     fileprivate let sessionController = SessionController.init()
     
-    fileprivate var dataSource: DataSource<String>!
+    fileprivate weak var dataSource: DataSource<String>!
     fileprivate lazy var itemsDataSource: GenericDelegateDataSource = {
-        self.dataSource = DataSource<String>.init()
-        self.dataSource.items = [ "Logout" ]
-        let sections = [ ProfileSection.init(dataSource: self.dataSource) ]
+        let dataSource = DataSource<String>.init()
+        dataSource.items = [ "Logout" ]
+        let sections = [ ProfileSection.init(dataSource: dataSource) ]
         sections.forEach({$0.delegate = self})
+        self.dataSource = dataSource
         return GenericDelegateDataSource.init(withSections: sections, andTableView: self.tableView)
     }()
     

@@ -40,20 +40,30 @@ extension SearchableViewControllerProtocol where Self : RefreshableTableViewCont
         self.searchController = searchController
     }
     
+    func setupDataSource(with items: [SearchableType]) {
+        let dataSource = SearchableDataSource(items)
+        if let searchController = self.searchController {
+            dataSource.performSearch(searchController.searchBar.text)
+        }
+        
+        var sections: [Section] = [SectionType(dataSource: dataSource)]
+        if self.pageCounter?.hasNextPage ?? false {
+            let dts = DataSource<String>.init()
+            dts.items = ["LoadMore"]
+            sections.append(LoadMoreSection.init(dataSource: dts))
+        }
+        
+        self.dataSource = dataSource
+        self.delegateDataSource = GenericDelegateDataSource(withSections: sections, andTableView: self.tableView)
+        
+        self.tableView.delegate = self.delegateDataSource
+        self.tableView.dataSource = self.delegateDataSource
+        self.delegateDataSource.delegate = self
+    }
+    
     func setupDataSourceIfPossible(with items: [SearchableType]) {
-        if let tableView = self.tableView, items.count > 0 {
-            let dataSource = SearchableDataSource(items)
-            if let searchController = self.searchController {
-                dataSource.performSearch(searchController.searchBar.text)
-            }
-            
-            let sections = [SectionType(dataSource: dataSource)]
-            self.delegateDataSource = GenericDelegateDataSource(withSections: sections, andTableView: tableView)
-            
-            tableView.delegate = self.delegateDataSource
-            tableView.dataSource = self.delegateDataSource
-            
-            self.dataSource = dataSource
+        if let _ = self.tableView, items.count > 0 {
+            self.setupDataSource(with: items)
         } else {
             self.showNoContentBackgroundView()
         }

@@ -17,12 +17,7 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
     
     fileprivate let sessionController = SessionController()
     
-    fileprivate lazy var projectsRequest: Request = {
-        let request = Request(url: Ambients.getProjectsPath(with: self.sessionController, include: "trackers"), method: .get)
-        request.delegate = self
-        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
-        return request
-    }()
+    fileprivate var projectsRequest: Request?
     
     weak var searchController: UISearchController!
     weak var dataSource: SearchableDataSource<Project>!
@@ -37,6 +32,11 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
         self.setupDataSourceIfPossible()
     }
     
+    override func clearCurrentContent() {
+        self.pageCounter = nil
+        self.project = nil
+    }
+    
     fileprivate func setupDataSourceIfPossible() {
         if let project = self.project {
             self.setupDataSourceIfPossible(with: project.projects ?? [])
@@ -46,9 +46,17 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
         }
     }
     
+    fileprivate func createProjectsRequest() -> Request {
+        let request = Request(url: Ambients.getProjectsPath(with: self.sessionController, page: self.pageCounter?.currentPage ?? 0, include: "trackers"), method: .get)
+        request.delegate = self
+        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
+        return request
+    }
+    
     override func startRefreshing() {
         super.startRefreshing()
-        self.projectsRequest.start()
+        self.projectsRequest = self.createProjectsRequest()
+        self.projectsRequest?.start()
     }
     
     // MARK: RequestProtocol
@@ -59,7 +67,13 @@ class ProjectsViewController: RefreshableTableViewController, SearchableViewCont
             return
         }
         
-        self.project = project
+        if self.project == nil {
+            self.project = project
+        } else {
+            self.project.append(from: project)
+        }
+        
+        self.setupPageCounterIfNeeded(totalItems: self.project.totalCount)
         self.setupDataSourceIfPossible()
         self.reloadTableView()
         

@@ -8,15 +8,20 @@
 
 import UIKit
 import PKHUD
+import GenericDataSourceSwift
 
-class RefreshableTableViewController: UITableViewController {
+class RefreshableTableViewController: UITableViewController, LoadMoreViewControllerProtocol, GenericDelegateDataSourceProtocol {
     fileprivate weak var noContentViewController: NoContentViewController?
+    
+    var pageCounter: PageCounterController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupRefreshControl()
     }
+    
+    func clearCurrentContent() { } // for overriding only
     
     fileprivate func setupRefreshControl() {
         if let refreshControl = self.refreshControl {
@@ -68,6 +73,15 @@ class RefreshableTableViewController: UITableViewController {
     // MARK: UIRefreshControl
     
     @objc fileprivate func refreshControl(sender: UIRefreshControl) {
+        self.clearCurrentContent()
         self.startRefreshing()
+    }
+    
+    // MARK: GenericDelegateDataSourceProtocol
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            self.loadNextPage()
+        }
     }
 }
