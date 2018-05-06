@@ -10,12 +10,16 @@ import Foundation
 
 protocol LoadMoreViewControllerProtocol: class {
     var pageCounter: PageCounterController? { get set }
+    
+    func startRefreshing()
 }
 
-extension LoadMoreViewControllerProtocol where Self : RefreshableTableViewController {
+extension LoadMoreViewControllerProtocol {
     func setupPageCounterIfNeeded(totalItems: Int) {
         if self.pageCounter == nil {
             self.pageCounter = PageCounterController(itemsPerPage: ITEMS_PER_PAGE, total: totalItems)
+        } else {
+            self.pageCounter?.totalItems = totalItems
         }
     }
     

@@ -12,7 +12,8 @@ class PageCounterController {
     fileprivate(set) var currentPage: Int = 0
     
     fileprivate var itemsPerPage: Int
-    fileprivate(set) var totalItems: Int
+    
+    var totalItems: Int
     
     var hasNextPage: Bool {
         return self.canGoNextPage()

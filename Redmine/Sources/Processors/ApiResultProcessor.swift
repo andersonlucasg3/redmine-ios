@@ -10,10 +10,15 @@ import Foundation
 import Swift_Json
 
 enum ApiResultProcessor<T: NSObject> {
-    static func processResult(content: String?) -> T? {
+    static func processResult(content: String?, customMapping: [String: String]? = nil) -> T? {
         guard let content = content else { return nil }
         let config = JsonConfig.init(SnakeCaseConverter())
         config.set(fromKey: "subtitle", to: "description")
+        if let mapping = customMapping {
+            mapping.keys.forEach({ key in
+                config.set(fromKey: key, to: mapping[key] ?? "")
+            })
+        }
         let parser = JsonParser()
         return parser.parse(string: content, withConfig: config)
     }

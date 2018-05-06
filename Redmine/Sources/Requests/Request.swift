@@ -76,6 +76,8 @@ class Request {
                                                           encoding: self.parameters?.encoding ?? URLEncoding.default,
                                                           headers: self.headers)
         self.dataRequest?.responseString(completionHandler: { [weak self] in
+            print("\(#file)-\(#function)-\(#line)")
+            print($0)
             switch $0.result {
             case .success(let value):
                 self?.dispatchSuccess(value)

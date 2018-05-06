@@ -41,7 +41,9 @@
 		71635452208424650099930A /* DateStringProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635451208424650099930A /* DateStringProcessor.swift */; };
 		7163545420842C090099930A /* NoContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163545320842C090099930A /* NoContent.storyboard */; };
 		7163545620842C510099930A /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163545520842C510099930A /* NoContentViewController.swift */; };
-		7188F23F2086D5A600DE1C7C /* SearchableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188F23E2086D5A600DE1C7C /* SearchableViewControllerProtocol.swift */; };
+		716AAD74209F701C0049C2C3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AAD73209F701C0049C2C3 /* SearchResult.swift */; };
+		716AAD76209F72990049C2C3 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AAD75209F72990049C2C3 /* SearchItem.swift */; };
+		7188F23F2086D5A600DE1C7C /* SearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */; };
 		7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61120857C44007E4C96 /* UserContentLoader.swift */; };
 		7192B61420858585007E4C96 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61320858585007E4C96 /* PaddingTextField.swift */; };
 		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
@@ -108,7 +110,9 @@
 		71635451208424650099930A /* DateStringProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringProcessor.swift; sourceTree = "<group>"; };
 		7163545320842C090099930A /* NoContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoContent.storyboard; sourceTree = "<group>"; };
 		7163545520842C510099930A /* NoContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentViewController.swift; sourceTree = "<group>"; };
-		7188F23E2086D5A600DE1C7C /* SearchableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		716AAD73209F701C0049C2C3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		716AAD75209F72990049C2C3 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTableViewController.swift; sourceTree = "<group>"; };
 		7192B61120857C44007E4C96 /* UserContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentLoader.swift; sourceTree = "<group>"; };
 		7192B61320858585007E4C96 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 			children = (
 				7188F23D2086D59500DE1C7C /* Protocols */,
 				7163543F2084110A0099930A /* RefreshableTableViewController.swift */,
+				7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */,
 			);
 			path = "Reusable ViewControllers";
 			sourceTree = "<group>";
@@ -331,7 +336,6 @@
 		7188F23D2086D59500DE1C7C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7188F23E2086D5A600DE1C7C /* SearchableViewControllerProtocol.swift */,
 				71DC52E3209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift */,
 			);
 			path = Protocols;
@@ -345,6 +349,7 @@
 				71D6ABB62082F17600FE5447 /* Track.swift */,
 				71635441208414D90099930A /* Issue.swift */,
 				71635445208418290099930A /* CustomField.swift */,
+				716AAD75209F72990049C2C3 /* SearchItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				71A3110120824CA600D79771 /* ProjectsResult.swift */,
 				71D6ABB82082F1B300FE5447 /* ProjectResult.swift */,
 				716354472084194E0099930A /* IssuesResult.swift */,
+				716AAD73209F701C0049C2C3 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,7 +606,7 @@
 				71DC52E2209D37990067E135 /* LoadMoreSection.swift in Sources */,
 				7126A6E420859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				71D6ABB92082F1B300FE5447 /* ProjectResult.swift in Sources */,
-				7188F23F2086D5A600DE1C7C /* SearchableViewControllerProtocol.swift in Sources */,
+				7188F23F2086D5A600DE1C7C /* SearchableTableViewController.swift in Sources */,
 				7192B61420858585007E4C96 /* PaddingTextField.swift in Sources */,
 				7126A6E520859BE700054ED2 /* TPKeyboardAvoidingTableView.m in Sources */,
 				7111F2822081AB71003AD03E /* Request.swift in Sources */,
@@ -612,8 +618,10 @@
 				7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
 				7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */,
+				716AAD76209F72990049C2C3 /* SearchItem.swift in Sources */,
 				710CA06D209BFDB0007A86B7 /* ProfileSection.swift in Sources */,
 				71DC52E0209D376E0067E135 /* LoadMoreCell.swift in Sources */,
+				716AAD74209F701C0049C2C3 /* SearchResult.swift in Sources */,
 				71DC52E4209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
@@ -779,7 +787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.imessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -802,7 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.imessage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

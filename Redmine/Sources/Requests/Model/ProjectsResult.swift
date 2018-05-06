@@ -8,13 +8,14 @@
 
 import Foundation
 
-class ProjectsResult: BasicResult {
+class ProjectsResult: BasicResult, SpecificResultProtocol {
+    typealias SpecificResult = Project
+    typealias BasicResultType = ProjectsResult
+    
     @objc var projects: [Project]?
     
-    func append(from project: ProjectsResult) {
-        self.totalCount = project.totalCount
-        self.offset = project.offset
-        self.limit = project.limit
-        self.projects?.append(contentsOf: project.projects ?? [])
+    var results: [Project]? {
+        get { return self.projects }
+        set { self.projects = newValue }
     }
 }

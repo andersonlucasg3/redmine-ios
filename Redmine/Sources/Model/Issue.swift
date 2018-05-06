@@ -9,8 +9,7 @@
 import Foundation
 
 @objc(Issue)
-class Issue: NSObject, Searchable {
-    @objc var id: Int = 0
+class Issue: Basic {
     @objc var project: IssueProject?
     @objc var tracker: IssueTracker?
     @objc var status: IssueStatus?
@@ -28,7 +27,7 @@ class Issue: NSObject, Searchable {
     @objc var createdOn: String?
     @objc var updatedOn: String?
     
-    var searchableValues: [String] {
+    override var searchableValues: [String] {
         return ["\(self.id)", self.subject ?? ""]
     }
 }

@@ -8,9 +8,26 @@
 
 import Foundation
 
+enum SearchType: String {
+    case projects = "projects"
+    case issues = "issues"
+}
+
+enum SearchParameters: String {
+    case utf8 = "utf8"
+    case query = "q"
+    case scope = "scope"
+    case allWords = "all_words"
+    case titlesOnly = "titles_only"
+    case attachments = "attachments"
+    case options = "options"
+    case commit = "commit"
+}
+
 struct Ambients {
     fileprivate static let projectsPath = "/projects.json"
     fileprivate static let issuesPath = "/issues.json"
+    fileprivate static let searchPath = "/search.json"
     
     fileprivate static func getFullUrl(_ session: SessionController, path: String) -> URL {
         return URL(string: "\(session.domain)\(path)")!
@@ -46,5 +63,19 @@ struct Ambients {
             params["assigned_to_id"] = assignedTo
         }
         return self.url(self.getFullUrl(session, path: self.issuesPath), with: params)
+    }
+    
+    static func getSearchPath(with session: SessionController, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
+        var params = self.getDefaultParams(limit, page, nil)
+        params[searchType.rawValue] = "1"
+        params[SearchParameters.utf8.rawValue] = "%E2%9C%93"
+        params[SearchParameters.query.rawValue] = query
+        params[SearchParameters.scope.rawValue] = "all"
+        params[SearchParameters.allWords.rawValue] = "1"
+        params[SearchParameters.titlesOnly.rawValue] = ""
+        params[SearchParameters.attachments.rawValue] = "0"
+        params[SearchParameters.options.rawValue] = "0"
+        params[SearchParameters.commit.rawValue] = "Send"
+        return self.url(self.getFullUrl(session, path: self.searchPath), with: params)
     }
 }

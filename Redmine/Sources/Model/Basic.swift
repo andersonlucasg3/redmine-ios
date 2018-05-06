@@ -8,7 +8,12 @@
 
 import Foundation
 
-class Basic: NSObject {
+@objc(Basic)
+class Basic: NSObject, Searchable {
     @objc var id: Int = 0
     @objc var name: String?
+    
+    var searchableValues: [String] {
+        return ["\(self.id)", self.name ?? ""]
+    }
 }

@@ -8,12 +8,27 @@
 
 import Foundation
 
+protocol SpecificResultProtocol: class {
+    associatedtype SpecificResult : Searchable
+    
+    var results: [SpecificResult]? { get set }
+}
+
+extension SpecificResultProtocol where Self : BasicResult {
+    func append(from obj: Self) {
+        self.update(from: obj)
+        self.results?.append(contentsOf: obj.results ?? [])
+    }
+}
+
 class BasicResult: NSObject {
     @objc var totalCount: Int = 0
     @objc var offset: Int = 0
     @objc var limit: Int = 0
     
-    func append(from obj: BasicResult) {
+    override required init() { }
+    
+    func update(from obj: BasicResult) {
         self.totalCount = obj.totalCount
         self.offset = obj.offset
         self.limit = obj.limit

@@ -8,11 +8,14 @@
 
 import Foundation
 
-class IssuesResult: BasicResult {
-    @objc var issues: [Issue]?
+class IssuesResult: BasicResult, SpecificResultProtocol {
+    typealias SpecificResult = Issue
+    typealias BasicResultType = IssuesResult
     
-    func append(from obj: IssuesResult) {
-        super.append(from: obj)
-        self.issues?.append(contentsOf: obj.issues ?? [])
+    @objc var issues: [SpecificResult]?
+    
+    var results: [Issue]? {
+        get { return self.issues }
+        set { self.issues = newValue }
     }
 }
