@@ -75,10 +75,17 @@ class Request {
                                                           parameters: self.parameters?.params,
                                                           encoding: self.parameters?.encoding ?? URLEncoding.default,
                                                           headers: self.headers)
-        self.dataRequest?.responseString(completionHandler: { [weak self] in
+        self.dataRequest?.responseString(completionHandler: { [weak self] response in
             print("\(#file)-\(#function)-\(#line)")
-            print($0)
-            switch $0.result {
+            print(response)
+            
+            let statusCode = response.response?.statusCode ?? 0
+            guard statusCode >= 200 && statusCode <= 299 else {
+                self?.dispatchError(.statusCode(code: statusCode, content: response.result.value))
+                return
+            }
+            
+            switch response.result {
             case .success(let value):
                 self?.dispatchSuccess(value)
             case .failure(let error):
