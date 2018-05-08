@@ -10,15 +10,16 @@ import Foundation
 import Alamofire
 import Reachability
 
-enum RequestError {
+enum RequestError: Error {
     case statusCode(code: Int, content: String?)
     case failure(error: Error)
     case noInternetConnection
 }
 
-protocol RequestProtocol : class {
+@objc protocol RequestProtocol : class {
+    @objc optional func request(_ request: Request, didReceiveResponse response: HTTPURLResponse?)
     func request(_ request: Request, didFinishWithContent content: String?)
-    func request(_ request: Request, didFailWithError error: RequestError)
+    func request(_ request: Request, didFailWithError error: Error)
 }
 
 func createBasicCredentials(_ username: String, _ password: String) -> String {
@@ -27,13 +28,15 @@ func createBasicCredentials(_ username: String, _ password: String) -> String {
     return "Basic \(data?.base64EncodedString() ?? "failed")"
 }
 
-class Request {
+typealias RequestParameters = (params: Parameters, encoding: ParameterEncoding)
+
+class Request: NSObject {
     fileprivate var dataRequest: DataRequest?
     
     fileprivate(set) var url: String
     fileprivate(set) var method: HTTPMethod
     
-    var parameters: (params: Parameters, encoding: ParameterEncoding)?
+    var parameters: RequestParameters?
     var headers: HTTPHeaders?
     
     weak var delegate: RequestProtocol?
@@ -49,24 +52,24 @@ class Request {
     }
     
     func addBasicAuthorizationHeader(username: String, password: String) {
-        if self.headers == nil {
-            self.headers = [ "Authorization" : createBasicCredentials(username, password) ]
-        } else {
-            self.headers?["Authorization"] = createBasicCredentials(username, password)
-        }
+        self.addBasicAuthorizationHeader(credentials: createBasicCredentials(username, password))
     }
     
     func addBasicAuthorizationHeader(credentials: String) {
+        self.addHeader(for: "Authorization", with: credentials)
+    }
+    
+    func addHeader(for key: String, with value: String) {
         if self.headers == nil {
-            self.headers = [ "Authorization" : credentials ]
+            self.headers = [ key : value ]
         } else {
-            self.headers?["Authorization"] = credentials
+            self.headers?[key] = value
         }
     }
     
     func start() {
         guard Reachability.forInternetConnection().isReachable() else {
-            self.delegate?.request(self, didFailWithError: .noInternetConnection)
+            self.delegate?.request(self, didFailWithError: RequestError.noInternetConnection)
             return
         }
         
@@ -78,6 +81,8 @@ class Request {
         self.dataRequest?.responseString(completionHandler: { [weak self] response in
             print("\(#file)-\(#function)-\(#line)")
             print(response)
+            
+            self?.dispatchResponse(response.response)
             
             let statusCode = response.response?.statusCode ?? 0
             guard statusCode >= 200 && statusCode <= 299 else {
@@ -111,18 +116,25 @@ class Request {
         guard let response = response else { return false }
         return response.statusCode >= 200 && response.statusCode <= 299
     }
+    
+    fileprivate func dispatchResponse(_ response: HTTPURLResponse?) {
+        mainAsync { [weak self] in
+            guard let this = self else { return }
+            this.delegate?.request?(this, didReceiveResponse: response)
+        }
+    }
 
     fileprivate func dispatchError(_ error: RequestError) {
         mainAsync { [weak self] in
-            guard let _ = self else { return }
-            self?.delegate?.request(self!, didFailWithError: error)
+            guard let this = self else { return }
+            this.delegate?.request(this, didFailWithError: error)
         }
     }
     
     fileprivate func dispatchSuccess(_ content: String?) {
         mainAsync { [weak self] in
-            guard let _ = self else { return }
-            self?.delegate?.request(self!, didFinishWithContent: content)
+            guard let this = self else { return }
+            this.delegate?.request(this, didFinishWithContent: content)
         }
     }
 }

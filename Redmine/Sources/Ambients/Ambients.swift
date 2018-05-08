@@ -25,6 +25,7 @@ enum SearchParameters: String {
 }
 
 struct Ambients {
+    fileprivate static let loginPath = "/login"
     fileprivate static let projectsPath = "/projects.json"
     fileprivate static let issuesPath = "/issues.json"
     fileprivate static let searchPath = "/search.json"
@@ -33,11 +34,14 @@ struct Ambients {
         return URL(string: "\(session.domain)\(path)")!
     }
     
-    fileprivate static func url(_ url: URL, with queryItems: [String: String]) -> String {
+    fileprivate static func url(_ url: URL, with queryItems: [String: String]?) -> String {
+        guard let queryItems = queryItems else { return url.absoluteString }
+        
         var query = URLComponents(url: url, resolvingAgainstBaseURL: false)
         query?.queryItems = queryItems.compactMap({
             return URLQueryItem(name: $0.key, value: $0.value)
         })
+        
         return ( (try? query?.asURL() ?? url) ?? url ).absoluteString
     }
     
@@ -47,6 +51,10 @@ struct Ambients {
             params["include"] = include
         }
         return params
+    }
+    
+    static func getLoginPath(with session: SessionController) -> String {
+        return self.url(self.getFullUrl(session, path: self.loginPath), with: nil)
     }
     
     static func getProjectsPath(with session: SessionController, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {

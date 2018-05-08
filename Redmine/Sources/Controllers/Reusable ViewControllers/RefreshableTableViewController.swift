@@ -36,12 +36,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         self.requestResult = nil
     }
     
-    func createRequest(with endPoint: String) -> Request {
-        let request = Request(url: endPoint, method: .get)
-        request.delegate = self
-        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
-        return request
-    }
+    // MARK: DataSource functions
     
     func postSetupDataSource() {} // empty for overriding only
     
@@ -93,6 +88,8 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         }
     }
     
+    // MARK: Refresh Control functions
+    
     fileprivate func setupRefreshControl() {
         if let refreshControl = self.refreshControl {
             refreshControl.addTarget(self, action: #selector(self.refreshControl(sender:)), for: .valueChanged)
@@ -104,6 +101,8 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
             }
         }
     }
+    
+    // MARK: No Content Background View
     
     func showNoContentBackgroundView() {
         let noContentViewController = NoContentViewController.instantiate()!
@@ -130,16 +129,33 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         }
     }
     
+    // MARK: Requests
+    
     func requestEndPoint() -> String {
         return "" // to be overriden in each class
     }
+    
+    func createRequest(with endPoint: String) -> Request {
+        let request = Request(url: endPoint, method: .get)
+        request.delegate = self
+        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
+        return request
+    }
+    
+    fileprivate func setupRequestHeaders(_ request: Request) {
+        request.addHeader(for: "Cookie", with: self.sessionController.authToken)
+    }
+    
+    // MARK: Refreshing
     
     func startRefreshing() {
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
         
-        self.request = self.createRequest(with: self.requestEndPoint())
-        self.request?.start()
+        let request = self.createRequest(with: self.requestEndPoint())
+        self.setupRequestHeaders(request)
+        request.start()
+        self.request = request
     }
     
     func endRefreshing(with success: Bool) {
@@ -164,7 +180,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
     
     func createRequestResult(from content: String?, of request: Request) -> RequestResult? {
         guard let requestResult: RequestResult = ApiResultProcessor.processResult(content: content) else {
-            self.request(request, didFailWithError: .statusCode(code: 404, content: content))
+            self.request(request, didFailWithError: RequestError.statusCode(code: 404, content: content))
             return nil
         }
         return requestResult
@@ -190,7 +206,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         self.endRefreshing(with: true)
     }
     
-    func request(_ request: Request, didFailWithError error: RequestError) {
+    func request(_ request: Request, didFailWithError error: Error) {
         print(#function)
         print(error)
         

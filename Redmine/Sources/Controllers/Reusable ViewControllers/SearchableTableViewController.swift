@@ -72,7 +72,7 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
     override func createRequestResult(from content: String?, of request: Request) -> RequestResult? {
         if self.overridingWithSearchRequest {
             guard let searchResult: SearchResult = self.createResult(content: content) else {
-                self.request(request, didFailWithError: .statusCode(code: 404, content: content))
+                self.request(request, didFailWithError: RequestError.statusCode(code: 404, content: content))
                 return nil
             }
             guard let requestResult: RequestResult = searchResult.transform() else {
@@ -87,10 +87,10 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
     // Overriding createRequest
     
     override func createRequest(with endPoint: String) -> Request {
-        if let searchType = self.searchType {
+        if self.overridingWithSearchRequest, let searchType = self.searchType {
             let query = self.searchController?.searchBar.text ?? ""
             let overridingEndPoint = Ambients.getSearchPath(with: self.sessionController, query: query, page: self.pageCounter?.currentPage ?? 0, searchType: searchType)
-            return super.createRequest(with: self.overridingWithSearchRequest ? overridingEndPoint : endPoint)
+            return super.createRequest(with: overridingEndPoint)
         }
         return super.createRequest(with: endPoint)
     }

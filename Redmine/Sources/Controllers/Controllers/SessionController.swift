@@ -11,14 +11,16 @@ import Foundation
 fileprivate enum Keys: String {
     case domain = "domain"
     case credentials = "credentials"
+    case authToken = "authToken"
 }
 
 class SessionController {
     var domain: String = ""
     var credentials: String = ""
+    var authToken: String = ""
     
     var isValid: Bool {
-        return !self.domain.isEmpty && !self.credentials.isEmpty
+        return !self.domain.isEmpty && !self.credentials.isEmpty && !self.authToken.isEmpty
     }
     
     init() {
@@ -40,15 +42,18 @@ class SessionController {
     fileprivate func loadContent() {
         self.domain = self.string(for: .domain)
         self.credentials = self.string(for: .credentials)
+        self.authToken = self.string(for: .authToken)
     }
     
     func save() {
         self.set(string: self.domain, for: .domain)
         self.set(string: self.credentials, for: .credentials)
+        self.set(string: self.authToken, for: .authToken)
     }
     
     func logout() {
         self.remove(key: .domain)
         self.remove(key: .credentials)
+        self.remove(key: .authToken)
     }
 }
