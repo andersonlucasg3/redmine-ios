@@ -24,13 +24,6 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         self.setupDataSourceIfPossible()
     }
     
-    override func performDataSourceOperations(_ dataSource: DataSource<ItemType>) {
-        super.performDataSourceOperations(dataSource)
-        if let dt = self.getSearchableDataSource() {
-            self.performSearch(in: dt)
-        }
-    }
-    
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -50,9 +43,20 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         self.searchController = searchController
     }
     
+    // MARK: DataSource functions
+    
+    override func performDataSourceOperations(_ dataSource: DataSource<ItemType>) {
+        super.performDataSourceOperations(dataSource)
+        if let dt = self.getSearchableDataSource() {
+            self.performSearch(in: dt)
+        }
+    }
+    
     override func createDataSource(with items: [ItemType]) -> DataSource<ItemType> {
         return SearchableDataSource<ItemType>.init(items)
     }
+    
+    // MARK: Search functions
     
     func performSearch(in dataSource: SearchableDataSource<ItemType>) {
         if let searchController = self.searchController {
@@ -64,6 +68,8 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         self.getSearchableDataSource()?.performSearch(self.searchController?.searchBar.text)
         self.reloadTableView()
     }
+    
+    // MARK: Creating the result
     
     func createResult(content: String?) -> SearchResult? {
         return ApiResultProcessor.processResult(content: content)
@@ -84,13 +90,24 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         return super.createRequestResult(from: content, of: request)
     }
     
-    // Overriding createRequest
+    // MARK: Request End-Point
     
-    override func createRequest(with endPoint: String) -> Request {
+    func overrideSearchEndPoint() -> String? {
+        return nil
+    }
+    
+    override func requestEndPoint() -> String {
         if self.overridingWithSearchRequest, let searchType = self.searchType {
             let query = self.searchController?.searchBar.text ?? ""
-            let overridingEndPoint = Ambients.getSearchPath(with: self.sessionController, query: query, page: self.pageCounter?.currentPage ?? 0, searchType: searchType)
-            return super.createRequest(with: overridingEndPoint)
+            let overrideEndPoint = self.overrideSearchEndPoint()
+            return overrideEndPoint ?? Ambients.getSearchPath(with: self.sessionController, query: query, page: self.pageCounter?.currentPage ?? 0, searchType: searchType)
+        }
+        return super.requestEndPoint()
+    }
+    
+    override func createRequest(with endPoint: String) -> Request {
+        if self.overridingWithSearchRequest {
+            return super.createRequest(with: self.overrideSearchEndPoint() ?? self.requestEndPoint())
         }
         return super.createRequest(with: endPoint)
     }

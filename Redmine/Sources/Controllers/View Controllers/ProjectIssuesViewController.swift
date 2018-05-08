@@ -33,4 +33,11 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
     override func requestEndPoint() -> String {
         return Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, page: self.pageCounter?.currentPage ?? 0)
     }
+    
+    override func overrideSearchEndPoint() -> String? {
+        return Ambients.getIssuesSearchPath(with: self.sessionController, for: self.project,
+                                            query: self.searchController?.searchBar.text ?? "",
+                                            page: self.pageCounter?.currentPage ?? 0,
+                                            searchType: .issues)
+    }
 }

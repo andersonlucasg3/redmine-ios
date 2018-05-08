@@ -1,5 +1,5 @@
 //
-//  Projects.swift
+//  ProjectsResult.swift
 //  Redmine
 //
 //  Created by Anderson Lucas de Castro Ramos on 14/04/2018.

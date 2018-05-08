@@ -41,7 +41,7 @@ class SearchResult: BasicResult {
         result.issues = self.results?.map({ item in
             let issue = Issue.init()
             issue.id = item.id
-            issue.name = item.title
+            issue.subject = item.title
             issue.subtitle = item.subtitle
             issue.createdOn = item.datetime
             return issue

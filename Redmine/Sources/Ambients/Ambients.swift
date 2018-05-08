@@ -30,6 +30,8 @@ struct Ambients {
     fileprivate static let issuesPath = "/issues.json"
     fileprivate static let searchPath = "/search.json"
     
+    fileprivate static func searchProjectIssuesPath(projIdentifier: String) -> String { return "/projects/\(projIdentifier)/search.json" }
+    
     fileprivate static func getFullUrl(_ session: SessionController, path: String) -> URL {
         return URL(string: "\(session.domain)\(path)")!
     }
@@ -79,8 +81,8 @@ struct Ambients {
         return self.url(self.getFullUrl(session, path: self.issuesPath), with: params)
     }
     
-    static func getSearchPath(with session: SessionController, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
-        var params = self.getDefaultParams(limit, page, nil)
+    fileprivate static func getSearchParams(query: String, limit: Int, page: Int, include: String?, searchType: SearchType) -> [String: String] {
+        var params = self.getDefaultParams(limit, page, include)
         params[searchType.rawValue] = "1"
         params[SearchParameters.utf8.rawValue] = "%E2%9C%93"
         params[SearchParameters.query.rawValue] = query
@@ -90,6 +92,16 @@ struct Ambients {
         params[SearchParameters.attachments.rawValue] = "0"
         params[SearchParameters.options.rawValue] = "0"
         params[SearchParameters.commit.rawValue] = "Send"
+        return params
+    }
+    
+    static func getSearchPath(with session: SessionController, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
+        let params = self.getSearchParams(query: query, limit: limit, page: page, include: nil, searchType: searchType)
         return self.url(self.getFullUrl(session, path: self.searchPath), with: params)
+    }
+    
+    static func getIssuesSearchPath(with session: SessionController, for project: Project, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
+        let params = self.getSearchParams(query: query, limit: limit, page: page, include: nil, searchType: searchType)
+        return self.url(self.getFullUrl(session, path: self.searchProjectIssuesPath(projIdentifier: project.identifier ?? "unknown")), with: params)
     }
 }

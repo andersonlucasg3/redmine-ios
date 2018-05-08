@@ -12,7 +12,7 @@ class IssuesResult: BasicResult, SpecificResultProtocol {
     typealias SpecificResult = Issue
     typealias BasicResultType = IssuesResult
     
-    @objc var issues: [SpecificResult]?
+    @objc var issues: [Issue]?
     
     var results: [Issue]? {
         get { return self.issues }
