@@ -78,6 +78,7 @@ class Request: NSObject {
                                                           parameters: self.parameters?.params,
                                                           encoding: self.parameters?.encoding ?? URLEncoding.default,
                                                           headers: self.headers)
+        if let dr = self.dataRequest { print(dr) }
         self.dataRequest?.responseString(completionHandler: { [weak self] response in
             print("\(#file)-\(#function)-\(#line)")
             print(response)
