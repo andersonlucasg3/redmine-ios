@@ -96,7 +96,7 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         return nil
     }
     
-    override func requestEndPoint() -> String {
+    fileprivate func privateOverrideSearchEndPoint() -> String {
         if self.overridingWithSearchRequest, let searchType = self.searchType {
             let query = self.searchController?.searchBar.text ?? ""
             let overrideEndPoint = self.overrideSearchEndPoint()
@@ -107,7 +107,7 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
     
     override func createRequest(with endPoint: String) -> Request {
         if self.overridingWithSearchRequest {
-            return super.createRequest(with: self.overrideSearchEndPoint() ?? self.requestEndPoint())
+            return super.createRequest(with: self.privateOverrideSearchEndPoint())
         }
         return super.createRequest(with: endPoint)
     }
