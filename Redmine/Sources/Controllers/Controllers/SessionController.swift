@@ -7,20 +7,19 @@
 //
 
 import Foundation
+import Swift_Json
 
 fileprivate enum Keys: String {
     case domain = "domain"
-    case credentials = "credentials"
-    case authToken = "authToken"
+    case user = "user"
 }
 
 class SessionController {
     var domain: String = ""
-    var credentials: String = ""
-    var authToken: String = ""
+    var user: User?
     
     var isValid: Bool {
-        return !self.domain.isEmpty && !self.credentials.isEmpty && !self.authToken.isEmpty
+        return !self.domain.isEmpty && self.user != nil
     }
     
     init() {
@@ -31,8 +30,19 @@ class SessionController {
         return UserDefaults.standard.string(forKey: key.rawValue) ?? ""
     }
     
+    fileprivate func object<T : NSObject>(for key: Keys) -> T? {
+        let jsonString = self.string(for: key)
+        return JsonParser().parse(string: jsonString)
+    }
+    
     fileprivate func set(string: String, for key: Keys) {
         UserDefaults.standard.set(string, forKey: key.rawValue)
+    }
+    
+    fileprivate func set<T: NSObject>(object: T, for key: Keys) {
+        if let jsonString: String = JsonWriter().write(anyObject: object) {
+            self.set(string: jsonString, for: key)
+        }
     }
     
     fileprivate func remove(key: Keys) {
@@ -41,19 +51,16 @@ class SessionController {
     
     fileprivate func loadContent() {
         self.domain = self.string(for: .domain)
-        self.credentials = self.string(for: .credentials)
-        self.authToken = self.string(for: .authToken)
+        self.user = self.object(for: .user)
     }
     
     func save() {
         self.set(string: self.domain, for: .domain)
-        self.set(string: self.credentials, for: .credentials)
-        self.set(string: self.authToken, for: .authToken)
+        if let user = self.user { self.set(object: user, for: .user) }
     }
     
     func logout() {
         self.remove(key: .domain)
-        self.remove(key: .credentials)
-        self.remove(key: .authToken)
+        self.remove(key: .user)
     }
 }

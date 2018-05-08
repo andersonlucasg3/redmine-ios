@@ -138,12 +138,11 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
     func createRequest(with endPoint: String) -> Request {
         let request = Request(url: endPoint, method: .get)
         request.delegate = self
-        request.addBasicAuthorizationHeader(credentials: self.sessionController.credentials)
         return request
     }
     
     fileprivate func setupRequestHeaders(_ request: Request) {
-        request.addHeader(for: "Cookie", with: self.sessionController.authToken)
+        request.addHeader(for: "X-Redmine-API-Key", with: self.sessionController.user?.apiKey ?? "")
     }
     
     // MARK: Refreshing

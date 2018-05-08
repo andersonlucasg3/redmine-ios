@@ -35,16 +35,9 @@ class LoginViewController: UIViewController, RequestProtocol {
         return domain.contains("://") ? domain : "http://\(domain)"
     }
     
-    fileprivate func createParameters() -> RequestParameters {
-        let params = ["username": self.usernameTextField.text ?? "", "password": self.passwordTextField.text ?? ""]
-        let encoding = URLEncoding.httpBody
-        return (params: params, encoding: encoding)
-    }
-    
     fileprivate func createRequest() {
         self.sessionController.domain = self.fixDomainIfNeeded()
-        self.loginRequest = Request(url: Ambients.getLoginPath(with: self.sessionController), method: .post)
-        self.loginRequest.parameters = self.createParameters()
+        self.loginRequest = Request(url: Ambients.getLoginPath(with: self.sessionController), method: .get)
         self.loginRequest.addBasicAuthorizationHeader(username: self.usernameTextField.text ?? "",
                                                  password: self.passwordTextField.text ?? "")
         self.loginRequest.delegate = self
@@ -62,23 +55,13 @@ class LoginViewController: UIViewController, RequestProtocol {
         self.present(alert, animated: true, completion: nil)
     }
     
-    fileprivate func saveValidCredentials(_ authToken: String) {
-        self.sessionController.credentials = createBasicCredentials(self.usernameTextField.text ?? "", self.passwordTextField.text ?? "")
-        self.sessionController.authToken = authToken
+    fileprivate func saveUser(_ user: User?) {
+        self.sessionController.user = user
         self.sessionController.save()
     }
     
     fileprivate func openProjectsViewController() {
         self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: true)
-    }
-    
-    fileprivate func isSuccessStatusCode(_ statusCode: Int) -> Bool {
-        return statusCode == 200 || statusCode == 422
-    }
-    
-    fileprivate func containsSetCookie(inResponse headers: [AnyHashable: Any]) -> Bool {
-        let setCookie = headers["Set-Cookie"] as! String
-        return !setCookie.isEmpty
     }
     
     // MARK: Buttons events
@@ -96,30 +79,22 @@ class LoginViewController: UIViewController, RequestProtocol {
     
     // MARK: RequestDelegate
     
-    func request(_ request: Request, didReceiveResponse response: HTTPURLResponse?) {
+    func request(_ request: Request, didFinishWithContent content: String?) {
         weak var this = self
         func redirectLoginError() {
             this?.request(request, didFailWithError: RequestError.statusCode(code: 404, content: nil))
         }
         
-        guard let response = response else {
+        guard let content = content, let userResult: UserResult = ApiResultProcessor.processResult(content: content) else {
             redirectLoginError()
             return
         }
         
-        if self.isSuccessStatusCode(response.statusCode) && self.containsSetCookie(inResponse: response.allHeaderFields) {
-            self.saveValidCredentials(response.allHeaderFields["Set-Cookie"] as! String)
-            self.openProjectsViewController()
-            
-            HUD.show(.success, onView: self.view)
-            HUD.hide(afterDelay: 1.0)
-        } else {
-            redirectLoginError()
-        }
-    }
-    
-    func request(_ request: Request, didFinishWithContent content: String?) {
-        // Do nothing
+        self.saveUser(userResult.user)
+        self.openProjectsViewController()
+        
+        HUD.show(.success, onView: self.view)
+        HUD.hide(afterDelay: 1.0)
     }
     
     func request(_ request: Request, didFailWithError error: Error) {

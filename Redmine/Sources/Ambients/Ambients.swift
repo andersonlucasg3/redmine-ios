@@ -25,7 +25,7 @@ enum SearchParameters: String {
 }
 
 struct Ambients {
-    fileprivate static let loginPath = "/login"
+    fileprivate static let loginPath = "/users/current.json"
     fileprivate static let projectsPath = "/projects.json"
     fileprivate static let issuesPath = "/issues.json"
     fileprivate static let searchPath = "/search.json"
@@ -45,8 +45,14 @@ struct Ambients {
         return ( (try? query?.asURL() ?? url) ?? url ).absoluteString
     }
     
-    fileprivate static func getDefaultParams(_ limit: Int, _ page: Int, _ include: String?) -> [String: String] {
-        var params = ["limit": "\(limit)", "offset": "\(page * limit)"]
+    fileprivate static func getDefaultParams(_ limit: Int?, _ page: Int?, _ include: String?) -> [String: String] {
+        var params: [String: String] = [:]
+        if let limit = limit {
+            params["limit"] = "\(limit)"
+            if let page = page {
+                params["offset"] = "\(page * limit)"
+            }
+        }
         if let include = include {
             params["include"] = include
         }
@@ -54,7 +60,7 @@ struct Ambients {
     }
     
     static func getLoginPath(with session: SessionController) -> String {
-        return self.url(self.getFullUrl(session, path: self.loginPath), with: nil)
+        return self.url(self.getFullUrl(session, path: self.loginPath), with: self.getDefaultParams(nil, nil, "memberships,groups"))
     }
     
     static func getProjectsPath(with session: SessionController, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {

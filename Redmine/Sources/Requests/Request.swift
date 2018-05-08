@@ -22,7 +22,7 @@ enum RequestError: Error {
     func request(_ request: Request, didFailWithError error: Error)
 }
 
-func createBasicCredentials(_ username: String, _ password: String) -> String {
+fileprivate func createBasicCredentials(_ username: String, _ password: String) -> String {
     let userCredentials = "\(username):\(password)"
     let data = userCredentials.data(using: .utf8)
     return "Basic \(data?.base64EncodedString() ?? "failed")"
