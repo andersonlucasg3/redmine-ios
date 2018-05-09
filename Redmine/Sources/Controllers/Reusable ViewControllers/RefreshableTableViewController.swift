@@ -29,6 +29,11 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         super.viewDidLoad()
         
         self.setupRefreshControl()
+        self.setupTableView()
+    }
+    
+    fileprivate func setupTableView() {
+        self.tableView.contentInset.bottom = 20
     }
     
     func clearCurrentContent() {
@@ -57,6 +62,10 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         self.delegateDataSource.delegate = self
     }
     
+    func loadMoreItemName() -> String {
+        return "Things"
+    }
+    
     func setupDataSource(with items: [ItemType]) {
         let dataSource = self.createDataSource(with: items)
         self.performDataSourceOperations(dataSource)
@@ -64,7 +73,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         var sections: [Section] = [SectionType.init(dataSource: dataSource)]
         if self.pageCounter?.hasNextPage ?? false {
             let dts = DataSource<String>.init()
-            dts.items = ["LoadMore"]
+            dts.items = [self.loadMoreItemName()]
             sections.append(LoadMoreSection.init(dataSource: dts))
         }
         

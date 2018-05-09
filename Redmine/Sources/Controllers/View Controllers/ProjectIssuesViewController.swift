@@ -30,6 +30,10 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         self.title = self.project?.name
     }
     
+    override func loadMoreItemName() -> String {
+        return "Issues"
+    }
+    
     override func requestEndPoint() -> String {
         return Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, page: self.pageCounter?.currentPage ?? 0)
     }

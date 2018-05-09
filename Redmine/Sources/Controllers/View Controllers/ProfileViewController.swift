@@ -41,12 +41,8 @@ class ProfileViewController: UIViewController, ProfileSectionProtocol, GenericDe
     
     func logoutUser() {
         self.sessionController.logout()
-        if !(self.navigationController?.viewControllers.first is LoginViewController) {
-            var vcs: [UIViewController] = self.navigationController?.viewControllers ?? []
-            vcs.insert(LoginViewController.instantiate("LoginViewController")!, at: 0)
-            self.navigationController?.setViewControllers(vcs, animated: false)
-        }
-        self.navigationController?.popToRootViewController(animated: true)
+        let nav: UINavigationController = LoginViewController.instantiate()!
+        UIApplication.shared.keyWindow?.rootViewController = nav
     }
     
     // MARK: GenericDelegateDataSourceProtocol

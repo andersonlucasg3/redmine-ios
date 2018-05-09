@@ -50,6 +50,8 @@
 		71A3110220824CA600D79771 /* ProjectsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectsResult.swift */; };
 		71A3110420824D6700D79771 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
 		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
+		71A88CD020A280B200A43CD9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */; };
+		71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */; };
 		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
 		71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */; };
 		71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */; };
@@ -123,6 +125,8 @@
 		71A3110120824CA600D79771 /* ProjectsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResult.swift; sourceTree = "<group>"; };
 		71A3110320824D6700D79771 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
+		71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSection.swift; sourceTree = "<group>"; };
 		71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 			children = (
 				7111F26D2081A562003AD03E /* LaunchScreen.storyboard */,
 				7111F2682081A560003AD03E /* Login.storyboard */,
+				71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */,
 				71D6ABAB2082C5B900FE5447 /* Projects.storyboard */,
 				7163544F20841F710099930A /* ProjectIssues.storyboard */,
 				7163545320842C090099930A /* NoContent.storyboard */,
@@ -434,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				7111F2662081A560003AD03E /* LoginViewController.swift */,
+				71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */,
 				71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */,
 				71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */,
 				71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */,
@@ -531,6 +537,7 @@
 				7111F26C2081A562003AD03E /* Assets.xcassets in Resources */,
 				7163545420842C090099930A /* NoContent.storyboard in Resources */,
 				7111F26A2081A560003AD03E /* Login.storyboard in Resources */,
+				71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */,
 				710CA06B209BFA56007A86B7 /* Profile.storyboard in Resources */,
 				7163545020841F710099930A /* ProjectIssues.storyboard in Resources */,
 			);
@@ -598,6 +605,7 @@
 			files = (
 				71D6ABAE2082D47500FE5447 /* ConfigurableView.swift in Sources */,
 				7163544C20841EF10099930A /* IssuesSection.swift in Sources */,
+				71A88CD020A280B200A43CD9 /* MainTabBarViewController.swift in Sources */,
 				71635442208414D90099930A /* Issue.swift in Sources */,
 				71D6ABB52082EEAD00FE5447 /* Colors.swift in Sources */,
 				71635446208418290099930A /* CustomField.swift in Sources */,
@@ -803,7 +811,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.imessage;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -826,7 +834,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.imessage;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

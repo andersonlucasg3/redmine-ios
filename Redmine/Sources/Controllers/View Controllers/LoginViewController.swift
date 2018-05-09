@@ -60,8 +60,8 @@ class LoginViewController: UIViewController, RequestProtocol {
         self.sessionController.save()
     }
     
-    fileprivate func openProjectsViewController() {
-        self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: true)
+    fileprivate func openMainTabBarController() {
+        UIApplication.shared.keyWindow?.rootViewController = MainTabBarViewController.instantiate()!
     }
     
     // MARK: Buttons events
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController, RequestProtocol {
         }
         
         self.saveUser(userResult.user)
-        self.openProjectsViewController()
+        self.openMainTabBarController()
         
         HUD.show(.success, onView: self.view)
         HUD.hide(afterDelay: 1.0)

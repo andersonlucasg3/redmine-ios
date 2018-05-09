@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.configureNavigationBarAppearance()
         
         if self.checkHasSession() {
-            self.navigationController?.setViewControllers([ProjectsViewController.instantiate()!], animated: false)
+            self.window?.rootViewController = MainTabBarViewController.instantiate()!
         }
         return true
     }

@@ -10,9 +10,9 @@ import UIKit
 import GenericDataSourceSwift
 
 class LoadMoreCell: UITableViewCell, Setupable {
-    typealias DataType = Any
+    typealias DataType = String
     
-    func setup(with data: Any) {
-        
+    func setup(with data: String) {
+        self.textLabel?.text = "Load more \(data)"
     }
 }
