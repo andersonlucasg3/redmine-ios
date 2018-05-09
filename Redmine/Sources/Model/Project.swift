@@ -17,4 +17,5 @@ class Project: Basic {
     @objc var createdOn: String?
     @objc var updatedOn: String?
     @objc var trackers: [Track]?
+    @objc var customFields: [CustomField]?
 }
