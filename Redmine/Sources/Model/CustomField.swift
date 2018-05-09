@@ -10,5 +10,6 @@ import Foundation
 
 @objc(CustomField)
 class CustomField: Basic {
-    @objc var value: String?
+    @objc var multiple: Bool = false
+    @objc var value: AnyObject?
 }

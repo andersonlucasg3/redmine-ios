@@ -35,7 +35,7 @@ class ProjectsViewController: SearchableTableViewController<ProjectsResult, Proj
     
     func openIssues(for project: Project) {
         let projectIssues: ProjectIssuesViewController = ProjectIssuesViewController.instantiate()!
-        projectIssues.project = project
+        projectIssues.projectToLoadId = "\(project.id)"
         self.navigationController?.pushViewController(projectIssues, animated: true)
     }
 }

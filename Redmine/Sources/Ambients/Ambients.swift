@@ -30,7 +30,8 @@ struct Ambients {
     fileprivate static let issuesPath = "/issues.json"
     fileprivate static let searchPath = "/search.json"
     
-    fileprivate static func searchProjectIssuesPath(projIdentifier: String) -> String { return "/projects/\(projIdentifier)/search.json" }
+    fileprivate static func projectPath(projectId: String) -> String { return "/projects/\(projectId).json" }
+    fileprivate static func searchProjectIssuesPath(projectIdentifier: String) -> String { return "/projects/\(projectIdentifier)/search.json" }
     
     fileprivate static func getFullUrl(_ session: SessionController, path: String) -> URL {
         return URL(string: "\(session.domain)\(path)")!
@@ -69,6 +70,10 @@ struct Ambients {
         return self.url(self.getFullUrl(session, path: self.projectsPath), with: self.getDefaultParams(limit, page, include))
     }
     
+    static func getProjectPath(with session: SessionController, projectId: String) -> String {
+        return self.url(self.getFullUrl(session, path: self.projectPath(projectId: projectId)), with: nil)
+    }
+    
     static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = nil, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {
         var params = self.getDefaultParams(limit, page, include)
         params["project_id"] = "\(project.id)"
@@ -102,6 +107,6 @@ struct Ambients {
     
     static func getIssuesSearchPath(with session: SessionController, for project: Project, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
         let params = self.getSearchParams(query: query, limit: limit, page: page, include: nil, searchType: searchType)
-        return self.url(self.getFullUrl(session, path: self.searchProjectIssuesPath(projIdentifier: project.identifier ?? "unknown")), with: params)
+        return self.url(self.getFullUrl(session, path: self.searchProjectIssuesPath(projectIdentifier: project.identifier ?? "unknown")), with: params)
     }
 }

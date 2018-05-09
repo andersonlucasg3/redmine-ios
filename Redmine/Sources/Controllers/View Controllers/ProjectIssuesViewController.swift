@@ -8,15 +8,24 @@
 
 import UIKit
 import GenericDataSourceSwift
+import PKHUD
 
 class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, Issue, IssuesSection> {
+    fileprivate var projectRequest: Request!
+    
+    fileprivate var project: Project! {
+        didSet {
+            self.updateProjectName()
+        }
+    }
+    
     override var searchType: SearchType! {
         return .issues
     }
     
-    var project: Project! {
+    var projectToLoadId: String! {
         didSet {
-            self.updateProjectName()
+            self.startRefreshing()
         }
     }
     
@@ -34,8 +43,13 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         return "Issues"
     }
     
+    // MARK: Request functions
+    
     override func requestEndPoint() -> String {
-        return Ambients.getIssuesPath(with: self.sessionController, forProject: self.project, page: self.pageCounter?.currentPage ?? 0)
+        guard let project = self.project else {
+            return Ambients.getProjectPath(with: self.sessionController, projectId: self.projectToLoadId)
+        }
+        return Ambients.getIssuesPath(with: self.sessionController, forProject: project, page: self.pageCounter?.currentPage ?? 0)
     }
     
     override func overrideSearchEndPoint() -> String? {
@@ -43,5 +57,26 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
                                             query: self.searchController?.searchBar.text ?? "",
                                             page: self.pageCounter?.currentPage ?? 0,
                                             searchType: .issues)
+    }
+    
+    // MARK: RequestProtocol
+    
+    override func request(_ request: Request, didFinishWithContent content: String?) {
+        guard let _ = self.project else {
+            guard let projectResult: ProjectResult = ApiResultProcessor.processResult(content: content) else {
+                self.request(request, didFailWithError: RequestError.statusCode(code: 404, content: content))
+                return
+            }
+            self.project = projectResult.project
+            self.projectRequest = nil
+            self.startRefreshing()
+            return
+        }
+        super.request(request, didFinishWithContent: content)
+    }
+    
+    override func request(_ request: Request, didFailWithError error: Error) {
+        self.projectRequest = nil
+        super.request(request, didFailWithError: error)
     }
 }

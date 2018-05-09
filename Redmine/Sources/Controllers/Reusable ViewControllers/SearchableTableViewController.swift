@@ -24,7 +24,7 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         self.setupDataSourceIfPossible()
     }
     
-    func setupSearchController() {
+    fileprivate func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search Projects"
@@ -58,20 +58,20 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
     
     // MARK: Search functions
     
-    func performSearch(in dataSource: SearchableDataSource<ItemType>) {
+    fileprivate func performSearch(in dataSource: SearchableDataSource<ItemType>) {
         if let searchController = self.searchController {
             dataSource.performSearch(searchController.searchBar.text)
         }
     }
     
-    func updateSearch(for controller: UISearchController) {
+    fileprivate func updateSearch(for controller: UISearchController) {
         self.getSearchableDataSource()?.performSearch(self.searchController?.searchBar.text)
         self.reloadTableView()
     }
     
     // MARK: Creating the result
     
-    func createResult(content: String?) -> SearchResult? {
+    fileprivate func createResult(content: String?) -> SearchResult? {
         return ApiResultProcessor.processResult(content: content)
     }
     
