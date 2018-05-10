@@ -19,6 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="viO-UA-Btb" kind="relationship" relationship="viewControllers" id="JHY-cW-tGS"/>
                         <segue destination="oSp-s8-VXb" kind="relationship" relationship="viewControllers" id="l9z-g5-9X4"/>
                         <segue destination="Teq-qZ-On0" kind="relationship" relationship="viewControllers" id="Pe7-fc-rQv"/>
                     </connections>
@@ -47,8 +48,19 @@
             </objects>
             <point key="canvasLocation" x="-221" y="115"/>
         </scene>
+        <!--MyIssues-->
+        <scene sceneID="iCJ-y1-8tk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyIssues" id="viO-UA-Btb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Issues" image="myissues" id="aRg-cl-NQa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3m-ED-B9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="254"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="myissues" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
         <image name="projects" width="25" height="25"/>
     </resources>

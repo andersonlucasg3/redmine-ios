@@ -23,7 +23,7 @@ class ProjectsViewController: SearchableTableViewController<ProjectsResult, Proj
         self.delegateDataSource?.sections?.map({$0 as? ProjectsSection}).forEach({$0?.delegate = self})
     }
     
-    override func loadMoreItemName() -> String {
+    override func loadMoreItemsName() -> String {
         return "Projects"
     }
     

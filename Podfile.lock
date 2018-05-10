@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.1)
+  - FileKit (5.0.0)
   - GenericDataSourceSwift (0.2.1)
   - KeychainAccess (3.1.0)
   - PKHUD (5.0.0)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FileKit
   - GenericDataSourceSwift
   - KeychainAccess
   - PKHUD
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - FileKit
     - GenericDataSourceSwift
     - KeychainAccess
     - PKHUD
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  FileKit: 857f5f9d2583044c1354e7564b110d80f31405e8
   GenericDataSourceSwift: f1ab3458b4870670f6cd5c5681ce30a16c779926
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: 5fcf5c58e5cd09f8cb3277f93ccc9e43e1e69c8f
+PODFILE CHECKSUM: b8e9b185e20df86b23268d6b21cfe273d4a3a90d
 
 COCOAPODS: 1.5.0

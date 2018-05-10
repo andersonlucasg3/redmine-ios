@@ -74,11 +74,13 @@ struct Ambients {
         return self.url(self.getFullUrl(session, path: self.projectPath(projectId: projectId)), with: nil)
     }
     
-    static func getIssuesPath(with session: SessionController, forProject project: Project, assignedTo: String? = nil, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {
+    static func getIssuesPath(with session: SessionController, forProject project: Project? = nil, assignedTo: String? = nil, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {
         var params = self.getDefaultParams(limit, page, include)
-        params["project_id"] = "\(project.id)"
-        if let trackers = project.trackers, let tracker = trackers.first {
-            params["tracker_id"] = "\(tracker.id)"
+        if let project = project {
+            params["project_id"] = "\(project.id)"
+            if let trackers = project.trackers, let tracker = trackers.first {
+                params["tracker_id"] = "\(tracker.id)"
+            }
         }
         if let assignedTo = assignedTo {
             params["assigned_to_id"] = assignedTo

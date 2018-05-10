@@ -39,7 +39,7 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         self.title = self.project?.name
     }
     
-    override func loadMoreItemName() -> String {
+    override func loadMoreItemsName() -> String {
         return "Issues"
     }
     

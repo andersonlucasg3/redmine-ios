@@ -62,7 +62,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         self.delegateDataSource.delegate = self
     }
     
-    func loadMoreItemName() -> String {
+    func loadMoreItemsName() -> String {
         return "Things"
     }
     
@@ -73,7 +73,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         var sections: [Section] = [SectionType.init(dataSource: dataSource)]
         if self.pageCounter?.hasNextPage ?? false {
             let dts = DataSource<String>.init()
-            dts.items = [self.loadMoreItemName()]
+            dts.items = [self.loadMoreItemsName()]
             sections.append(LoadMoreSection.init(dataSource: dts))
         }
         
