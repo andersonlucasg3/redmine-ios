@@ -183,12 +183,288 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		710CA06E209BFE66007A86B7 /* Profile */ = {
+		7111ABB220A61F8F005ABEA6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABD120A623AF005ABEA6 /* TimeTracking */,
+				7111ABD020A62399005ABEA6 /* NewIssue */,
+				7111ABC820A622CE005ABEA6 /* Profile */,
+				7111ABC720A622BA005ABEA6 /* NoContent */,
+				7111ABC520A62231005ABEA6 /* ProjectIssues */,
+				7111ABC420A6221D005ABEA6 /* ProjectInfo */,
+				7111ABBD20A62149005ABEA6 /* MyIssues */,
+				7111ABBB20A620E1005ABEA6 /* Main */,
+				7111ABB920A620CC005ABEA6 /* Projects */,
+				7111ABB720A620AA005ABEA6 /* Login */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7111ABB320A61FB0005ABEA6 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				7111F27B2081A72E003AD03E /* Extensions */,
+				71D6ABA72082C56000FE5447 /* Views */,
+				7111F2832081B0B6003AD03E /* Helpers */,
+				7111F2862081B777003AD03E /* Ambients */,
+				71A3110520824E3600D79771 /* Processors */,
+				71D6ABB32082EEA300FE5447 /* Constants */,
+				71A310FC2082400D00D79771 /* Model */,
+				7111F2802081AB5E003AD03E /* Requests */,
+				7111ABB620A61FFB005ABEA6 /* Session */,
+				7111ABB520A61FD7005ABEA6 /* Searchable */,
+				7111ABB420A61FC5005ABEA6 /* Refreshable */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		7111ABB420A61FC5005ABEA6 /* Refreshable */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABCF20A62373005ABEA6 /* Cells */,
+				7111ABCE20A6235C005ABEA6 /* Sections */,
+				7188F23D2086D59500DE1C7C /* Protocols */,
+				71DC52DD209D34E00067E135 /* PageCounterController.swift */,
+				7163543F2084110A0099930A /* RefreshableTableViewController.swift */,
+			);
+			path = Refreshable;
+			sourceTree = "<group>";
+		};
+		7111ABB520A61FD7005ABEA6 /* Searchable */ = {
+			isa = PBXGroup;
+			children = (
+				7126A6EC2085AC2C00054ED2 /* DataSources */,
+				7111ABBF20A6217F005ABEA6 /* Model */,
+				7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */,
+			);
+			path = Searchable;
+			sourceTree = "<group>";
+		};
+		7111ABB620A61FFB005ABEA6 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				71A310F92081BCCB00D79771 /* SessionController.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		7111ABB720A620AA005ABEA6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7111F2682081A560003AD03E /* Login.storyboard */,
+				7111F2662081A560003AD03E /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7111ABB820A620C0005ABEA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71F8F9CA20A14F870013DFA6 /* UserResult.swift */,
+				71F8F9C420A14D070013DFA6 /* User.swift */,
+				71F8F9C620A14D6B0013DFA6 /* Membership.swift */,
+				71F8F9C820A14D990013DFA6 /* Role.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7111ABB920A620CC005ABEA6 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABC120A621C3005ABEA6 /* Sections */,
+				7111ABC020A621BA005ABEA6 /* Cells */,
+				7111ABBC20A620FD005ABEA6 /* Model */,
+				71D6ABAB2082C5B900FE5447 /* Projects.storyboard */,
+				71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		7111ABBB20A620E1005ABEA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */,
+				71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7111ABBC20A620FD005ABEA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71A3110120824CA600D79771 /* ProjectsResult.swift */,
+				71D6ABB82082F1B300FE5447 /* ProjectResult.swift */,
+				71A3110320824D6700D79771 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7111ABBD20A62149005ABEA6 /* MyIssues */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABC320A621E0005ABEA6 /* Sections */,
+				7111ABC220A621D9005ABEA6 /* Cells */,
+				7111ABBE20A6215E005ABEA6 /* Model */,
+				71E415F820A4E17D00B8226B /* MyIssues.storyboard */,
+				71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */,
+			);
+			path = MyIssues;
+			sourceTree = "<group>";
+		};
+		7111ABBE20A6215E005ABEA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				716354472084194E0099930A /* IssuesResult.swift */,
+				71635441208414D90099930A /* Issue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7111ABBF20A6217F005ABEA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				716AAD73209F701C0049C2C3 /* SearchResult.swift */,
+				716AAD75209F72990049C2C3 /* SearchItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7111ABC020A621BA005ABEA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7111ABC120A621C3005ABEA6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7111ABC220A621D9005ABEA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7163544D20841F4B0099930A /* IssueTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7111ABC320A621E0005ABEA6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				7163544B20841EF10099930A /* IssuesSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7111ABC420A6221D005ABEA6 /* ProjectInfo */ = {
+			isa = PBXGroup;
+			children = (
+				71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */,
+			);
+			path = ProjectInfo;
+			sourceTree = "<group>";
+		};
+		7111ABC520A62231005ABEA6 /* ProjectIssues */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABCD20A62350005ABEA6 /* Sections */,
+				7111ABCC20A62340005ABEA6 /* Cells */,
+				7163544F20841F710099930A /* ProjectIssues.storyboard */,
+				71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */,
+			);
+			path = ProjectIssues;
+			sourceTree = "<group>";
+		};
+		7111ABC720A622BA005ABEA6 /* NoContent */ = {
+			isa = PBXGroup;
+			children = (
+				7163545320842C090099930A /* NoContent.storyboard */,
+				7163545520842C510099930A /* NoContentViewController.swift */,
+			);
+			path = NoContent;
+			sourceTree = "<group>";
+		};
+		7111ABC820A622CE005ABEA6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABCB20A6231E005ABEA6 /* Sections */,
+				7111ABCA20A62318005ABEA6 /* Cells */,
+				7111ABB820A620C0005ABEA6 /* Model */,
+				710CA06A209BFA56007A86B7 /* Profile.storyboard */,
+				710CA068209BFA15007A86B7 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7111ABCA20A62318005ABEA6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				710CA06F209BFE6E007A86B7 /* LogoutCell.swift */,
 			);
-			path = Profile;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7111ABCB20A6231E005ABEA6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				710CA06C209BFDB0007A86B7 /* ProfileSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7111ABCC20A62340005ABEA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7111ABCD20A62350005ABEA6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7111ABCE20A6235C005ABEA6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				71DC52E1209D37990067E135 /* LoadMoreSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		7111ABCF20A62373005ABEA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71DC52DF209D376E0067E135 /* LoadMoreCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7111ABD020A62399005ABEA6 /* NewIssue */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABAA20A4E71E005ABEA6 /* NewIssue.storyboard */,
+				7111ABAC20A4E72C005ABEA6 /* NewIssueViewController.swift */,
+			);
+			path = NewIssue;
+			sourceTree = "<group>";
+		};
+		7111ABD120A623AF005ABEA6 /* TimeTracking */ = {
+			isa = PBXGroup;
+			children = (
+				71A310FB20823FDC00D79771 /* Model */,
+				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
+			);
+			path = TimeTracking;
 			sourceTree = "<group>";
 		};
 		7111F2582081A560003AD03E = {
@@ -223,37 +499,18 @@
 		7111F2762081A568003AD03E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7126A6EC2085AC2C00054ED2 /* DataSources */,
+				7111ABB320A61FB0005ABEA6 /* Commons */,
+				7111ABB220A61F8F005ABEA6 /* UseCases */,
 				7126A6D920859BD000054ED2 /* External */,
-				71D6ABB32082EEA300FE5447 /* Constants */,
-				71D6ABA72082C56000FE5447 /* Views */,
-				71D6ABA42082C54100FE5447 /* Sections */,
-				71A3110520824E3600D79771 /* Processors */,
-				71A310FB20823FDC00D79771 /* Model */,
-				7111F2862081B777003AD03E /* Ambients */,
-				7111F2832081B0B6003AD03E /* Helpers */,
-				7111F2802081AB5E003AD03E /* Requests */,
-				7111F27B2081A72E003AD03E /* Extensions */,
-				7111F2772081A570003AD03E /* Controllers */,
+				7111F26D2081A562003AD03E /* LaunchScreen.storyboard */,
 				7111F2642081A560003AD03E /* AppDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		7111F2772081A570003AD03E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				71DC52DC209D34D00067E135 /* Controllers */,
-				71DC52DB209D34B30067E135 /* View Controllers */,
-				7188F23A2086D30100DE1C7C /* Reusable ViewControllers */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		7111F2782081A578003AD03E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7111F27A2081A5A0003AD03E /* Storyboards */,
 				7111F26B2081A562003AD03E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -268,22 +525,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7111F27A2081A5A0003AD03E /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				7111F26D2081A562003AD03E /* LaunchScreen.storyboard */,
-				7111F2682081A560003AD03E /* Login.storyboard */,
-				71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */,
-				71D6ABAB2082C5B900FE5447 /* Projects.storyboard */,
-				71E415F820A4E17D00B8226B /* MyIssues.storyboard */,
-				7163544F20841F710099930A /* ProjectIssues.storyboard */,
-				7163545320842C090099930A /* NoContent.storyboard */,
-				710CA06A209BFA56007A86B7 /* Profile.storyboard */,
-				7111ABAA20A4E71E005ABEA6 /* NewIssue.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		7111F27B2081A72E003AD03E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,7 +537,6 @@
 		7111F2802081AB5E003AD03E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				71A310FC2082400D00D79771 /* Model */,
 				7111F2812081AB71003AD03E /* Request.swift */,
 				7192B61120857C44007E4C96 /* UserContentLoader.swift */,
 			);
@@ -350,16 +590,6 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		7188F23A2086D30100DE1C7C /* Reusable ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				7188F23D2086D59500DE1C7C /* Protocols */,
-				7163543F2084110A0099930A /* RefreshableTableViewController.swift */,
-				7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */,
-			);
-			path = "Reusable ViewControllers";
-			sourceTree = "<group>";
-		};
 		7188F23D2086D59500DE1C7C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,15 +601,7 @@
 		71A310FB20823FDC00D79771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				716354432084151A0099930A /* Basic.swift */,
-				71A3110320824D6700D79771 /* Project.swift */,
 				71D6ABB62082F17600FE5447 /* Track.swift */,
-				71635441208414D90099930A /* Issue.swift */,
-				71635445208418290099930A /* CustomField.swift */,
-				716AAD75209F72990049C2C3 /* SearchItem.swift */,
-				71F8F9C420A14D070013DFA6 /* User.swift */,
-				71F8F9C620A14D6B0013DFA6 /* Membership.swift */,
-				71F8F9C820A14D990013DFA6 /* Role.swift */,
 				7111ABB020A4EBBC005ABEA6 /* TimeTracker.swift */,
 			);
 			path = Model;
@@ -388,12 +610,9 @@
 		71A310FC2082400D00D79771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				716354432084151A0099930A /* Basic.swift */,
 				71635449208419710099930A /* BasicResult.swift */,
-				71A3110120824CA600D79771 /* ProjectsResult.swift */,
-				71D6ABB82082F1B300FE5447 /* ProjectResult.swift */,
-				716354472084194E0099930A /* IssuesResult.swift */,
-				716AAD73209F701C0049C2C3 /* SearchResult.swift */,
-				71F8F9CA20A14F870013DFA6 /* UserResult.swift */,
+				71635445208418290099930A /* CustomField.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,38 +626,13 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
-		71D6ABA42082C54100FE5447 /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */,
-				7163544B20841EF10099930A /* IssuesSection.swift */,
-				7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */,
-				710CA06C209BFDB0007A86B7 /* ProfileSection.swift */,
-				71DC52E1209D37990067E135 /* LoadMoreSection.swift */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
 		71D6ABA72082C56000FE5447 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				71D6ABA82082C56500FE5447 /* Cells */,
 				71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */,
 				7192B61320858585007E4C96 /* PaddingTextField.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		71D6ABA82082C56500FE5447 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				710CA06E209BFE66007A86B7 /* Profile */,
-				71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */,
-				7163544D20841F4B0099930A /* IssueTableViewCell.swift */,
-				7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */,
-				71DC52DF209D376E0067E135 /* LoadMoreCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		71D6ABB32082EEA300FE5447 /* Constants */ = {
@@ -448,32 +642,6 @@
 				71DC52E5209D42E50067E135 /* Values.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		71DC52DB209D34B30067E135 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7111F2662081A560003AD03E /* LoginViewController.swift */,
-				71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */,
-				71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */,
-				71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */,
-				71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */,
-				71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */,
-				7163545520842C510099930A /* NoContentViewController.swift */,
-				710CA068209BFA15007A86B7 /* ProfileViewController.swift */,
-				7111ABAC20A4E72C005ABEA6 /* NewIssueViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		71DC52DC209D34D00067E135 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				71A310F92081BCCB00D79771 /* SessionController.swift */,
-				71DC52DD209D34E00067E135 /* PageCounterController.swift */,
-				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
@@ -833,7 +1001,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
@@ -853,7 +1024,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
