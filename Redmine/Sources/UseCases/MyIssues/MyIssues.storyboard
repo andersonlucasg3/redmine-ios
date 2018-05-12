@@ -108,9 +108,9 @@
                                                     </prototypes>
                                                 </tableView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pog-C6-ejj">
-                                                    <rect key="frame" x="309" y="8" width="46" height="46"/>
+                                                    <rect key="frame" x="311" y="16" width="36" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="46" id="D4q-2r-cif"/>
+                                                        <constraint firstAttribute="height" constant="36" id="D4q-2r-cif"/>
                                                         <constraint firstAttribute="width" secondItem="pog-C6-ejj" secondAttribute="height" multiplier="1:1" id="Obo-6A-kLF"/>
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,8 +127,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="Yqn-sm-nDO" secondAttribute="trailing" id="QvB-qT-cuB"/>
                                                 <constraint firstAttribute="bottom" secondItem="Yqn-sm-nDO" secondAttribute="bottom" constant="6" id="dPC-fY-Cp4"/>
                                                 <constraint firstItem="FM5-QO-Jl0" firstAttribute="top" secondItem="DcO-s2-eih" secondAttribute="bottom" constant="2" id="fgl-4g-Fx9"/>
-                                                <constraint firstItem="pog-C6-ejj" firstAttribute="top" secondItem="M8k-nZ-m6g" secondAttribute="top" constant="8" id="lXQ-qN-YDH"/>
-                                                <constraint firstAttribute="trailing" secondItem="pog-C6-ejj" secondAttribute="trailing" constant="8" id="m4J-ZC-Jpv"/>
+                                                <constraint firstItem="pog-C6-ejj" firstAttribute="top" secondItem="M8k-nZ-m6g" secondAttribute="top" constant="16" id="lXQ-qN-YDH"/>
+                                                <constraint firstAttribute="trailing" secondItem="pog-C6-ejj" secondAttribute="trailing" constant="16" id="m4J-ZC-Jpv"/>
                                                 <constraint firstItem="Yqn-sm-nDO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pog-C6-ejj" secondAttribute="bottom" constant="8" id="xgL-pZ-Q2n"/>
                                                 <constraint firstItem="DcO-s2-eih" firstAttribute="top" secondItem="M8k-nZ-m6g" secondAttribute="top" constant="8" id="yJa-Ic-fb7"/>
                                             </constraints>

@@ -90,9 +90,9 @@
                                                     </prototypes>
                                                 </tableView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dav-PX-F9Y">
-                                                    <rect key="frame" x="309" y="8" width="46" height="46"/>
+                                                    <rect key="frame" x="311" y="16" width="36" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="46" id="AWM-Ji-3ua"/>
+                                                        <constraint firstAttribute="height" constant="36" id="AWM-Ji-3ua"/>
                                                         <constraint firstAttribute="width" secondItem="dav-PX-F9Y" secondAttribute="height" multiplier="1:1" id="BHQ-UM-1oW"/>
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,10 +105,10 @@
                                                 <constraint firstItem="YJv-nD-yGy" firstAttribute="top" secondItem="soA-p8-iYi" secondAttribute="bottom" constant="2" id="FNK-vF-9Mu"/>
                                                 <constraint firstItem="hsm-nf-eUb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dav-PX-F9Y" secondAttribute="bottom" constant="8" id="J7i-YC-Xl9"/>
                                                 <constraint firstItem="dav-PX-F9Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YJv-nD-yGy" secondAttribute="trailing" constant="15" id="ReP-VI-5T5"/>
-                                                <constraint firstItem="dav-PX-F9Y" firstAttribute="top" secondItem="y78-ht-ddH" secondAttribute="top" constant="8" id="TPh-Fv-41v"/>
+                                                <constraint firstItem="dav-PX-F9Y" firstAttribute="top" secondItem="y78-ht-ddH" secondAttribute="top" constant="16" id="TPh-Fv-41v"/>
                                                 <constraint firstAttribute="bottom" secondItem="hsm-nf-eUb" secondAttribute="bottom" constant="6" id="XpT-Bj-nLx"/>
                                                 <constraint firstItem="YJv-nD-yGy" firstAttribute="leading" secondItem="soA-p8-iYi" secondAttribute="leading" id="ZSw-kr-ksX"/>
-                                                <constraint firstAttribute="trailing" secondItem="dav-PX-F9Y" secondAttribute="trailing" constant="8" id="bJ7-Up-jM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="dav-PX-F9Y" secondAttribute="trailing" constant="16" id="bJ7-Up-jM3"/>
                                                 <constraint firstItem="soA-p8-iYi" firstAttribute="leading" secondItem="y78-ht-ddH" secondAttribute="leading" constant="15" id="bnE-UD-bNa"/>
                                                 <constraint firstItem="hsm-nf-eUb" firstAttribute="top" secondItem="YJv-nD-yGy" secondAttribute="bottom" constant="8" id="e1M-d7-aM2"/>
                                                 <constraint firstItem="soA-p8-iYi" firstAttribute="top" secondItem="y78-ht-ddH" secondAttribute="top" constant="8" id="eWg-2w-K9q"/>
