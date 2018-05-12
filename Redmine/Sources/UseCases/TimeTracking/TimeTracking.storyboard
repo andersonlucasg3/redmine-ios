@@ -6,23 +6,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Time Tracking-->
         <scene sceneID="psf-0w-gpe">
             <objects>
-                <tableViewController id="DEU-R3-Rdl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FHZ-zl-bHj">
+                <tableViewController id="DEU-R3-Rdl" customClass="TimeTrackingViewController" customModule="Redmine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FHZ-zl-bHj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="198" id="HGO-hz-sK3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTrackingTableViewCell" rowHeight="198" id="HGO-hz-sK3" customClass="TimeTrackingTableViewCell" customModule="Redmine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="198"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HGO-hz-sK3" id="7MV-Kw-uIh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="197.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFq-nw-12s">
@@ -37,58 +38,81 @@
                                             <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worked Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-Fd-UQM">
-                                            <rect key="frame" x="16" y="68.5" width="101" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-Fd-UQM">
+                                            <rect key="frame" x="16" y="68.5" width="54.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-I3-3Cs">
-                                            <rect key="frame" x="16" y="97.5" width="72" height="29"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74E-Wo-6oV">
-                                            <rect key="frame" x="16" y="134.5" width="54.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSs-ed-I3M">
-                                            <rect key="frame" x="16" y="163.5" width="43.5" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Project name ajaskdjf aflks fd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-I3-3Cs">
+                                            <rect key="frame" x="16" y="97.5" width="234.5" height="26"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RO-Zv-TCB">
-                                            <rect key="frame" x="313" y="11" width="46" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="play"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worked Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74E-Wo-6oV">
+                                            <rect key="frame" x="16" y="131.5" width="101" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSs-ed-I3M">
+                                            <rect key="frame" x="16" y="160.5" width="71.5" height="29"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RO-Zv-TCB">
+                                            <rect key="frame" x="313" y="16" width="46" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="NGN-iJ-YRe"/>
+                                                <constraint firstAttribute="width" secondItem="1RO-Zv-TCB" secondAttribute="height" multiplier="1:1" id="Nmh-cq-M7f"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" backgroundImage="play"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JL-MO-zQx">
+                                            <rect key="frame" x="313" y="135.5" width="46" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="c89-zz-1xx"/>
+                                                <constraint firstAttribute="width" secondItem="4JL-MO-zQx" secondAttribute="height" multiplier="1:1" id="gbR-rN-ULf"/>
+                                            </constraints>
+                                            <color key="tintColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" backgroundImage="publish"/>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="RFq-nw-12s" firstAttribute="top" secondItem="7MV-Kw-uIh" secondAttribute="top" constant="11" id="4q9-Hn-LsU"/>
+                                        <constraint firstAttribute="trailing" secondItem="1RO-Zv-TCB" secondAttribute="trailing" constant="16" id="BFe-oV-zGE"/>
                                         <constraint firstItem="74E-Wo-6oV" firstAttribute="top" secondItem="KPr-I3-3Cs" secondAttribute="bottom" constant="8" id="DAK-mK-Bmg"/>
                                         <constraint firstItem="tis-Fd-UQM" firstAttribute="top" secondItem="6gf-zv-5Y1" secondAttribute="bottom" constant="8" id="GxX-QM-x7Q"/>
                                         <constraint firstItem="RFq-nw-12s" firstAttribute="leading" secondItem="7MV-Kw-uIh" secondAttribute="leading" constant="16" id="H6Z-EF-8rC"/>
+                                        <constraint firstItem="1RO-Zv-TCB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6gf-zv-5Y1" secondAttribute="trailing" constant="8" id="JeI-g3-c17"/>
+                                        <constraint firstAttribute="trailing" secondItem="4JL-MO-zQx" secondAttribute="trailing" constant="16" id="LvR-XO-8cj"/>
                                         <constraint firstItem="oSs-ed-I3M" firstAttribute="top" secondItem="74E-Wo-6oV" secondAttribute="bottom" constant="8" id="THV-5I-Z9f"/>
                                         <constraint firstItem="6gf-zv-5Y1" firstAttribute="leading" secondItem="RFq-nw-12s" secondAttribute="leading" id="VqW-QB-RVs"/>
                                         <constraint firstAttribute="bottom" secondItem="oSs-ed-I3M" secondAttribute="bottom" constant="8" id="Z4k-Ki-kwb"/>
+                                        <constraint firstItem="1RO-Zv-TCB" firstAttribute="top" secondItem="7MV-Kw-uIh" secondAttribute="top" constant="16" id="aMw-ze-PZq"/>
+                                        <constraint firstItem="4JL-MO-zQx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oSs-ed-I3M" secondAttribute="trailing" constant="8" id="cbV-md-HTj"/>
                                         <constraint firstItem="6gf-zv-5Y1" firstAttribute="top" secondItem="RFq-nw-12s" secondAttribute="bottom" constant="8" id="fy7-pg-n8b"/>
                                         <constraint firstItem="oSs-ed-I3M" firstAttribute="leading" secondItem="74E-Wo-6oV" secondAttribute="leading" id="gc1-Mf-EEv"/>
                                         <constraint firstItem="KPr-I3-3Cs" firstAttribute="top" secondItem="tis-Fd-UQM" secondAttribute="bottom" constant="8" id="jNR-V7-KPt"/>
                                         <constraint firstItem="74E-Wo-6oV" firstAttribute="leading" secondItem="RFq-nw-12s" secondAttribute="leading" id="o03-SY-Jzj"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KPr-I3-3Cs" secondAttribute="trailing" constant="16" id="r1w-p5-TCO"/>
                                         <constraint firstItem="KPr-I3-3Cs" firstAttribute="leading" secondItem="tis-Fd-UQM" secondAttribute="leading" id="uNj-yc-0NG"/>
                                         <constraint firstItem="tis-Fd-UQM" firstAttribute="leading" secondItem="RFq-nw-12s" secondAttribute="leading" id="wk4-P2-VAT"/>
+                                        <constraint firstAttribute="bottom" secondItem="4JL-MO-zQx" secondAttribute="bottom" constant="16" id="yQk-DH-k4Y"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="issueNameLabel" destination="6gf-zv-5Y1" id="GrN-jg-NCv"/>
+                                    <outlet property="playPauseButton" destination="1RO-Zv-TCB" id="L4X-SV-ph5"/>
+                                    <outlet property="projectNameLabel" destination="KPr-I3-3Cs" id="bQn-mm-gJJ"/>
+                                    <outlet property="publishButton" destination="4JL-MO-zQx" id="rOd-38-jhh"/>
+                                    <outlet property="timeLabel" destination="oSs-ed-I3M" id="x2j-1Y-NUV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DEU-R3-Rdl" id="eBI-Pm-YVN"/>
-                            <outlet property="delegate" destination="DEU-R3-Rdl" id="IAM-X9-lgn"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Time Tracking" id="XIy-of-jiu"/>
                 </tableViewController>
@@ -112,11 +136,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5S-LM-SMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="130"/>
+            <point key="canvasLocation" x="-742" y="130"/>
         </scene>
     </scenes>
     <resources>
         <image name="play" width="46" height="46"/>
+        <image name="publish" width="46" height="46"/>
         <image name="timetracker" width="25" height="25"/>
     </resources>
 </document>

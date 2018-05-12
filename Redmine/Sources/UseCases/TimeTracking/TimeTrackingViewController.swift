@@ -7,7 +7,109 @@
 //
 
 import UIKit
+import SwiftyTimer
+import GenericDataSourceSwift
 
-class TimeTrackingViewController: UITableViewController {
+class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol {
+    fileprivate var minuteTimer: Timer!
     
+    fileprivate let timeTrackerController = TimeTrackerController.init()
+    
+    fileprivate weak var dataSource: DataSource<TimeTracker>!
+    fileprivate var genericDataSource: GenericDelegateDataSource!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.createDataSource()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateDataSource()
+        self.startMinuteTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.updateDataSource()
+        self.stopMinuteTimer()
+    }
+    
+    fileprivate func createDataSource() {
+        let dataSource = DataSource<TimeTracker>.init()
+        dataSource.items = self.timeTrackerController.currentTimeTrackers
+        let sections: [TimeTrackingSection] = [TimeTrackingSection.init(dataSource: dataSource)]
+        sections.forEach({$0.delegate = self})
+        self.genericDataSource = GenericDelegateDataSource.init(withSections: sections, andTableView: self.tableView)
+        self.tableView.delegate = self.genericDataSource
+        self.tableView.dataSource = self.genericDataSource
+        
+        self.dataSource = dataSource
+    }
+    
+    fileprivate func updateDataSource() {
+        self.dataSource.items = self.timeTrackerController.currentTimeTrackers
+        self.reloadTableView()
+    }
+    
+    fileprivate func reloadTableView() {
+        self.tableView.reloadData()
+    }
+    
+    fileprivate func startMinuteTimer() {
+        if self.minuteTimer == nil {
+            self.minuteTimer = Timer.scheduledTimer(timeInterval: 30.seconds,
+                                                    target: self, selector: #selector(self.minuteTimerFire(_:)),
+                                                    userInfo: nil, repeats: true)
+        }
+    }
+    
+    fileprivate func stopMinuteTimer() {
+        if let timer = self.minuteTimer {
+            timer.invalidate()
+            self.minuteTimer = nil
+        }
+    }
+    
+    @objc fileprivate func minuteTimerFire(_ timer: Timer) {
+        self.reloadTableView()
+    }
+    
+    fileprivate func showCurrentTrackingWillBePausedToBeginOther(_ tracker: TimeTracker, _ runningTracker: TimeTracker) {
+        self.showAlert(withTitle: "Redmine",
+                       message: "The tracker \"\(runningTracker.issue?.name ?? "Unknown")\" will be stopped to start \"\(tracker.issue?.name ?? "Unknown")\"",
+                       confirmAction: (title: "Ok", action: { [unowned self] in
+                            self.timeTrackerController.pauseTracker(runningTracker)
+                            self.timeTrackerController.continueTracker(tracker)
+                            self.reloadTableView()
+                       }))
+    }
+    
+    // MARK: TimeTrackingTableViewCellProtocol
+    
+    func playPauseAction(for tracker: TimeTracker, finishAction callThis: ((PlayPauseAction) -> Void)) {
+        if let runningTracker = self.timeTrackerController.runningTracker {
+            if runningTracker == tracker {
+                self.timeTrackerController.pauseTracker(tracker)
+                callThis(.pause)
+            } else {
+                callThis(.pause)
+                self.showCurrentTrackingWillBePausedToBeginOther(tracker, runningTracker)
+            }
+        } else {
+            self.timeTrackerController.continueTracker(tracker)
+            callThis(.play)
+        }
+    }
+    
+    func publishAction(for tracker: TimeTracker) {
+        
+    }
+    
+    func state(for item: TimeTracker) -> PlayPauseAction {
+        return self.timeTrackerController.runningTracker == item ? .pause : .play
+    }
 }

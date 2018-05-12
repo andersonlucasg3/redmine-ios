@@ -14,7 +14,9 @@ class TimeNode: NSObject {
     @objc var endTime: TimeInterval = -1.0
     
     func duration() -> TimeInterval {
-        guard self.endTime > 0.0 else { return 0.0 }
+        guard self.endTime > 0.0 else {
+            return Date.init().timeIntervalSince1970 - self.startTime
+        }
         return self.endTime - self.startTime
     }
 }

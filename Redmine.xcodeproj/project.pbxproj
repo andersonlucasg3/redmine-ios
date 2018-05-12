@@ -52,6 +52,8 @@
 		7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67720A697D600C21B22 /* UIViewController+showAlert.swift */; };
 		7183E67A20A6AAE900C21B22 /* IssueTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7183E67920A6AAE900C21B22 /* IssueTableViewCell.storyboard */; };
 		7183E67C20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67B20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift */; };
+		7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */; };
+		7183E68220A7304300C21B22 /* TimeTrackingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E68120A7304300C21B22 /* TimeTrackingSection.swift */; };
 		7188F23F2086D5A600DE1C7C /* SearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */; };
 		7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61120857C44007E4C96 /* UserContentLoader.swift */; };
 		7192B61420858585007E4C96 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61320858585007E4C96 /* PaddingTextField.swift */; };
@@ -138,6 +140,8 @@
 		7183E67720A697D600C21B22 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
 		7183E67920A6AAE900C21B22 /* IssueTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueTableViewCell.storyboard; sourceTree = "<group>"; };
 		7183E67B20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesTimeTrackingInteractor.swift; sourceTree = "<group>"; };
+		7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingTableViewCell.swift; sourceTree = "<group>"; };
+		7183E68120A7304300C21B22 /* TimeTrackingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingSection.swift; sourceTree = "<group>"; };
 		7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTableViewController.swift; sourceTree = "<group>"; };
 		7192B61120857C44007E4C96 /* UserContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentLoader.swift; sourceTree = "<group>"; };
 		7192B61320858585007E4C96 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 		7111ABD120A623AF005ABEA6 /* TimeTracking */ = {
 			isa = PBXGroup;
 			children = (
+				7183E68020A7303600C21B22 /* Sections */,
+				7183E67D20A72C7A00C21B22 /* Cells */,
 				71A310FB20823FDC00D79771 /* Model */,
 				714C2A1220A628B400BE3947 /* TimeTracking.storyboard */,
 				714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */,
@@ -603,6 +609,22 @@
 				7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		7183E67D20A72C7A00C21B22 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7183E68020A7303600C21B22 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				7183E68120A7304300C21B22 /* TimeTrackingSection.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		7188F23D2086D59500DE1C7C /* Protocols */ = {
@@ -821,6 +843,7 @@
 				716354482084194E0099930A /* IssuesResult.swift in Sources */,
 				71DC52E6209D42E50067E135 /* Values.swift in Sources */,
 				71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */,
+				7183E68220A7304300C21B22 /* TimeTrackingSection.swift in Sources */,
 				7163544A208419710099930A /* BasicResult.swift in Sources */,
 				71D6ABB72082F17600FE5447 /* Track.swift in Sources */,
 				7126A6E720859BE700054ED2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -860,6 +883,7 @@
 				7111ABB120A4EBBC005ABEA6 /* TimeTracker.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
+				7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */,
 				7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */,
 				71F8F9C520A14D070013DFA6 /* User.swift in Sources */,
 				7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */,
@@ -1030,7 +1054,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1052,7 +1076,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
