@@ -19,6 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="s0U-Y8-oov" kind="relationship" relationship="viewControllers" id="U9Y-Xt-vhn"/>
                         <segue destination="viO-UA-Btb" kind="relationship" relationship="viewControllers" id="JHY-cW-tGS"/>
                         <segue destination="oSp-s8-VXb" kind="relationship" relationship="viewControllers" id="l9z-g5-9X4"/>
                         <segue destination="Teq-qZ-On0" kind="relationship" relationship="viewControllers" id="Pe7-fc-rQv"/>
@@ -36,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1q-V3-RQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="-126"/>
+            <point key="canvasLocation" x="-231" y="94"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dEg-2J-hw0">
@@ -46,7 +47,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbh-0C-bis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-221" y="115"/>
+            <point key="canvasLocation" x="-222" y="257"/>
         </scene>
         <!--MyIssues-->
         <scene sceneID="iCJ-y1-8tk">
@@ -56,12 +57,23 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3m-ED-B9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="254"/>
+            <point key="canvasLocation" x="-237" y="-88"/>
+        </scene>
+        <!--TimeTracking-->
+        <scene sceneID="lOs-vA-Duh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TimeTracking" id="s0U-Y8-oov" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Time Tracking" image="timetracker" id="fY7-Kz-4mh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ded-NG-AmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255" y="-221"/>
         </scene>
     </scenes>
     <resources>
         <image name="myissues" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
         <image name="projects" width="25" height="25"/>
+        <image name="timetracker" width="25" height="25"/>
     </resources>
 </document>

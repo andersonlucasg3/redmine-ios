@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, RequestProtocol {
     
     // MARK: Buttons events
     
-    @IBAction fileprivate func loginButton(_ sender: UIButton) {
+    @IBAction fileprivate func loginButton(sender: UIButton) {
         if self.checkCanLogin() {
             HUD.show(.progress, onView: self.view)
             

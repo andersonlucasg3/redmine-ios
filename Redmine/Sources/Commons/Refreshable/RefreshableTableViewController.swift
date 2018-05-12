@@ -10,9 +10,12 @@ import UIKit
 import PKHUD
 import GenericDataSourceSwift
 
+protocol RefreshableTableViewProtocol: class {
+    func reloadTableView()
+}
+
 class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultProtocol, ItemType: Basic, SectionType: Section>
-    : UITableViewController, LoadMoreViewControllerProtocol,
-        GenericDelegateDataSourceProtocol, RequestProtocol {
+    : UITableViewController, LoadMoreViewControllerProtocol, GenericDelegateDataSourceProtocol, RequestProtocol, RefreshableTableViewProtocol {
     fileprivate weak var noContentViewController: NoContentViewController?
     
     let sessionController = SessionController()
@@ -28,8 +31,9 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupRefreshControl()
         self.setupTableView()
+        self.setupRefreshControl()
+        self.setupDataSourceIfPossible()
     }
     
     fileprivate func setupTableView() {

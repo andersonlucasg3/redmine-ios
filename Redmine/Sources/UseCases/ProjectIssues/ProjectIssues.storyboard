@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IssueTableViewCell" rowHeight="243" id="xPf-NW-Hol" customClass="IssueTableViewCell" customModule="Redmine" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="243"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IssueTableViewCell" rowHeight="267" id="xPf-NW-Hol" customClass="IssueTableViewCell" customModule="Redmine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="267"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xPf-NW-Hol" id="9TL-tr-P41">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y78-ht-ddH">
-                                            <rect key="frame" x="6" y="6" width="363" height="231"/>
+                                            <rect key="frame" x="6" y="6" width="363" height="255"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soA-p8-iYi">
                                                     <rect key="frame" x="15" y="8" width="55" height="24"/>
@@ -38,7 +39,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-nD-yGy">
-                                                    <rect key="frame" x="78" y="8" width="41" height="26.5"/>
+                                                    <rect key="frame" x="15" y="34" width="41" height="26.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="35" id="ZJE-4r-XhM"/>
                                                     </constraints>
@@ -47,7 +48,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="32" estimatedRowHeight="32" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hsm-nf-eUb">
-                                                    <rect key="frame" x="0.0" y="46" width="363" height="179"/>
+                                                    <rect key="frame" x="0.0" y="68.5" width="363" height="180.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="50" id="1Ei-6t-4Bi"/>
@@ -88,17 +89,29 @@
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dav-PX-F9Y">
+                                                    <rect key="frame" x="309" y="8" width="46" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="AWM-Ji-3ua"/>
+                                                        <constraint firstAttribute="width" secondItem="dav-PX-F9Y" secondAttribute="height" multiplier="1:1" id="BHQ-UM-1oW"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" backgroundImage="timetracker_button"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hsm-nf-eUb" secondAttribute="trailing" id="1eg-XX-y2x"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YJv-nD-yGy" secondAttribute="trailing" constant="15" id="ReP-VI-5T5"/>
-                                                <constraint firstItem="YJv-nD-yGy" firstAttribute="leading" secondItem="soA-p8-iYi" secondAttribute="trailing" constant="8" id="Vh5-je-w7P"/>
+                                                <constraint firstItem="YJv-nD-yGy" firstAttribute="top" secondItem="soA-p8-iYi" secondAttribute="bottom" constant="2" id="FNK-vF-9Mu"/>
+                                                <constraint firstItem="hsm-nf-eUb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dav-PX-F9Y" secondAttribute="bottom" constant="8" id="J7i-YC-Xl9"/>
+                                                <constraint firstItem="dav-PX-F9Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YJv-nD-yGy" secondAttribute="trailing" constant="15" id="ReP-VI-5T5"/>
+                                                <constraint firstItem="dav-PX-F9Y" firstAttribute="top" secondItem="y78-ht-ddH" secondAttribute="top" constant="8" id="TPh-Fv-41v"/>
                                                 <constraint firstAttribute="bottom" secondItem="hsm-nf-eUb" secondAttribute="bottom" constant="6" id="XpT-Bj-nLx"/>
+                                                <constraint firstItem="YJv-nD-yGy" firstAttribute="leading" secondItem="soA-p8-iYi" secondAttribute="leading" id="ZSw-kr-ksX"/>
+                                                <constraint firstAttribute="trailing" secondItem="dav-PX-F9Y" secondAttribute="trailing" constant="8" id="bJ7-Up-jM3"/>
                                                 <constraint firstItem="soA-p8-iYi" firstAttribute="leading" secondItem="y78-ht-ddH" secondAttribute="leading" constant="15" id="bnE-UD-bNa"/>
-                                                <constraint firstItem="hsm-nf-eUb" firstAttribute="top" secondItem="YJv-nD-yGy" secondAttribute="bottom" constant="11.5" id="e1M-d7-aM2"/>
+                                                <constraint firstItem="hsm-nf-eUb" firstAttribute="top" secondItem="YJv-nD-yGy" secondAttribute="bottom" constant="8" id="e1M-d7-aM2"/>
                                                 <constraint firstItem="soA-p8-iYi" firstAttribute="top" secondItem="y78-ht-ddH" secondAttribute="top" constant="8" id="eWg-2w-K9q"/>
-                                                <constraint firstItem="YJv-nD-yGy" firstAttribute="top" secondItem="soA-p8-iYi" secondAttribute="top" id="jER-6b-1u8"/>
                                                 <constraint firstItem="hsm-nf-eUb" firstAttribute="leading" secondItem="y78-ht-ddH" secondAttribute="leading" id="loF-uR-cac"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -121,11 +134,12 @@
                                     <outlet property="tableView" destination="hsm-nf-eUb" id="kng-Q1-jbz"/>
                                     <outlet property="tableViewHeightConstriant" destination="1Ei-6t-4Bi" id="En0-ZA-avB"/>
                                     <outlet property="ticketLabel" destination="soA-p8-iYi" id="6a1-9f-2QH"/>
+                                    <outlet property="timeTrackerButton" destination="dav-PX-F9Y" id="YPu-yD-tvf"/>
                                     <outlet property="titleLabel" destination="YJv-nD-yGy" id="5mC-wj-vMM"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadMoreCell" textLabel="tH1-g2-oeS" rowHeight="44" style="IBUITableViewCellStyleDefault" id="TwX-El-1DI" customClass="LoadMoreCell" customModule="Redmine" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="271" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TwX-El-1DI" id="aNa-OR-4CI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -158,7 +172,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C29-da-65m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="-342"/>
+            <point key="canvasLocation" x="101.59999999999999" y="-342.27886056971516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="timetracker_button" width="46" height="46"/>
+    </resources>
 </document>

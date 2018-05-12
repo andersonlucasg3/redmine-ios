@@ -16,6 +16,7 @@ class IssueTableViewCell: UITableViewCell, Setupable {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var tableView: UITableView!
     @IBOutlet fileprivate weak var tableViewHeightConstriant: NSLayoutConstraint!
+    @IBOutlet fileprivate(set) weak var timeTrackerButton: UIButton!
     
     fileprivate var issueDetailDataSource: GenericDelegateDataSource!
     

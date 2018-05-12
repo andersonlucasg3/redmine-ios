@@ -21,7 +21,6 @@ class SearchableTableViewController<RequestResult: BasicResult&SpecificResultPro
         super.viewDidLoad()
         
         self.setupSearchController()
-        self.setupDataSourceIfPossible()
     }
     
     fileprivate func setupSearchController() {

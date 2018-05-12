@@ -11,6 +11,10 @@ import GenericDataSourceSwift
 import PKHUD
 
 class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, Issue, IssuesSection> {
+    fileprivate let timeTrackerController = TimeTrackerController.init()
+    fileprivate lazy var interactor = IssuesTimeTrackingInteractor.init(viewController: self,
+                                                                        timeTrackerController: self.timeTrackerController)
+    
     fileprivate var projectRequest: Request!
     
     fileprivate var project: Project! {
@@ -41,6 +45,10 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
     
     override func loadMoreItemsName() -> String {
         return "Issues"
+    }
+    
+    override func postSetupDataSource() {
+        self.delegateDataSource.sections.map({$0 as! IssuesSection}).forEach({$0.delegate = self.interactor})
     }
     
     // MARK: Request functions

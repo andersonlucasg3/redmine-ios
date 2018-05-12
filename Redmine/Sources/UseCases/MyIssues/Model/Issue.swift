@@ -10,6 +10,11 @@ import Foundation
 
 @objc(Issue)
 class Issue: Basic {
+    override var name: String? {
+        get { return self.subject }
+        set { self.subject = newValue }
+    }
+    
     @objc var project: IssueProject?
     @objc var tracker: IssueTracker?
     @objc var status: IssueStatus?

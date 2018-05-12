@@ -11,11 +11,24 @@ import FileKit
 import Swift_Json
 
 class TimeTrackerController {
+    fileprivate static var timeTrackers: [TimeTracker]!
+    
     fileprivate let trackersPath = Path.userCaches + "trackers"
-    fileprivate(set) var currentTimeTrackers: [TimeTracker]!
+    
+    fileprivate(set) var currentTimeTrackers: [TimeTracker]! {
+        get { return TimeTrackerController.timeTrackers }
+        set { TimeTrackerController.timeTrackers = newValue }
+    }
+    
+    var runningTracker: TimeTracker? {
+        return self.findRunningTracker()
+    }
     
     init() {
-        self.currentTimeTrackers = self.loadFiles()
+        try? self.trackersPath.createDirectory(withIntermediateDirectories: true)
+        if TimeTrackerController.timeTrackers == nil {
+            TimeTrackerController.timeTrackers = self.loadFiles()
+        }
     }
     
     fileprivate func loadFiles() -> [TimeTracker] {
@@ -24,23 +37,34 @@ class TimeTrackerController {
             let isDotFile = item.fileName.starts(with: ".")
             return regular && !isDotFile
         })
+        let parser = JsonParser.init()
         return filteredChildren.compactMap({ item in
-            let jsonString = try? String(contentsOfPath: item)
-            return ApiResultProcessor.processResult(content: jsonString)
+            let jsonString = try? String.init(contentsOfFile: item.description, encoding: .utf8)
+            return parser.parse(string: jsonString ?? "")
         })
     }
     
-    func addNewTracker(for issue: Issue) -> TimeTracker {
-        // TODO: Elaborar melhor o algorítmo para saber o dia que o TimeNode foi criado para poder associar a data certa no redmine.
-        // Exemplo, comecei uma tarefa hoje. Tenho 2 time nodes criados, antes do almoço e depois do almoço.
-        // Aí retorno no dia seguinte e continuo na mesma tarefa.
-        // Quando for finalizar o time tracker deverá ser criado para 2 dias diferentes para que não entrem 16 horas no mesmo dia no redmine.
-        let tracker = self.createTracker(issue)
-        self.addTracker(tracker)
+    @discardableResult
+    func startTracker(for issue: Issue) -> TimeTracker {
+        self.finishRunningTracker()
+        let tracker = self.createOrRecoverTracker(issue)
+        self.createTimeNode(tracker)
+        self.saveAndAddTracker(tracker)
         return tracker
     }
     
-    func remove(tracker: TimeTracker) {
+    func pauseTracker(_ tracker: TimeTracker) {
+        self.finishRunningNode(tracker)
+        self.saveTracker(tracker)
+    }
+    
+    func continueTracker(_ tracker: TimeTracker) {
+        guard self.findRunningNode(tracker) == nil else { return }
+        self.createTimeNode(tracker)
+        self.saveTracker(tracker)
+    }
+    
+    func endTracker(_ tracker: TimeTracker) {
         let filePath = self.trackersPath + tracker.fileName!
         try! filePath.deleteFile()
         if let index = self.currentTimeTrackers.index(of: tracker) {
@@ -48,27 +72,66 @@ class TimeTrackerController {
         }
     }
     
-    fileprivate func createTracker(_ issue: Issue) -> TimeTracker {
-        let tracker = TimeTracker.init()
-        let node = TimeNode.init()
-        node.startTime = Date.init().timeIntervalSince1970
-        tracker.timeNodes = [node]
-        
-        tracker.fileName = "\(UUID.init().uuidString).tracker"
-        tracker.issue = issue
-        return tracker
+    fileprivate func findRunningTracker() -> TimeTracker? {
+        return self.currentTimeTrackers.first(where: {self.findRunningNode($0) != nil})
     }
     
-    fileprivate func addTracker(_ tracker: TimeTracker) {
+    fileprivate func findRunningNode(_ tracker: TimeTracker) -> TimeNode? {
+        guard let nodes = tracker.timeNodes else { return nil }
+        guard let node = nodes.first(where: {$0.endTime == -1}) else { return nil }
+        return node
+    }
+    
+    fileprivate func finishRunningTracker() {
+        if let tracker = self.findRunningTracker() {
+            self.finishRunningNode(tracker)
+            self.saveTracker(tracker)
+        }
+    }
+    
+    fileprivate func finishRunningNode(_ tracker: TimeTracker) {
+        guard let node = self.findRunningNode(tracker) else { return }
+        node.endTime = Date.init().timeIntervalSince1970
+    }
+    
+    fileprivate func createOrRecoverTracker(_ issue: Issue) -> TimeTracker {
+        guard let issueTracker = self.currentTimeTrackers.first(where: {$0.issue?.id == issue.id}) else {
+            let tracker = TimeTracker.init()
+            tracker.fileName = "\(UUID.init().uuidString).tracker"
+            tracker.issue = issue
+            return tracker
+        }
+        return issueTracker
+    }
+ 
+    @discardableResult
+    fileprivate func createTimeNode(_ tracker: TimeTracker) -> TimeNode {
+        var nodes = tracker.timeNodes ?? []
+        let node = TimeNode.init()
+        node.startTime = Date.init().timeIntervalSince1970
+        nodes.append(node)
+        tracker.timeNodes = nodes
+        return node
+    }
+    
+    fileprivate func saveAndAddTracker(_ tracker: TimeTracker) {
+        if self.saveTracker(tracker) {
+            self.currentTimeTrackers.append(tracker)
+        }
+    }
+    
+    @discardableResult
+    fileprivate func saveTracker(_ tracker: TimeTracker) -> Bool {
         let filePath = self.trackersPath + tracker.fileName!
         let writer = JsonWriter.init()
-        guard let jsonString: String = writer.write(anyObject: tracker) else { return }
+        guard let jsonString: String = writer.write(anyObject: tracker) else { return false }
         do {
-            try jsonString.write(to: filePath)
-            self.currentTimeTrackers.append(tracker)
+            try jsonString.write(toFile: filePath.description, atomically: true, encoding: .utf8)
+            return true
         } catch let error {
             print(#function)
             print(error)
         }
+        return false
     }
 }
