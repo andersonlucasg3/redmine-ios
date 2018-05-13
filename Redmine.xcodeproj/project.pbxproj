@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09CA81D2BC7620A851064041 /* Pods_Redmine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */; };
+		319B8951DB4F17A6B2307372 /* Pods_RedMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04B1154C4B86BE7EB940992 /* Pods_RedMock.framework */; };
 		710CA069209BFA15007A86B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CA068209BFA15007A86B7 /* ProfileViewController.swift */; };
 		710CA06B209BFA56007A86B7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CA06A209BFA56007A86B7 /* Profile.storyboard */; };
 		710CA06D209BFDB0007A86B7 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CA06C209BFDB0007A86B7 /* ProfileSection.swift */; };
@@ -26,6 +27,85 @@
 		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		7123864220A79CEB00DE2B44 /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */; };
+		7123864320A79CEB00DE2B44 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */; };
+		7123864420A79CEB00DE2B44 /* IssuesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163544B20841EF10099930A /* IssuesSection.swift */; };
+		7123864520A79CEB00DE2B44 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */; };
+		7123864620A79CEB00DE2B44 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635441208414D90099930A /* Issue.swift */; };
+		7123864720A79CEB00DE2B44 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB42082EEAD00FE5447 /* Colors.swift */; };
+		7123864820A79CEB00DE2B44 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635445208418290099930A /* CustomField.swift */; };
+		7123864920A79CEB00DE2B44 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
+		7123864A20A79CEB00DE2B44 /* IssuesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716354472084194E0099930A /* IssuesResult.swift */; };
+		7123864B20A79CEB00DE2B44 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E5209D42E50067E135 /* Values.swift */; };
+		7123864C20A79CEB00DE2B44 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */; };
+		7123864D20A79CEB00DE2B44 /* TimeTrackingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E68120A7304300C21B22 /* TimeTrackingSection.swift */; };
+		7123864E20A79CEB00DE2B44 /* BasicResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635449208419710099930A /* BasicResult.swift */; };
+		7123864F20A79CEB00DE2B44 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB62082F17600FE5447 /* Track.swift */; };
+		7123865020A79CEB00DE2B44 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E120859BE700054ED2 /* TPKeyboardAvoidingCollectionView.m */; };
+		7123865120A79CEB00DE2B44 /* RefreshableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163543F2084110A0099930A /* RefreshableTableViewController.swift */; };
+		7123865220A79CEB00DE2B44 /* SearchableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */; };
+		7123865320A79CEB00DE2B44 /* TimeTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */; };
+		7123865420A79CEB00DE2B44 /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163545520842C510099930A /* NoContentViewController.swift */; };
+		7123865520A79CEB00DE2B44 /* ProjectIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */; };
+		7123865620A79CEB00DE2B44 /* ProjectsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110120824CA600D79771 /* ProjectsResult.swift */; };
+		7123865720A79CEB00DE2B44 /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		7123865820A79CEB00DE2B44 /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716354432084151A0099930A /* Basic.swift */; };
+		7123865920A79CEB00DE2B44 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C620A14D6B0013DFA6 /* Membership.swift */; };
+		7123865A20A79CEB00DE2B44 /* LoadMoreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E1209D37990067E135 /* LoadMoreSection.swift */; };
+		7123865B20A79CEB00DE2B44 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DE20859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		7123865C20A79CEB00DE2B44 /* ProjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABB82082F1B300FE5447 /* ProjectResult.swift */; };
+		7123865D20A79CEB00DE2B44 /* SearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */; };
+		7123865E20A79CEB00DE2B44 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61320858585007E4C96 /* PaddingTextField.swift */; };
+		7123865F20A79CEB00DE2B44 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C820A14D990013DFA6 /* Role.swift */; };
+		7123866020A79CEB00DE2B44 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DF20859BE700054ED2 /* TPKeyboardAvoidingTableView.m */; };
+		7123866120A79CEB00DE2B44 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
+		7123866220A79CEB00DE2B44 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E020859BE700054ED2 /* TPKeyboardAvoidingScrollView.m */; };
+		7123866320A79CEB00DE2B44 /* ProjectsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */; };
+		7123866420A79CEB00DE2B44 /* LogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CA06F209BFE6E007A86B7 /* LogoutCell.swift */; };
+		7123866520A79CEB00DE2B44 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110320824D6700D79771 /* Project.swift */; };
+		7123866620A79CEB00DE2B44 /* NewIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111ABAC20A4E72C005ABEA6 /* NewIssueViewController.swift */; };
+		7123866720A79CEB00DE2B44 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
+		7123866820A79CEB00DE2B44 /* IssueDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */; };
+		7123866920A79CEB00DE2B44 /* UIViewController+instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F27C2081A73C003AD03E /* UIViewController+instantiate.swift */; };
+		7123866A20A79CEB00DE2B44 /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9CA20A14F870013DFA6 /* UserResult.swift */; };
+		7123866B20A79CEB00DE2B44 /* IssueDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */; };
+		7123866C20A79CEB00DE2B44 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AAD75209F72990049C2C3 /* SearchItem.swift */; };
+		7123866D20A79CEB00DE2B44 /* IssuesTimeTrackingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67B20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift */; };
+		7123866E20A79CEB00DE2B44 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CA06C209BFDB0007A86B7 /* ProfileSection.swift */; };
+		7123866F20A79CEB00DE2B44 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52DF209D376E0067E135 /* LoadMoreCell.swift */; };
+		7123867020A79CEB00DE2B44 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AAD73209F701C0049C2C3 /* SearchResult.swift */; };
+		7123867120A79CEB00DE2B44 /* LoadMoreViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E3209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift */; };
+		7123867220A79CEB00DE2B44 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111ABB020A4EBBC005ABEA6 /* TimeTracker.swift */; };
+		7123867320A79CEB00DE2B44 /* NSObject+className.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F27E2081A751003AD03E /* NSObject+className.swift */; };
+		7123867420A79CEB00DE2B44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2662081A560003AD03E /* LoginViewController.swift */; };
+		7123867520A79CEB00DE2B44 /* TimeTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */; };
+		7123867620A79CEB00DE2B44 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67720A697D600C21B22 /* UIViewController+showAlert.swift */; };
+		7123867720A79CEB00DE2B44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C420A14D070013DFA6 /* User.swift */; };
+		7123867820A79CEB00DE2B44 /* UserContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61120857C44007E4C96 /* UserContentLoader.swift */; };
+		7123867920A79CEB00DE2B44 /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABAF2082E0D700FE5447 /* ProjectInfoViewController.swift */; };
+		7123867A20A79CEB00DE2B44 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
+		7123867B20A79CEB00DE2B44 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CA068209BFA15007A86B7 /* ProfileViewController.swift */; };
+		7123867C20A79CEB00DE2B44 /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
+		7123867D20A79CEB00DE2B44 /* TimeTrackerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */; };
+		7123867E20A79CEB00DE2B44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2642081A560003AD03E /* AppDelegate.swift */; };
+		7123867F20A79CEB00DE2B44 /* DateStringProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71635451208424650099930A /* DateStringProcessor.swift */; };
+		7123868020A79CEB00DE2B44 /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163544D20841F4B0099930A /* IssueTableViewCell.swift */; };
+		7123868120A79CEB00DE2B44 /* PageCounterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52DD209D34E00067E135 /* PageCounterController.swift */; };
+		7123868320A79CEB00DE2B44 /* Pods_Redmine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */; };
+		7123868520A79CEB00DE2B44 /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D6ABAB2082C5B900FE5447 /* Projects.storyboard */; };
+		7123868620A79CEB00DE2B44 /* NewIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111ABAA20A4E71E005ABEA6 /* NewIssue.storyboard */; };
+		7123868720A79CEB00DE2B44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111F26D2081A562003AD03E /* LaunchScreen.storyboard */; };
+		7123868820A79CEB00DE2B44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111F26B2081A562003AD03E /* Assets.xcassets */; };
+		7123868920A79CEB00DE2B44 /* IssueTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7183E67920A6AAE900C21B22 /* IssueTableViewCell.storyboard */; };
+		7123868A20A79CEB00DE2B44 /* MyIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E415F820A4E17D00B8226B /* MyIssues.storyboard */; };
+		7123868B20A79CEB00DE2B44 /* TimeTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714C2A1220A628B400BE3947 /* TimeTracking.storyboard */; };
+		7123868C20A79CEB00DE2B44 /* NoContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163545320842C090099930A /* NoContent.storyboard */; };
+		7123868D20A79CEB00DE2B44 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111F2682081A560003AD03E /* Login.storyboard */; };
+		7123868E20A79CEB00DE2B44 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */; };
+		7123868F20A79CEB00DE2B44 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CA06A209BFA56007A86B7 /* Profile.storyboard */; };
+		7123869020A79CEB00DE2B44 /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123863D20A79C9400DE2B44 /* projects.json */; };
+		7123869120A79CEB00DE2B44 /* ProjectIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163544F20841F710099930A /* ProjectIssues.storyboard */; };
+		7123869920A79F1800DE2B44 /* currentUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123869820A79F1800DE2B44 /* currentUser.json */; };
 		7126A6E420859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DE20859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		7126A6E520859BE700054ED2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DF20859BE700054ED2 /* TPKeyboardAvoidingTableView.m */; };
 		7126A6E620859BE700054ED2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E020859BE700054ED2 /* TPKeyboardAvoidingScrollView.m */; };
@@ -84,10 +164,13 @@
 		71F8F9C720A14D6B0013DFA6 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C620A14D6B0013DFA6 /* Membership.swift */; };
 		71F8F9C920A14D990013DFA6 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C820A14D990013DFA6 /* Role.swift */; };
 		71F8F9CB20A14F870013DFA6 /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9CA20A14F870013DFA6 /* UserResult.swift */; };
+		924955C6F1C52646BC7594DE /* Pods_Redmine_Mocked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A60EE973FEB0C271076EE6 /* Pods_Redmine_Mocked.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11CCF7C5BA2F1BFC864093B2 /* Pods-Redmine-Mocked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine-Mocked.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine-Mocked/Pods-Redmine-Mocked.debug.xcconfig"; sourceTree = "<group>"; };
 		19FA2A3A12DE19CDA55AC6DA /* Pods-Redmine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.release.xcconfig"; sourceTree = "<group>"; };
+		46A4E872299AFAEDA48EA439 /* Pods-Redmine-Mocked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine-Mocked.release.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine-Mocked/Pods-Redmine-Mocked.release.xcconfig"; sourceTree = "<group>"; };
 		710CA068209BFA15007A86B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		710CA06A209BFA56007A86B7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		710CA06C209BFDB0007A86B7 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
@@ -109,6 +192,9 @@
 		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
+		7123863D20A79C9400DE2B44 /* projects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
+		7123869620A79CEB00DE2B44 /* RedMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7123869820A79F1800DE2B44 /* currentUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentUser.json; sourceTree = "<group>"; };
 		7126A6DB20859BE600054ED2 /* Redmine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Redmine-Bridging-Header.h"; sourceTree = "<group>"; };
 		7126A6DC20859BE700054ED2 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		7126A6DD20859BE700054ED2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -172,7 +258,11 @@
 		71F8F9C620A14D6B0013DFA6 /* Membership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		71F8F9C820A14D990013DFA6 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		71F8F9CA20A14F870013DFA6 /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		B04B1154C4B86BE7EB940992 /* Pods_RedMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1DBC369F141268DA986B29C /* Pods-RedMock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedMock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedMock/Pods-RedMock.debug.xcconfig"; sourceTree = "<group>"; };
 		C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redmine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redmine/Pods-Redmine.debug.xcconfig"; sourceTree = "<group>"; };
+		E3A60EE973FEB0C271076EE6 /* Pods_Redmine_Mocked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine_Mocked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E775AF3CABB8AF5FD20580F9 /* Pods-RedMock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedMock.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedMock/Pods-RedMock.release.xcconfig"; sourceTree = "<group>"; };
 		F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redmine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +275,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7123868220A79CEB00DE2B44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7123868320A79CEB00DE2B44 /* Pods_Redmine.framework in Frameworks */,
+				924955C6F1C52646BC7594DE /* Pods_Redmine_Mocked.framework in Frameworks */,
+				319B8951DB4F17A6B2307372 /* Pods_RedMock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -193,6 +293,10 @@
 			children = (
 				C8725F4A126B1F51B6E91D05 /* Pods-Redmine.debug.xcconfig */,
 				19FA2A3A12DE19CDA55AC6DA /* Pods-Redmine.release.xcconfig */,
+				11CCF7C5BA2F1BFC864093B2 /* Pods-Redmine-Mocked.debug.xcconfig */,
+				46A4E872299AFAEDA48EA439 /* Pods-Redmine-Mocked.release.xcconfig */,
+				B1DBC369F141268DA986B29C /* Pods-RedMock.debug.xcconfig */,
+				E775AF3CABB8AF5FD20580F9 /* Pods-RedMock.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -501,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				7111F2612081A560003AD03E /* Redmine.app */,
+				7123869620A79CEB00DE2B44 /* RedMock.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,6 +636,7 @@
 		7111F2782081A578003AD03E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7123863C20A79C9400DE2B44 /* Mocks */,
 				7111F26B2081A562003AD03E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -578,6 +684,15 @@
 				7111F2872081B78C003AD03E /* Ambients.swift */,
 			);
 			path = Ambients;
+			sourceTree = "<group>";
+		};
+		7123863C20A79C9400DE2B44 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7123863D20A79C9400DE2B44 /* projects.json */,
+				7123869820A79F1800DE2B44 /* currentUser.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		7126A6D920859BD000054ED2 /* External */ = {
@@ -685,6 +800,8 @@
 			isa = PBXGroup;
 			children = (
 				F62BF0AE5D0B7455DB116132 /* Pods_Redmine.framework */,
+				E3A60EE973FEB0C271076EE6 /* Pods_Redmine_Mocked.framework */,
+				B04B1154C4B86BE7EB940992 /* Pods_RedMock.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -709,6 +826,25 @@
 			name = Redmine;
 			productName = Redmine;
 			productReference = 7111F2612081A560003AD03E /* Redmine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7123863F20A79CEB00DE2B44 /* RedMock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7123869320A79CEB00DE2B44 /* Build configuration list for PBXNativeTarget "RedMock" */;
+			buildPhases = (
+				7123864020A79CEB00DE2B44 /* [CP] Check Pods Manifest.lock */,
+				7123864120A79CEB00DE2B44 /* Sources */,
+				7123868220A79CEB00DE2B44 /* Frameworks */,
+				7123868420A79CEB00DE2B44 /* Resources */,
+				7123869220A79CEB00DE2B44 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedMock;
+			productName = Redmine;
+			productReference = 7123869620A79CEB00DE2B44 /* RedMock.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -746,6 +882,7 @@
 			projectRoot = "";
 			targets = (
 				7111F2602081A560003AD03E /* Redmine */,
+				7123863F20A79CEB00DE2B44 /* RedMock */,
 			);
 		};
 /* End PBXProject section */
@@ -767,6 +904,27 @@
 				71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */,
 				710CA06B209BFA56007A86B7 /* Profile.storyboard in Resources */,
 				7163545020841F710099930A /* ProjectIssues.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7123868420A79CEB00DE2B44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7123868520A79CEB00DE2B44 /* Projects.storyboard in Resources */,
+				7123868620A79CEB00DE2B44 /* NewIssue.storyboard in Resources */,
+				7123869920A79F1800DE2B44 /* currentUser.json in Resources */,
+				7123868720A79CEB00DE2B44 /* LaunchScreen.storyboard in Resources */,
+				7123868820A79CEB00DE2B44 /* Assets.xcassets in Resources */,
+				7123868920A79CEB00DE2B44 /* IssueTableViewCell.storyboard in Resources */,
+				7123868A20A79CEB00DE2B44 /* MyIssues.storyboard in Resources */,
+				7123868B20A79CEB00DE2B44 /* TimeTracking.storyboard in Resources */,
+				7123868C20A79CEB00DE2B44 /* NoContent.storyboard in Resources */,
+				7123868D20A79CEB00DE2B44 /* Login.storyboard in Resources */,
+				7123868E20A79CEB00DE2B44 /* MainTabBar.storyboard in Resources */,
+				7123868F20A79CEB00DE2B44 /* Profile.storyboard in Resources */,
+				7123869020A79CEB00DE2B44 /* projects.json in Resources */,
+				7123869120A79CEB00DE2B44 /* ProjectIssues.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +963,58 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Redmine/Pods-Redmine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7123864020A79CEB00DE2B44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RedMock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7123869220A79CEB00DE2B44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RedMock/Pods-RedMock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FileKit/FileKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GenericDataSourceSwift/GenericDataSourceSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericDataSourceSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedMock/Pods-RedMock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C014F5062CAAC289367AF479 /* [CP] Check Pods Manifest.lock */ = {
@@ -896,6 +1106,77 @@
 				71635452208424650099930A /* DateStringProcessor.swift in Sources */,
 				7163544E20841F4B0099930A /* IssueTableViewCell.swift in Sources */,
 				71DC52DE209D34E00067E135 /* PageCounterController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7123864120A79CEB00DE2B44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7123864220A79CEB00DE2B44 /* MyIssuesViewController.swift in Sources */,
+				7123864320A79CEB00DE2B44 /* ConfigurableView.swift in Sources */,
+				7123864420A79CEB00DE2B44 /* IssuesSection.swift in Sources */,
+				7123864520A79CEB00DE2B44 /* MainTabBarViewController.swift in Sources */,
+				7123864620A79CEB00DE2B44 /* Issue.swift in Sources */,
+				7123864720A79CEB00DE2B44 /* Colors.swift in Sources */,
+				7123864820A79CEB00DE2B44 /* CustomField.swift in Sources */,
+				7123864920A79CEB00DE2B44 /* ProjectsViewController.swift in Sources */,
+				7123864A20A79CEB00DE2B44 /* IssuesResult.swift in Sources */,
+				7123864B20A79CEB00DE2B44 /* Values.swift in Sources */,
+				7123864C20A79CEB00DE2B44 /* ProjectTableViewCell.swift in Sources */,
+				7123864D20A79CEB00DE2B44 /* TimeTrackingSection.swift in Sources */,
+				7123864E20A79CEB00DE2B44 /* BasicResult.swift in Sources */,
+				7123864F20A79CEB00DE2B44 /* Track.swift in Sources */,
+				7123865020A79CEB00DE2B44 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				7123865120A79CEB00DE2B44 /* RefreshableTableViewController.swift in Sources */,
+				7123865220A79CEB00DE2B44 /* SearchableDataSource.swift in Sources */,
+				7123865320A79CEB00DE2B44 /* TimeTrackingViewController.swift in Sources */,
+				7123865420A79CEB00DE2B44 /* NoContentViewController.swift in Sources */,
+				7123865520A79CEB00DE2B44 /* ProjectIssuesViewController.swift in Sources */,
+				7123865620A79CEB00DE2B44 /* ProjectsResult.swift in Sources */,
+				7123865720A79CEB00DE2B44 /* Ambients.swift in Sources */,
+				7123865820A79CEB00DE2B44 /* Basic.swift in Sources */,
+				7123865920A79CEB00DE2B44 /* Membership.swift in Sources */,
+				7123865A20A79CEB00DE2B44 /* LoadMoreSection.swift in Sources */,
+				7123865B20A79CEB00DE2B44 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				7123865C20A79CEB00DE2B44 /* ProjectResult.swift in Sources */,
+				7123865D20A79CEB00DE2B44 /* SearchableTableViewController.swift in Sources */,
+				7123865E20A79CEB00DE2B44 /* PaddingTextField.swift in Sources */,
+				7123865F20A79CEB00DE2B44 /* Role.swift in Sources */,
+				7123866020A79CEB00DE2B44 /* TPKeyboardAvoidingTableView.m in Sources */,
+				7123866120A79CEB00DE2B44 /* Request.swift in Sources */,
+				7123866220A79CEB00DE2B44 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				7123866320A79CEB00DE2B44 /* ProjectsSection.swift in Sources */,
+				7123866420A79CEB00DE2B44 /* LogoutCell.swift in Sources */,
+				7123866520A79CEB00DE2B44 /* Project.swift in Sources */,
+				7123866620A79CEB00DE2B44 /* NewIssueViewController.swift in Sources */,
+				7123866720A79CEB00DE2B44 /* SessionController.swift in Sources */,
+				7123866820A79CEB00DE2B44 /* IssueDetailTableViewCell.swift in Sources */,
+				7123866920A79CEB00DE2B44 /* UIViewController+instantiate.swift in Sources */,
+				7123866A20A79CEB00DE2B44 /* UserResult.swift in Sources */,
+				7123866B20A79CEB00DE2B44 /* IssueDetailSection.swift in Sources */,
+				7123866C20A79CEB00DE2B44 /* SearchItem.swift in Sources */,
+				7123866D20A79CEB00DE2B44 /* IssuesTimeTrackingInteractor.swift in Sources */,
+				7123866E20A79CEB00DE2B44 /* ProfileSection.swift in Sources */,
+				7123866F20A79CEB00DE2B44 /* LoadMoreCell.swift in Sources */,
+				7123867020A79CEB00DE2B44 /* SearchResult.swift in Sources */,
+				7123867120A79CEB00DE2B44 /* LoadMoreViewControllerProtocol.swift in Sources */,
+				7123867220A79CEB00DE2B44 /* TimeTracker.swift in Sources */,
+				7123867320A79CEB00DE2B44 /* NSObject+className.swift in Sources */,
+				7123867420A79CEB00DE2B44 /* LoginViewController.swift in Sources */,
+				7123867520A79CEB00DE2B44 /* TimeTrackingTableViewCell.swift in Sources */,
+				7123867620A79CEB00DE2B44 /* UIViewController+showAlert.swift in Sources */,
+				7123867720A79CEB00DE2B44 /* User.swift in Sources */,
+				7123867820A79CEB00DE2B44 /* UserContentLoader.swift in Sources */,
+				7123867920A79CEB00DE2B44 /* ProjectInfoViewController.swift in Sources */,
+				7123867A20A79CEB00DE2B44 /* ApiResultProcessor.swift in Sources */,
+				7123867B20A79CEB00DE2B44 /* ProfileViewController.swift in Sources */,
+				7123867C20A79CEB00DE2B44 /* GlobalFunc.swift in Sources */,
+				7123867D20A79CEB00DE2B44 /* TimeTrackerController.swift in Sources */,
+				7123867E20A79CEB00DE2B44 /* AppDelegate.swift in Sources */,
+				7123867F20A79CEB00DE2B44 /* DateStringProcessor.swift in Sources */,
+				7123868020A79CEB00DE2B44 /* IssueTableViewCell.swift in Sources */,
+				7123868120A79CEB00DE2B44 /* PageCounterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,10 +1326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
@@ -1068,12 +1346,52 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7123869420A79CEB00DE2B44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1DBC369F141268DA986B29C /* Pods-RedMock.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EUPS925RGY;
+				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine.mock;
+				PRODUCT_MODULE_NAME = Redmine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG MOCKED";
+				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7123869520A79CEB00DE2B44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E775AF3CABB8AF5FD20580F9 /* Pods-RedMock.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EUPS925RGY;
+				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine.mock;
+				PRODUCT_MODULE_NAME = Redmine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = MOCKED;
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1097,6 +1415,15 @@
 			buildConfigurations = (
 				7111F2742081A562003AD03E /* Debug */,
 				7111F2752081A562003AD03E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7123869320A79CEB00DE2B44 /* Build configuration list for PBXNativeTarget "RedMock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7123869420A79CEB00DE2B44 /* Debug */,
+				7123869520A79CEB00DE2B44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

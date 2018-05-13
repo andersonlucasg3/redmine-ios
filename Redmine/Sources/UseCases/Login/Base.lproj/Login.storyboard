@@ -56,7 +56,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUT-0t-Gnh"/>
+                                                    <action selector="loginButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zr4-dQ-2rp"/>
                                                 </connections>
                                             </button>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8X-2R-MQj" userLabel="RoundedView">

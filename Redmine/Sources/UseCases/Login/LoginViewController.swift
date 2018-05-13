@@ -67,6 +67,10 @@ class LoginViewController: UIViewController, RequestProtocol {
     // MARK: Buttons events
     
     @IBAction fileprivate func loginButton(sender: UIButton) {
+        #if MOCKED
+        let mockContent = try? String.init(contentsOfFile: Bundle.main.path(forResource: "currentUser", ofType: "json") ?? "path")
+        self.request(Request.init(url: "", method: .get), didFinishWithContent: mockContent)
+        #else
         if self.checkCanLogin() {
             HUD.show(.progress, onView: self.view)
             
@@ -75,6 +79,7 @@ class LoginViewController: UIViewController, RequestProtocol {
         } else {
             self.showFulfillAlert()
         }
+        #endif
     }
     
     // MARK: RequestDelegate

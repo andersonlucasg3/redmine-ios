@@ -1,0 +1,30 @@
+{
+    "user": {
+        "id": 1,
+        "login": "anderson.ramos",
+        "firstname": "Anderson Lucas",
+        "lastname": "C. Ramos",
+        "mail": "andersonlucasg3@hotmail.com",
+        "created_on": "01/01/2018",
+        "last_login_on": "12/05/2018",
+        "api_key": "fjf0jf1o3ifnlk4lk53l1kn5l1fl3kfj2lj31fjo13jfasdfasvnawOEKFFNH3JR1HRW0F9WDNCHQ",
+        "custom_fields": [
+            
+        ],
+        "memberships": [
+            {
+                "project": {
+                    "id": 1,
+                    "name": "Projeto 1"
+                },
+                "roles": [
+                    {
+                        "id": 1,
+                        "name": "Fodão",
+                        "inherited": true
+                    }
+                ]
+            }
+        ]
+    }
+}
