@@ -1,0 +1,34 @@
+{
+    "project": {
+        "id": 1,
+        "name": "Projeto 1",
+        "identifier": "projeto-1",
+        "description": "Projeto para fazer coisas número 1",
+        "homepage": "http://www.hostedredmine.com/projeto1",
+        "status": 1,
+        "created_on": "01/01/2018",
+        "updated_on": "01/03/2018",
+        "trackers": [
+            {
+                "id": 1,
+                "name": "Tracker 1"
+            }
+        ],
+        "custom_fields": [
+            {
+                "id": 1,
+                "name": "plataformas",
+                "multiple": true,
+                "value": [
+                    "IOS",
+                    "ANDROID"
+                ]
+            },
+            {
+                "id": 2,
+                "name": "criador",
+                "value": "Anderson Lucas de Castro Ramos"
+            }
+        ]
+    }
+}

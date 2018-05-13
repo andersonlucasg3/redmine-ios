@@ -29,4 +29,10 @@ class MyIssuesViewController: SearchableTableViewController<IssuesResult, Issue,
     override func postSetupDataSource() {
         self.delegateDataSource.sections.map({$0 as! IssuesSection}).forEach({$0.delegate = self.interactor})
     }
+    
+    #if MOCKED
+    override func mockedContent() -> String? {
+        return try? String.init(contentsOfFile: Bundle.main.path(forResource: "issues", ofType: "json") ?? "path")
+    }
+    #endif
 }

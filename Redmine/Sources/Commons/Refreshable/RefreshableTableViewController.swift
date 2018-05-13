@@ -160,13 +160,19 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
     
     // MARK: Refreshing
     
+    #if MOCKED
+    func mockedContent() -> String? {
+        return nil
+    }
+    #endif
+    
     func startRefreshing() {
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
         
         #if MOCKED
-        let mockContent = try? String.init(contentsOfFile: Bundle.main.path(forResource: "projects", ofType: "json") ?? "path")
-        self.request(Request.init(url: "", method: .get), didFinishWithContent: mockContent)
+        let request = Request.init(url: "", method: .get)
+        self.request(request, didFinishWithContent: self.mockedContent())
         #else
         let request = self.createRequest(with: self.requestEndPoint())
         self.setupRequestHeaders(request)

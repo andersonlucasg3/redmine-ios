@@ -27,6 +27,12 @@ class ProjectsViewController: SearchableTableViewController<ProjectsResult, Proj
         return "Projects"
     }
     
+    #if MOCKED
+    override func mockedContent() -> String? {
+        return try? String.init(contentsOfFile: Bundle.main.path(forResource: "projects", ofType: "json") ?? "path")
+    }
+    #endif
+    
     // MARK: ProjectsSectionProtocol
     
     func openProjectInfo(for project: Project) {

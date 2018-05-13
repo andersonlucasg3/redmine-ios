@@ -1,0 +1,90 @@
+{
+    "issues": [
+        {
+            "id": 1,
+            "project": {
+                "id": 1,
+                "name": "Projeto 1"
+            },
+            "tracker": {
+                "id": 1,
+                "name": "Tracker 1"
+            },
+            "status": {
+                "id": 1,
+                "name": "Status 1"
+            },
+            "priority": {
+                "id": 1,
+                "name": "Priority 1"
+            },
+            "author": {
+                "id": 1,
+                "name": "Anderson Lucas C. Ramos"
+            },
+            "assigned_to": {
+                "id": 1,
+                "name": "Anderson Lucas C. Ramos"
+            },
+            "fixed_version": {
+                "id": 1,
+                "name": "1.0.0"
+            },
+            "issue_category": {
+                "id": 1,
+                "name": "Category 1"
+            },
+            "subject": "Issue 1",
+            "subtitle": "Issue subtitle 1",
+            "start_date": "01/01/2018",
+            "due_date": "01/12/2018",
+            "done_ratio": 80,
+            "custom_fields": null,
+            "created_on": "01/01/2018",
+            "updated_on": "05/05/2018"
+        },
+        {
+            "id": 2,
+            "project": {
+                "id": 2,
+                "name": "Projeto 2"
+            },
+            "tracker": {
+                "id": 2,
+                "name": "Tracker 2"
+            },
+            "status": {
+                "id": 2,
+                "name": "Status 2"
+            },
+            "priority": {
+                "id": 2,
+                "name": "Priority 2"
+            },
+            "author": {
+                "id": 2,
+                "name": "Anderson Lucas C. Ramos"
+            },
+            "assigned_to": {
+                "id": 2,
+                "name": "Anderson Lucas C. Ramos"
+            },
+            "fixed_version": {
+                "id": 2,
+                "name": "2.0.0"
+            },
+            "issue_category": {
+                "id": 2,
+                "name": "Category 2"
+            },
+            "subject": "Issue 2",
+            "subtitle": "Issue subtitle 2",
+            "start_date": "01/02/2018",
+            "due_date": "01/11/2018",
+            "done_ratio": 60,
+            "custom_fields": null,
+            "created_on": "01/02/2018",
+            "updated_on": "05/06/2018"
+        }
+    ]
+}

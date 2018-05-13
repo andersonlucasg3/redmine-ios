@@ -51,6 +51,15 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         self.delegateDataSource.sections.map({$0 as! IssuesSection}).forEach({$0.delegate = self.interactor})
     }
     
+    #if MOCKED
+    override func mockedContent() -> String? {
+        if self.project == nil {
+            return try? String.init(contentsOfFile: Bundle.main.path(forResource: "project", ofType: "json") ?? "path")
+        }
+        return try? String.init(contentsOfFile: Bundle.main.path(forResource: "issues", ofType: "json") ?? "path")
+    }
+    #endif
+    
     // MARK: Request functions
     
     override func requestEndPoint() -> String {

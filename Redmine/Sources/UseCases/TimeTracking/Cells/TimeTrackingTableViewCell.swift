@@ -25,8 +25,9 @@ class TimeTrackingTableViewCell: UITableViewCell, Setupable {
     }
     
     fileprivate func formattedTime(from duration: TimeInterval) -> String {
-        let formatter = DateFormatter.init()
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: Date.init(timeIntervalSince1970: duration))
+        let hours = Int(duration / 60.minutes)
+        let minutes = Int((duration / 60.seconds).truncatingRemainder(dividingBy: 60))
+        let seconds = Int(duration.truncatingRemainder(dividingBy: 60.seconds))
+        return "\(hours):\(minutes):\(seconds)"
     }
 }

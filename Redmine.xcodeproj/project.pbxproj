@@ -106,6 +106,8 @@
 		7123869020A79CEB00DE2B44 /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123863D20A79C9400DE2B44 /* projects.json */; };
 		7123869120A79CEB00DE2B44 /* ProjectIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7163544F20841F710099930A /* ProjectIssues.storyboard */; };
 		7123869920A79F1800DE2B44 /* currentUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123869820A79F1800DE2B44 /* currentUser.json */; };
+		7123869B20A7C18500DE2B44 /* issues.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123869A20A7C18500DE2B44 /* issues.json */; };
+		7123869D20A7C2B700DE2B44 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 7123869C20A7C2B700DE2B44 /* project.json */; };
 		7126A6E420859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DE20859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		7126A6E520859BE700054ED2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6DF20859BE700054ED2 /* TPKeyboardAvoidingTableView.m */; };
 		7126A6E620859BE700054ED2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E020859BE700054ED2 /* TPKeyboardAvoidingScrollView.m */; };
@@ -195,6 +197,8 @@
 		7123863D20A79C9400DE2B44 /* projects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
 		7123869620A79CEB00DE2B44 /* RedMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7123869820A79F1800DE2B44 /* currentUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentUser.json; sourceTree = "<group>"; };
+		7123869A20A7C18500DE2B44 /* issues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = issues.json; sourceTree = "<group>"; };
+		7123869C20A7C2B700DE2B44 /* project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = project.json; sourceTree = "<group>"; };
 		7126A6DB20859BE600054ED2 /* Redmine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Redmine-Bridging-Header.h"; sourceTree = "<group>"; };
 		7126A6DC20859BE700054ED2 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		7126A6DD20859BE700054ED2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -689,6 +693,8 @@
 		7123863C20A79C9400DE2B44 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				7123869C20A7C2B700DE2B44 /* project.json */,
+				7123869A20A7C18500DE2B44 /* issues.json */,
 				7123863D20A79C9400DE2B44 /* projects.json */,
 				7123869820A79F1800DE2B44 /* currentUser.json */,
 			);
@@ -914,6 +920,7 @@
 				7123868520A79CEB00DE2B44 /* Projects.storyboard in Resources */,
 				7123868620A79CEB00DE2B44 /* NewIssue.storyboard in Resources */,
 				7123869920A79F1800DE2B44 /* currentUser.json in Resources */,
+				7123869B20A7C18500DE2B44 /* issues.json in Resources */,
 				7123868720A79CEB00DE2B44 /* LaunchScreen.storyboard in Resources */,
 				7123868820A79CEB00DE2B44 /* Assets.xcassets in Resources */,
 				7123868920A79CEB00DE2B44 /* IssueTableViewCell.storyboard in Resources */,
@@ -921,6 +928,7 @@
 				7123868B20A79CEB00DE2B44 /* TimeTracking.storyboard in Resources */,
 				7123868C20A79CEB00DE2B44 /* NoContent.storyboard in Resources */,
 				7123868D20A79CEB00DE2B44 /* Login.storyboard in Resources */,
+				7123869D20A7C2B700DE2B44 /* project.json in Resources */,
 				7123868E20A79CEB00DE2B44 /* MainTabBar.storyboard in Resources */,
 				7123868F20A79CEB00DE2B44 /* Profile.storyboard in Resources */,
 				7123869020A79CEB00DE2B44 /* projects.json in Resources */,
@@ -1326,7 +1334,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
@@ -1346,7 +1357,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
@@ -1365,7 +1379,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine.mock;
 				PRODUCT_MODULE_NAME = Redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1387,7 +1404,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine.mock;
 				PRODUCT_MODULE_NAME = Redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
