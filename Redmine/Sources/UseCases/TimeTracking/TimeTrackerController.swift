@@ -116,7 +116,9 @@ class TimeTrackerController {
     
     fileprivate func saveAndAddTracker(_ tracker: TimeTracker) {
         if self.saveTracker(tracker) {
-            self.currentTimeTrackers.append(tracker)
+            if !self.currentTimeTrackers.contains(tracker) {
+                self.currentTimeTrackers.append(tracker)
+            }
         }
     }
     
