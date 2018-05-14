@@ -11,8 +11,6 @@ import SwiftyTimer
 import GenericDataSourceSwift
 
 class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol {
-    fileprivate var minuteTimer: Timer!
-    
     fileprivate let timeTrackerController = TimeTrackerController.init()
     
     fileprivate weak var dataSource: DataSource<TimeTracker>!
@@ -60,17 +58,14 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
     }
     
     fileprivate func startMinuteTimer() {
-        if self.minuteTimer == nil {
-            self.minuteTimer = Timer.scheduledTimer(timeInterval: 30.seconds,
-                                                    target: self, selector: #selector(self.minuteTimerFire(_:)),
-                                                    userInfo: nil, repeats: true)
+        self.tableView.visibleCells.compactMap({$0 as? TimeTrackingTableViewCell}).forEach { (cell) in
+            cell.startTimer()
         }
     }
     
     fileprivate func stopMinuteTimer() {
-        if let timer = self.minuteTimer {
-            timer.invalidate()
-            self.minuteTimer = nil
+        self.tableView.visibleCells.compactMap({$0 as? TimeTrackingTableViewCell}).forEach { (cell) in
+            cell.stopTimer()
         }
     }
     

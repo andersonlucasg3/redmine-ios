@@ -18,16 +18,61 @@ class TimeTrackingTableViewCell: UITableViewCell, Setupable {
     @IBOutlet fileprivate(set) weak var playPauseButton: UIButton!
     @IBOutlet fileprivate(set) weak var publishButton: UIButton!
     
+    fileprivate var timer: Timer!
+    fileprivate weak var timeTracker: TimeTracker!
+    
+    deinit {
+        self.stopTimer()
+    }
+    
     func setup(with data: TimeTracker) {
+        self.timeTracker = data
+        
         self.issueNameLabel.text = data.issue?.name
-        self.timeLabel.text = self.formattedTime(from: data.duration())
         self.projectNameLabel.text = data.issue?.project?.name
+        self.updateTimeLabel()
+        
+        self.startTimer()
+    }
+    
+    func startTimer() {
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
+                                              selector: #selector(self.secondTimerFire(_:)),
+                                              userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopTimer() {
+        if let timer = self.timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    fileprivate func updateTimeLabel() {
+        if let timeTracker = self.timeTracker {
+            self.timeLabel.text = self.formattedTime(from: timeTracker.duration())
+        } else {
+            self.stopTimer()
+        }
+    }
+    
+    @objc fileprivate func secondTimerFire(_ timer: Timer) {
+        self.updateTimeLabel()
+    }
+    
+    fileprivate func getFormatedDatePart(_ value: Int) -> String {
+        return value >= 10 ? "\(value)" : "0\(value)"
     }
     
     fileprivate func formattedTime(from duration: TimeInterval) -> String {
         let hours = Int(duration / 60.minutes)
         let minutes = Int((duration / 60.seconds).truncatingRemainder(dividingBy: 60))
         let seconds = Int(duration.truncatingRemainder(dividingBy: 60.seconds))
-        return "\(hours):\(minutes):\(seconds)"
+        let hourString = self.getFormatedDatePart(hours)
+        let minuteString = self.getFormatedDatePart(minutes)
+        let secondString = self.getFormatedDatePart(seconds)
+        return "\(hourString):\(minuteString):\(secondString)"
     }
 }
