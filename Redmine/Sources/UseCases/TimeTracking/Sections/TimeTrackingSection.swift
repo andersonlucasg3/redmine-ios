@@ -38,12 +38,16 @@ class TimeTrackingSection: Section {
         guard let cell = cell as? TimeTrackingTableViewCell else { return }
         cell.playPauseButton.tag = indexPath.row
         cell.publishButton.tag = indexPath.row
+        self.addTargetToCell(cell)
+        self.configureState(for: cell, at: indexPath)
+        self.configureBackground(for: cell, at: indexPath)
+    }
+    
+    fileprivate func addTargetToCell(_ cell: TimeTrackingTableViewCell) {
         if cell.playPauseButton.actions(forTarget: self, forControlEvent: .touchUpInside) == nil {
             cell.playPauseButton.addTarget(self, action: #selector(self.playPauseButton(sender:)), for: .touchUpInside)
             cell.publishButton.addTarget(self, action: #selector(self.publishButton(sender:)), for: .touchUpInside)
         }
-        self.configureState(for: cell, at: indexPath)
-        self.configureBackground(for: cell, at: indexPath)
     }
     
     fileprivate func configureState(for cell: TimeTrackingTableViewCell, at indexPath: IndexPath) {

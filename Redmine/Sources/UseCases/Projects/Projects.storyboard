@@ -43,96 +43,48 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvj-vg-TDe">
-                                            <rect key="frame" x="6" y="6" width="363" height="75.5"/>
-                                            <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v25-uA-jxs">
-                                                    <rect key="frame" x="255" y="8" width="100" height="26"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="LvG-YE-aYg"/>
-                                                        <constraint firstAttribute="width" constant="100" id="mhw-6x-6JY"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Project Info">
-                                                        <color key="titleColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="projectInfoButtonWithSender:" destination="BgS-AS-Y4i" eventType="touchUpInside" id="IRO-Lx-Naj"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-aG-zq0">
-                                                    <rect key="frame" x="255" y="41.5" width="100" height="26"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="AEP-fR-wbA"/>
-                                                        <constraint firstAttribute="width" constant="100" id="Eag-3E-qLq"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Open Issues">
-                                                        <color key="titleColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="openIssuesButtonWithSender:" destination="BgS-AS-Y4i" eventType="touchUpInside" id="JS1-X1-RW8"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-5m-Q7o">
-                                                    <rect key="frame" x="8" y="13" width="43" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akc-8e-B9F">
-                                                    <rect key="frame" x="8" y="38" width="35.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-aG-zq0">
+                                            <rect key="frame" x="274" y="29" width="85" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="v25-uA-jxs" firstAttribute="top" secondItem="Cvj-vg-TDe" secondAttribute="top" constant="8" id="3vZ-ev-0dp"/>
-                                                <constraint firstItem="akc-8e-B9F" firstAttribute="top" secondItem="hpL-5m-Q7o" secondAttribute="bottom" constant="4" id="Jrd-EW-A53"/>
-                                                <constraint firstAttribute="trailing" secondItem="v25-uA-jxs" secondAttribute="trailing" constant="8" id="Kh5-93-wnh"/>
-                                                <constraint firstItem="akc-8e-B9F" firstAttribute="leading" secondItem="Cvj-vg-TDe" secondAttribute="leading" constant="8" id="LjO-zp-xTx"/>
-                                                <constraint firstItem="Rrm-aG-zq0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="v25-uA-jxs" secondAttribute="bottom" constant="7.5" id="Sln-TY-lrT"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="akc-8e-B9F" secondAttribute="bottom" constant="16" id="TML-gC-JW3"/>
-                                                <constraint firstItem="Rrm-aG-zq0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="akc-8e-B9F" secondAttribute="trailing" constant="8" id="WUl-wh-Izi"/>
-                                                <constraint firstItem="v25-uA-jxs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hpL-5m-Q7o" secondAttribute="trailing" constant="8" id="Xz8-1Y-WrB"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ZhR-Dg-P8e"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rrm-aG-zq0" secondAttribute="bottom" constant="8" id="c33-VH-lnS"/>
-                                                <constraint firstItem="hpL-5m-Q7o" firstAttribute="leading" secondItem="Cvj-vg-TDe" secondAttribute="leading" constant="8" id="cK6-4y-Cb8"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rrm-aG-zq0" secondAttribute="trailing" constant="8" id="lGP-6v-YR2"/>
-                                                <constraint firstItem="akc-8e-B9F" firstAttribute="leading" secondItem="hpL-5m-Q7o" secondAttribute="leading" id="n7q-kJ-wh1"/>
-                                                <constraint firstItem="hpL-5m-Q7o" firstAttribute="top" secondItem="Cvj-vg-TDe" secondAttribute="top" constant="13" id="xme-em-wsg"/>
+                                                <constraint firstAttribute="width" constant="85" id="bXC-9i-inN"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="12"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
+                                            <state key="normal" title="Open Issues">
+                                                <color key="titleColor" red="0.13725490200000001" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="openIssuesButtonWithSender:" destination="BgS-AS-Y4i" eventType="touchUpInside" id="JS1-X1-RW8"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-5m-Q7o">
+                                            <rect key="frame" x="16" y="16" width="43" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akc-8e-B9F">
+                                            <rect key="frame" x="16" y="45" width="35.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Cvj-vg-TDe" secondAttribute="trailing" constant="6" id="2OJ-gU-9GH"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cvj-vg-TDe" secondAttribute="bottom" constant="6" id="3ll-87-E39"/>
-                                        <constraint firstItem="Cvj-vg-TDe" firstAttribute="top" secondItem="WWY-TP-l73" secondAttribute="top" constant="6" id="E9C-Ks-bhe"/>
-                                        <constraint firstItem="Cvj-vg-TDe" firstAttribute="leading" secondItem="WWY-TP-l73" secondAttribute="leading" constant="6" id="e9Q-Jm-Hp1"/>
+                                        <constraint firstItem="hpL-5m-Q7o" firstAttribute="top" secondItem="WWY-TP-l73" secondAttribute="top" constant="16" id="Jh2-ck-QlO"/>
+                                        <constraint firstItem="akc-8e-B9F" firstAttribute="leading" secondItem="hpL-5m-Q7o" secondAttribute="leading" id="S7h-TF-zyr"/>
+                                        <constraint firstItem="Rrm-aG-zq0" firstAttribute="centerY" secondItem="WWY-TP-l73" secondAttribute="centerY" id="SQU-eX-mRC"/>
+                                        <constraint firstItem="akc-8e-B9F" firstAttribute="top" secondItem="hpL-5m-Q7o" secondAttribute="bottom" constant="8" id="bdu-5y-VVd"/>
+                                        <constraint firstItem="hpL-5m-Q7o" firstAttribute="leading" secondItem="WWY-TP-l73" secondAttribute="leading" constant="16" id="cGG-J8-w4N"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rrm-aG-zq0" secondAttribute="trailing" constant="16" id="eiD-Ey-RGR"/>
+                                        <constraint firstItem="Rrm-aG-zq0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hpL-5m-Q7o" secondAttribute="trailing" constant="8" id="lN5-Ig-SbO"/>
+                                        <constraint firstItem="Rrm-aG-zq0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="akc-8e-B9F" secondAttribute="trailing" constant="8" id="q0x-e4-m9K"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="akc-8e-B9F" secondAttribute="bottom" constant="16" id="vVv-BE-Ulb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="openIssuesButton" destination="Rrm-aG-zq0" id="Bpe-fV-q9P"/>
-                                    <outlet property="projectInfoButton" destination="v25-uA-jxs" id="i2d-4D-qzA"/>
                                     <outlet property="subtitleLabel" destination="akc-8e-B9F" id="9WK-hh-ync"/>
                                     <outlet property="titleLabel" destination="hpL-5m-Q7o" id="xvT-Yr-h6a"/>
                                 </connections>
