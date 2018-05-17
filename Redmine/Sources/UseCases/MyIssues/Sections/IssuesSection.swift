@@ -30,6 +30,11 @@ class IssuesSection: Section {
     func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
         guard let cell = cell as? IssueTableViewCell else { return }
         cell.timeTrackerButton.tag = indexPath.row
+        
+        cell.configureBackground(at: indexPath)
+    }
+    
+    fileprivate func addTargetToCell(_ cell: IssueTableViewCell) {
         if cell.timeTrackerButton.actions(forTarget: self, forControlEvent: .touchUpInside) == nil {
             cell.timeTrackerButton.addTarget(self, action: #selector(self.timeTrackerButton(sender:)), for: .touchUpInside)
         }
