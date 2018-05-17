@@ -115,6 +115,8 @@
 		7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */; };
 		7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */; };
 		7126A6EE2085AC3900054ED2 /* SearchableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */; };
+		712B6ECA20ACD30200786C9D /* TimeHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */; };
+		712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */; };
 		714C2A1320A628B400BE3947 /* TimeTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714C2A1220A628B400BE3947 /* TimeTracking.storyboard */; };
 		714C2A1520A628C200BE3947 /* TimeTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */; };
 		716354402084110A0099930A /* RefreshableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163543F2084110A0099930A /* RefreshableTableViewController.swift */; };
@@ -137,6 +139,7 @@
 		7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */; };
 		7183E68220A7304300C21B22 /* TimeTrackingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E68120A7304300C21B22 /* TimeTrackingSection.swift */; };
 		7188F23F2086D5A600DE1C7C /* SearchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */; };
+		718AC2D120ACD585005A3C64 /* TimeHistoryDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718AC2D020ACD585005A3C64 /* TimeHistoryDetailSection.swift */; };
 		7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61120857C44007E4C96 /* UserContentLoader.swift */; };
 		7192B61420858585007E4C96 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7192B61320858585007E4C96 /* PaddingTextField.swift */; };
 		71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A310F92081BCCB00D79771 /* SessionController.swift */; };
@@ -160,6 +163,12 @@
 		71DC52E2209D37990067E135 /* LoadMoreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E1209D37990067E135 /* LoadMoreSection.swift */; };
 		71DC52E4209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E3209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift */; };
 		71DC52E6209D42E50067E135 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC52E5209D42E50067E135 /* Values.swift */; };
+		71DD8E3920AD2BB40040BC48 /* TimeHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8E3820AD2BB40040BC48 /* TimeHistoryDetailCell.swift */; };
+		71DD8E3C20AD2CFA0040BC48 /* DurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8E3B20AD2CF90040BC48 /* DurationHelper.swift */; };
+		71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8E3D20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift */; };
+		71DD8E4020AD36EE0040BC48 /* TimeHistoryDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DD8E3F20AD36EE0040BC48 /* TimeHistoryDetailHeader.xib */; };
+		71DD8E4320AD37D90040BC48 /* UITableViewCell+Zebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8E4220AD37D90040BC48 /* UITableViewCell+Zebra.swift */; };
+		71DD8E4620AD3A040040BC48 /* TimeHistoryProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD8E4520AD3A040040BC48 /* TimeHistoryProcessor.swift */; };
 		71E415F920A4E17D00B8226B /* MyIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E415F820A4E17D00B8226B /* MyIssues.storyboard */; };
 		71E415FB20A4E28500B8226B /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */; };
 		71F8F9C520A14D070013DFA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8F9C420A14D070013DFA6 /* User.swift */; };
@@ -211,6 +220,8 @@
 		7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailSection.swift; sourceTree = "<group>"; };
 		7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableDataSource.swift; sourceTree = "<group>"; };
+		712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeHistoryDetail.storyboard; sourceTree = "<group>"; };
+		712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		714C2A1220A628B400BE3947 /* TimeTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeTracking.storyboard; sourceTree = "<group>"; };
 		714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingViewController.swift; sourceTree = "<group>"; };
 		7163543F2084110A0099930A /* RefreshableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableTableViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +244,7 @@
 		7183E67E20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingTableViewCell.swift; sourceTree = "<group>"; };
 		7183E68120A7304300C21B22 /* TimeTrackingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingSection.swift; sourceTree = "<group>"; };
 		7188F23E2086D5A600DE1C7C /* SearchableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTableViewController.swift; sourceTree = "<group>"; };
+		718AC2D020ACD585005A3C64 /* TimeHistoryDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailSection.swift; sourceTree = "<group>"; };
 		7192B61120857C44007E4C96 /* UserContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentLoader.swift; sourceTree = "<group>"; };
 		7192B61320858585007E4C96 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		71A310F92081BCCB00D79771 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -256,6 +268,12 @@
 		71DC52E1209D37990067E135 /* LoadMoreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreSection.swift; sourceTree = "<group>"; };
 		71DC52E3209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreViewControllerProtocol.swift; sourceTree = "<group>"; };
 		71DC52E5209D42E50067E135 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		71DD8E3820AD2BB40040BC48 /* TimeHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailCell.swift; sourceTree = "<group>"; };
+		71DD8E3B20AD2CF90040BC48 /* DurationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationHelper.swift; sourceTree = "<group>"; };
+		71DD8E3D20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailHeader.swift; sourceTree = "<group>"; };
+		71DD8E3F20AD36EE0040BC48 /* TimeHistoryDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeHistoryDetailHeader.xib; sourceTree = "<group>"; };
+		71DD8E4220AD37D90040BC48 /* UITableViewCell+Zebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Zebra.swift"; sourceTree = "<group>"; };
+		71DD8E4520AD3A040040BC48 /* TimeHistoryProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryProcessor.swift; sourceTree = "<group>"; };
 		71E415F820A4E17D00B8226B /* MyIssues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyIssues.storyboard; sourceTree = "<group>"; };
 		71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuesViewController.swift; sourceTree = "<group>"; };
 		71F8F9C420A14D070013DFA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -308,7 +326,7 @@
 		7111ABB220A61F8F005ABEA6 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				7111ABD120A623AF005ABEA6 /* TimeTracking */,
+				712B6EC720ACD20000786C9D /* TimeTracker */,
 				7111ABD020A62399005ABEA6 /* NewIssue */,
 				7111ABC820A622CE005ABEA6 /* Profile */,
 				7111ABC720A622BA005ABEA6 /* NoContent */,
@@ -586,10 +604,8 @@
 			children = (
 				7183E68020A7303600C21B22 /* Sections */,
 				7183E67D20A72C7A00C21B22 /* Cells */,
-				71A310FB20823FDC00D79771 /* Model */,
 				714C2A1220A628B400BE3947 /* TimeTracking.storyboard */,
 				714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */,
-				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
 				7183E67B20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift */,
 			);
 			path = TimeTracking;
@@ -661,6 +677,7 @@
 				7111F27C2081A73C003AD03E /* UIViewController+instantiate.swift */,
 				7183E67720A697D600C21B22 /* UIViewController+showAlert.swift */,
 				7111F27E2081A751003AD03E /* NSObject+className.swift */,
+				71DD8E4220AD37D90040BC48 /* UITableViewCell+Zebra.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -732,6 +749,31 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		712B6EC720ACD20000786C9D /* TimeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				7111ABD120A623AF005ABEA6 /* TimeTracking */,
+				712B6EC820ACD23E00786C9D /* TimeHistoryDetail */,
+				71A310FB20823FDC00D79771 /* Models */,
+				71DD8E3A20AD2CE80040BC48 /* Helpers */,
+				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
+			);
+			path = TimeTracker;
+			sourceTree = "<group>";
+		};
+		712B6EC820ACD23E00786C9D /* TimeHistoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				71DD8E4420AD39F60040BC48 /* Processors */,
+				71DD8E4120AD37380040BC48 /* Headers */,
+				71DD8E3720AD2BA40040BC48 /* Cells */,
+				718AC2CF20ACD574005A3C64 /* Sections */,
+				712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */,
+				712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */,
+			);
+			path = TimeHistoryDetail;
+			sourceTree = "<group>";
+		};
 		7183E67D20A72C7A00C21B22 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,13 +798,21 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		71A310FB20823FDC00D79771 /* Model */ = {
+		718AC2CF20ACD574005A3C64 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				718AC2D020ACD585005A3C64 /* TimeHistoryDetailSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		71A310FB20823FDC00D79771 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				71D6ABB62082F17600FE5447 /* Track.swift */,
 				7111ABB020A4EBBC005ABEA6 /* TimeTracker.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		71A310FC2082400D00D79771 /* Model */ = {
@@ -800,6 +850,39 @@
 				71DC52E5209D42E50067E135 /* Values.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		71DD8E3720AD2BA40040BC48 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71DD8E3820AD2BB40040BC48 /* TimeHistoryDetailCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71DD8E3A20AD2CE80040BC48 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				71DD8E3B20AD2CF90040BC48 /* DurationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		71DD8E4120AD37380040BC48 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				71DD8E3F20AD36EE0040BC48 /* TimeHistoryDetailHeader.xib */,
+				71DD8E3D20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		71DD8E4420AD39F60040BC48 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				71DD8E4520AD3A040040BC48 /* TimeHistoryProcessor.swift */,
+			);
+			path = Processors;
 			sourceTree = "<group>";
 		};
 		D0744C6265A65BC974F4EDDB /* Frameworks */ = {
@@ -905,9 +988,11 @@
 				7183E67A20A6AAE900C21B22 /* IssueTableViewCell.storyboard in Resources */,
 				71E415F920A4E17D00B8226B /* MyIssues.storyboard in Resources */,
 				714C2A1320A628B400BE3947 /* TimeTracking.storyboard in Resources */,
+				71DD8E4020AD36EE0040BC48 /* TimeHistoryDetailHeader.xib in Resources */,
 				7163545420842C090099930A /* NoContent.storyboard in Resources */,
 				7111F26A2081A560003AD03E /* Login.storyboard in Resources */,
 				71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */,
+				712B6ECA20ACD30200786C9D /* TimeHistoryDetail.storyboard in Resources */,
 				710CA06B209BFA56007A86B7 /* Profile.storyboard in Resources */,
 				7163545020841F710099930A /* ProjectIssues.storyboard in Resources */,
 			);
@@ -1075,6 +1160,7 @@
 				716354442084151A0099930A /* Basic.swift in Sources */,
 				71F8F9C720A14D6B0013DFA6 /* Membership.swift in Sources */,
 				71DC52E2209D37990067E135 /* LoadMoreSection.swift in Sources */,
+				71DD8E3C20AD2CFA0040BC48 /* DurationHelper.swift in Sources */,
 				7126A6E420859BE700054ED2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				71D6ABB92082F1B300FE5447 /* ProjectResult.swift in Sources */,
 				7188F23F2086D5A600DE1C7C /* SearchableTableViewController.swift in Sources */,
@@ -1088,18 +1174,23 @@
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				7111ABAD20A4E72C005ABEA6 /* NewIssueViewController.swift in Sources */,
 				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
+				718AC2D120ACD585005A3C64 /* TimeHistoryDetailSection.swift in Sources */,
 				7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */,
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
+				71DD8E4620AD3A040040BC48 /* TimeHistoryProcessor.swift in Sources */,
 				71F8F9CB20A14F870013DFA6 /* UserResult.swift in Sources */,
+				71DD8E3920AD2BB40040BC48 /* TimeHistoryDetailCell.swift in Sources */,
 				7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */,
 				716AAD76209F72990049C2C3 /* SearchItem.swift in Sources */,
 				7183E67C20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift in Sources */,
 				710CA06D209BFDB0007A86B7 /* ProfileSection.swift in Sources */,
+				71DD8E4320AD37D90040BC48 /* UITableViewCell+Zebra.swift in Sources */,
 				71DC52E0209D376E0067E135 /* LoadMoreCell.swift in Sources */,
 				716AAD74209F701C0049C2C3 /* SearchResult.swift in Sources */,
 				71DC52E4209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift in Sources */,
 				7111ABB120A4EBBC005ABEA6 /* TimeTracker.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
+				712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
 				7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */,
 				7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */,
@@ -1109,6 +1200,7 @@
 				71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */,
 				710CA069209BFA15007A86B7 /* ProfileViewController.swift in Sources */,
 				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
+				71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */,
 				7111ABAF20A4EA95005ABEA6 /* TimeTrackerController.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
 				71635452208424650099930A /* DateStringProcessor.swift in Sources */,

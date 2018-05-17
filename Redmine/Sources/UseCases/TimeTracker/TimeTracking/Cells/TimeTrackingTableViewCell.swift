@@ -52,7 +52,7 @@ class TimeTrackingTableViewCell: UITableViewCell, Setupable {
     
     fileprivate func updateTimeLabel() {
         if let timeTracker = self.timeTracker {
-            self.timeLabel.text = self.formattedTime(from: timeTracker.duration())
+            self.timeLabel.text = DurationHelper.formattedTime(for: timeTracker.duration())
         } else {
             self.stopTimer()
         }
@@ -60,19 +60,5 @@ class TimeTrackingTableViewCell: UITableViewCell, Setupable {
     
     @objc fileprivate func secondTimerFire(_ timer: Timer) {
         self.updateTimeLabel()
-    }
-    
-    fileprivate func getFormatedDatePart(_ value: Int) -> String {
-        return value >= 10 ? "\(value)" : "0\(value)"
-    }
-    
-    fileprivate func formattedTime(from duration: TimeInterval) -> String {
-        let hours = Int(duration / 60.minutes)
-        let minutes = Int((duration / 60.seconds).truncatingRemainder(dividingBy: 60))
-        let seconds = Int(duration.truncatingRemainder(dividingBy: 60.seconds))
-        let hourString = self.getFormatedDatePart(hours)
-        let minuteString = self.getFormatedDatePart(minutes)
-        let secondString = self.getFormatedDatePart(seconds)
-        return "\(hourString):\(minuteString):\(secondString)"
     }
 }

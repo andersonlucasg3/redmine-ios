@@ -33,11 +33,7 @@ class ProjectsSection: Section, ProjectTableViewCellProtocol {
         let projectCell = cell as! ProjectTableViewCell
         projectCell.tag = indexPath.row
         projectCell.delegate = self
-        self.configureBackground(for: projectCell, at: indexPath)
-    }
-    
-    fileprivate func configureBackground(for cell: ProjectTableViewCell, at indexPath: IndexPath) {
-        cell.backgroundColor = indexPath.row % 2 == 0 ? #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 0.1531999144) : UIColor.white
+        projectCell.configureBackground(at: indexPath)
     }
     
     // MARK: ProjectTableViewCellProtocol
