@@ -11,7 +11,7 @@ import GenericDataSourceSwift
 import PKHUD
 
 class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, Issue, IssuesSection> {
-    fileprivate let timeTrackerController = TimeTrackerController.init()
+    fileprivate lazy var timeTrackerController = TimeTrackerController.init(with: self.sessionController)
     fileprivate lazy var interactor = IssuesTimeTrackingInteractor.init(viewController: self,
                                                                         timeTrackerController: self.timeTrackerController)
     
