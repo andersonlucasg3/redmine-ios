@@ -11,7 +11,8 @@ import SwiftyTimer
 import GenericDataSourceSwift
 
 class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol, GenericDelegateDataSourceProtocol {
-    fileprivate let timeTrackerController = TimeTrackerController.init()
+    fileprivate let sessionController = SessionController.init()
+    fileprivate lazy var timeTrackerController = TimeTrackerController.init(with: self.sessionController)
     
     fileprivate weak var dataSource: DataSource<TimeTracker>!
     fileprivate var genericDataSource: GenericDelegateDataSource!

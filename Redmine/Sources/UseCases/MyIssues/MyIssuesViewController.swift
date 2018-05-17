@@ -9,8 +9,7 @@
 import UIKit
 
 class MyIssuesViewController: SearchableTableViewController<IssuesResult, Issue, IssuesSection> {
-    fileprivate var timeTrackerController = TimeTrackerController.init()
-    
+    fileprivate lazy var timeTrackerController = TimeTrackerController.init(with: self.sessionController)
     fileprivate lazy var interactor = IssuesTimeTrackingInteractor.init(viewController: self,
                                                                         timeTrackerController: self.timeTrackerController)
     
