@@ -10,7 +10,7 @@ import UIKit
 import SwiftyTimer
 import GenericDataSourceSwift
 
-class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol {
+class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol, GenericDelegateDataSourceProtocol {
     fileprivate let timeTrackerController = TimeTrackerController.init()
     
     fileprivate weak var dataSource: DataSource<TimeTracker>!
@@ -44,6 +44,7 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
         self.genericDataSource = GenericDelegateDataSource.init(withSections: sections, andTableView: self.tableView)
         self.tableView.delegate = self.genericDataSource
         self.tableView.dataSource = self.genericDataSource
+        self.genericDataSource.delegate = self
         
         self.dataSource = dataSource
     }
@@ -106,5 +107,17 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
     
     func state(for item: TimeTracker) -> PlayPauseAction {
         return self.timeTrackerController.runningTracker == item ? .pause : .play
+    }
+    
+    // MARK: GenericDelegateDataSourceProtocol
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let item: TimeTracker = self.dataSource.getItem(for: indexPath.row)
+        
+        let controller = TimeHistoryDetailViewController.instantiate()!
+        controller.timeTracker = item
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

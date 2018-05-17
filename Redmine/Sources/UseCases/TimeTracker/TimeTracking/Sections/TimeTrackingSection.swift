@@ -40,7 +40,7 @@ class TimeTrackingSection: Section {
         cell.publishButton.tag = indexPath.row
         self.addTargetToCell(cell)
         self.configureState(for: cell, at: indexPath)
-        self.configureBackground(for: cell, at: indexPath)
+        cell.configureBackground(at: indexPath)
     }
     
     fileprivate func addTargetToCell(_ cell: TimeTrackingTableViewCell) {
@@ -54,10 +54,6 @@ class TimeTrackingSection: Section {
         if let state = self.delegate?.state(for: self.getItem(for: indexPath.row)) {
             cell.playPauseButton.setBackgroundImage(state == .play ? #imageLiteral(resourceName: "play") : #imageLiteral(resourceName: "pause"), for: .normal)
         }
-    }
-    
-    fileprivate func configureBackground(for cell: TimeTrackingTableViewCell, at indexPath: IndexPath) {
-        cell.backgroundColor = indexPath.row % 2 == 0 ? #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 0.1531999144) : UIColor.white
     }
     
     @objc fileprivate func playPauseButton(sender: UIButton) {
