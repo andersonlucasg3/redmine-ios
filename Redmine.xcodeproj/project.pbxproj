@@ -117,6 +117,7 @@
 		7126A6EE2085AC3900054ED2 /* SearchableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */; };
 		712B6ECA20ACD30200786C9D /* TimeHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */; };
 		712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */; };
+		7130AA5320ADB7F800AE0638 /* String+slugify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7130AA5220ADB7F800AE0638 /* String+slugify.swift */; };
 		714C2A1320A628B400BE3947 /* TimeTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714C2A1220A628B400BE3947 /* TimeTracking.storyboard */; };
 		714C2A1520A628C200BE3947 /* TimeTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */; };
 		716354402084110A0099930A /* RefreshableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163543F2084110A0099930A /* RefreshableTableViewController.swift */; };
@@ -222,6 +223,7 @@
 		7126A6ED2085AC3900054ED2 /* SearchableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableDataSource.swift; sourceTree = "<group>"; };
 		712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeHistoryDetail.storyboard; sourceTree = "<group>"; };
 		712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailViewController.swift; sourceTree = "<group>"; };
+		7130AA5220ADB7F800AE0638 /* String+slugify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+slugify.swift"; sourceTree = "<group>"; };
 		714C2A1220A628B400BE3947 /* TimeTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeTracking.storyboard; sourceTree = "<group>"; };
 		714C2A1420A628C200BE3947 /* TimeTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackingViewController.swift; sourceTree = "<group>"; };
 		7163543F2084110A0099930A /* RefreshableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableTableViewController.swift; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 				7183E67720A697D600C21B22 /* UIViewController+showAlert.swift */,
 				7111F27E2081A751003AD03E /* NSObject+className.swift */,
 				71DD8E4220AD37D90040BC48 /* UITableViewCell+Zebra.swift */,
+				7130AA5220ADB7F800AE0638 /* String+slugify.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */,
 				7111ABAF20A4EA95005ABEA6 /* TimeTrackerController.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
+				7130AA5320ADB7F800AE0638 /* String+slugify.swift in Sources */,
 				71635452208424650099930A /* DateStringProcessor.swift in Sources */,
 				7163544E20841F4B0099930A /* IssueTableViewCell.swift in Sources */,
 				71DC52DE209D34E00067E135 /* PageCounterController.swift in Sources */,
