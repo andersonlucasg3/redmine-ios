@@ -9,8 +9,12 @@
 import Foundation
 
 class TimeHistoryProcessor {
+    func dayId(for date: Date) -> Int {
+        return Calendar.current.component(.day, from: date)
+    }
+    
     func filterTimeNodes(for tracker: TimeTracker) -> [String: [TimeNode]] {
-        guard let nodes = self.timeTracker?.timeNodes else { return [:] }
+        guard let nodes = tracker.timeNodes else { return [:] }
         let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = "dd/MM"
         return Dictionary<String, [TimeNode]>.init(grouping: nodes, by: { (node) -> String in

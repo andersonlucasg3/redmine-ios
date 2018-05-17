@@ -12,6 +12,8 @@ class TimeHistoryDetailViewController: UITableViewController {
     fileprivate let processor = TimeHistoryProcessor.init()
     fileprivate var delegateDataSource: GenericDelegateDataSource!
     
+    @IBOutlet fileprivate weak var totalDurationLabel: UILabel!
+    
     weak var timeTracker: TimeTracker?
     
     override func viewDidLoad() {
@@ -19,16 +21,13 @@ class TimeHistoryDetailViewController: UITableViewController {
         
         self.registerHeaders()
         self.createDataSources()
+        self.setTotalDuration()
     }
     
     fileprivate func registerHeaders() {
         let className = TimeHistoryDetailHeader.className
         let nib = UINib.init(nibName: className, bundle: Bundle.main)
         self.tableView.register(nib, forHeaderFooterViewReuseIdentifier: className)
-    }
-    
-    fileprivate func dayId(for date: Date) -> Int {
-        return Calendar.current.component(.day, from: date)
     }
     
     fileprivate func filterTimeNodes() -> [String: [TimeNode]] {
@@ -47,5 +46,9 @@ class TimeHistoryDetailViewController: UITableViewController {
         self.delegateDataSource = GenericDelegateDataSource.init(withSections: sections, andTableView: self.tableView)
         self.tableView.delegate = self.delegateDataSource
         self.tableView.dataSource = self.delegateDataSource
+    }
+    
+    fileprivate func setTotalDuration() {
+        self.totalDurationLabel.text = DurationHelper.formattedTime(for: self.timeTracker?.duration() ?? 0.0)
     }
 }
