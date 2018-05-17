@@ -13,7 +13,7 @@ import Swift_Json
 class TimeTrackerController {
     fileprivate static var timeTrackers: [TimeTracker]!
     
-    fileprivate let trackersPath = Path.userCaches + "trackers"
+    fileprivate let trackersPath: Path
     
     fileprivate(set) var currentTimeTrackers: [TimeTracker]! {
         get { return TimeTrackerController.timeTrackers }
@@ -24,7 +24,11 @@ class TimeTrackerController {
         return self.findRunningTracker()
     }
     
-    init() {
+    init(with user: User) {
+        let userLogin = user.login ?? "unknown"
+        self.trackersPath = Path.userCaches + "trackers" + userLogin
+        print("[TIMETRACKER] Initializing time tracker for user: \(userLogin)")
+        print("[TIMETRACKER] User's trackers folder: \(self.trackersPath.description)")
         try? self.trackersPath.createDirectory(withIntermediateDirectories: true)
         if TimeTrackerController.timeTrackers == nil {
             TimeTrackerController.timeTrackers = self.loadFiles()
