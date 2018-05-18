@@ -48,7 +48,7 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
     }
     
     override func postSetupDataSource() {
-        self.delegateDataSource.sections.map({$0 as! IssuesSection}).forEach({$0.delegate = self.interactor})
+        self.delegateDataSource.sections.compactMap({$0 as? IssuesSection}).forEach({$0.delegate = self.interactor})
     }
     
     #if MOCKED
