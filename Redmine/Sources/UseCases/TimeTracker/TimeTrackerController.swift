@@ -15,6 +15,10 @@ class TimeTrackerController {
     
     fileprivate var trackersPath: Path!
     
+    fileprivate let timeTrackersSortBlock = { (left: TimeTracker, right: TimeTracker) -> Bool in
+        return left.timeNodes?.last?.startTime ?? 0.0 > right.timeNodes?.last?.startTime ?? 0.0
+    }
+    
     fileprivate(set) var currentTimeTrackers: [TimeTracker]! {
         get { return TimeTrackerController.timeTrackers }
         set { TimeTrackerController.timeTrackers = newValue }
@@ -32,7 +36,7 @@ class TimeTrackerController {
         
         try? self.trackersPath.createDirectory(withIntermediateDirectories: true)
         if TimeTrackerController.timeTrackers == nil {
-            TimeTrackerController.timeTrackers = self.loadFiles()
+            TimeTrackerController.timeTrackers = self.loadFiles().sorted(by: self.timeTrackersSortBlock)
         }
     }
     
@@ -73,6 +77,7 @@ class TimeTrackerController {
     func continueTracker(_ tracker: TimeTracker) {
         guard self.findRunningNode(tracker) == nil else { return }
         self.createTimeNode(tracker)
+        self.sortTrackers()
         self.saveTracker(tracker)
     }
     
@@ -82,6 +87,10 @@ class TimeTrackerController {
         if let index = self.currentTimeTrackers.index(of: tracker) {
             self.currentTimeTrackers.remove(at: index)
         }
+    }
+    
+    fileprivate func sortTrackers() {
+        self.currentTimeTrackers.sort(by: self.timeTrackersSortBlock)
     }
     
     fileprivate func findRunningTracker() -> TimeTracker? {
@@ -129,7 +138,7 @@ class TimeTrackerController {
     fileprivate func saveAndAddTracker(_ tracker: TimeTracker) {
         if self.saveTracker(tracker) {
             if !self.currentTimeTrackers.contains(tracker) {
-                self.currentTimeTrackers.append(tracker)
+                self.currentTimeTrackers.insert(tracker, at: 0)
             }
         }
     }

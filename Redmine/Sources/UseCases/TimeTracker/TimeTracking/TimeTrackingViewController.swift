@@ -81,7 +81,7 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
                        confirmAction: (title: "Ok", action: { [unowned self] in
                             self.timeTrackerController.pauseTracker(runningTracker)
                             self.timeTrackerController.continueTracker(tracker)
-                            self.reloadTableView()
+                            self.updateDataSource()
                        }))
     }
     
@@ -100,6 +100,7 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
             self.timeTrackerController.continueTracker(tracker)
             callThis(.play)
         }
+        self.updateDataSource()
     }
     
     func publishAction(for tracker: TimeTracker) {

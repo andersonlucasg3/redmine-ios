@@ -16,6 +16,8 @@ class TimeHistoryDetailCell: UITableViewCell, Setupable {
     @IBOutlet fileprivate weak var durationLabel: UILabel!
     
     fileprivate let dateFormatter = DateFormatter.init()
+    fileprivate var timer: Timer!
+    fileprivate weak var timeNode: TimeNode?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +25,41 @@ class TimeHistoryDetailCell: UITableViewCell, Setupable {
         self.dateFormatter.dateFormat = "dd/MM HH:mm:ss"
     }
     
+    deinit {
+        self.stopTimer()
+    }
+    
     func setup(with data: TimeNode) {
-        self.set(timeInterval: data.startTime, into: self.startTimeLabel)
-        self.set(timeInterval: data.endTime, into: self.endTimeLabel)
-        self.set(duration: data.duration(), into: self.durationLabel)
+        self.timeNode = data
+        self.updateLabels()
+        self.startTimerIfNeeded()
+    }
+    
+    fileprivate func updateLabels() {
+        guard let node = self.timeNode else { return }
+        let nowTimeInterval = Date().timeIntervalSince1970
+        self.set(timeInterval: node.startTime, into: self.startTimeLabel)
+        self.set(timeInterval: node.endTime == -1 ? nowTimeInterval : node.endTime, into: self.endTimeLabel)
+        self.set(duration: node.duration(), into: self.durationLabel)
+    }
+    
+    fileprivate func startTimerIfNeeded() {
+        if self.timeNode?.endTime == -1, case nil = self.timer {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timerTick(timer:)), userInfo: nil, repeats: true)
+        } else {
+            self.stopTimer()
+        }
+    }
+    
+    fileprivate func stopTimer() {
+        if let timer = self.timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    @objc fileprivate func timerTick(timer: Timer) {
+        self.updateLabels()
     }
     
     fileprivate func set(timeInterval: TimeInterval, into label: UILabel) {
