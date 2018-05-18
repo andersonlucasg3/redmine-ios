@@ -1,0 +1,15 @@
+git_url("git@bitbucket.org:insanitech/fastlane-match.git")
+
+shallow_clone true         # because I don't need the whole git history of the certs
+force_for_new_devices true # if someone adds a device I want to make sure they can test the app
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["br.com.insanitech.redmine"])
+
+keychain_name("login.keychain")
+
+readonly true
+
+git_full_name("Anderson Lucas C. Ramos")
+git_user_email("anderson@insanitech.com.br")
