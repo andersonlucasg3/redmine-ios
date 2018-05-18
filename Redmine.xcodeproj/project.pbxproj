@@ -1454,7 +1454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1463,6 +1463,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5bea0d05-7a67-4dd8-80f1-b22f14dfc221";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development br.com.insanitech.redmine";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1477,7 +1479,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Redmine/Redmine.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EUPS925RGY;
 				INFOPLIST_FILE = "$(SRCROOT)/Redmine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1486,6 +1489,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.insanitech.redmine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8a59fac5-20a5-4b42-9c90-7cb10a5ca00e";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore br.com.insanitech.redmine";
 				SWIFT_OBJC_BRIDGING_HEADER = "Redmine/Supporting Files/Redmine-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
