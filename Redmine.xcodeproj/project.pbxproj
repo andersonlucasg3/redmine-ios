@@ -149,6 +149,8 @@
 		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
 		71A88CD020A280B200A43CD9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */; };
 		71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */; };
+		71B9123920AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
+		71B9123A20AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
 		71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */; };
 		71D6ABAA2082C57200FE5447 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */; };
@@ -255,6 +257,7 @@
 		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
 		71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSection.swift; sourceTree = "<group>"; };
 		71D6ABA92082C57200FE5447 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -669,6 +672,7 @@
 			children = (
 				7126A6DB20859BE600054ED2 /* Redmine-Bridging-Header.h */,
 				7111F2702081A562003AD03E /* Info.plist */,
+				71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -910,6 +914,7 @@
 				7111F25E2081A560003AD03E /* Frameworks */,
 				7111F25F2081A560003AD03E /* Resources */,
 				17D2B95B1405EB7F59DA46D4 /* [CP] Embed Pods Frameworks */,
+				71B9123B20AE8E8F0070DFE4 /* [RUN] Fabric */,
 			);
 			buildRules = (
 			);
@@ -986,6 +991,7 @@
 			files = (
 				71D6ABAC2082C5B900FE5447 /* Projects.storyboard in Resources */,
 				7111ABAB20A4E71E005ABEA6 /* NewIssue.storyboard in Resources */,
+				71B9123920AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */,
 				7111F26F2081A562003AD03E /* LaunchScreen.storyboard in Resources */,
 				7111F26C2081A562003AD03E /* Assets.xcassets in Resources */,
 				7183E67A20A6AAE900C21B22 /* IssueTableViewCell.storyboard in Resources */,
@@ -1017,6 +1023,7 @@
 				7123868C20A79CEB00DE2B44 /* NoContent.storyboard in Resources */,
 				7123868D20A79CEB00DE2B44 /* Login.storyboard in Resources */,
 				7123869D20A7C2B700DE2B44 /* project.json in Resources */,
+				71B9123A20AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */,
 				7123868E20A79CEB00DE2B44 /* MainTabBar.storyboard in Resources */,
 				7123868F20A79CEB00DE2B44 /* Profile.storyboard in Resources */,
 				7123869020A79CEB00DE2B44 /* projects.json in Resources */,
@@ -1037,24 +1044,28 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FileKit/FileKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GenericDataSourceSwift/GenericDataSourceSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericDataSourceSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1089,29 +1100,47 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FileKit/FileKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GenericDataSourceSwift/GenericDataSourceSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Swift.Json/Swift_Json.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericDataSourceSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swift_Json.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedMock/Pods-RedMock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		71B9123B20AE8E8F0070DFE4 /* [RUN] Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[RUN] Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" a24b1efed22c450acd7b4e5b395d89c2cf3e2ca2 99bda5126b6d1a38c3050d606e110275aa4cd4904a3cbe10f995d6dc2ba5b570";
 		};
 		C014F5062CAAC289367AF479 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -14,6 +14,11 @@ def default_pods
    pod 'PKHUD'
    pod 'UIColor-HexString'
    pod 'FileKit'
+
+   # Firebase/Fabric
+   pod 'Firebase/Core'
+   pod 'Fabric'
+   pod 'Crashlytics'
    
 end
 
