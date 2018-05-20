@@ -73,6 +73,8 @@ class Request: NSObject {
             return
         }
         
+        print("[Request.swift] headers: \(self.headers ?? [:])")
+        print("[Request.swift] parameters: \(self.parameters?.params ?? [:])")
         self.dataRequest = SessionManager.default.request(self.url,
                                                           method: self.method,
                                                           parameters: self.parameters?.params,
