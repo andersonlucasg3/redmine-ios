@@ -11,6 +11,8 @@ import GenericDataSourceSwift
 import PKHUD
 
 class ProjectsViewController: SearchableTableViewController<ProjectsResult, Project, ProjectsSection>, ProjectsSectionProtocol {
+    @IBOutlet fileprivate weak var projectsToggleBarButtonItem: UIBarButtonItem! 
+    
     override var searchType: SearchType! {
         return .projects
     }
