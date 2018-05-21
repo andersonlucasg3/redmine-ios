@@ -27,6 +27,9 @@
 		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		711BAADC20B2335F00050B6B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADB20B2335F00050B6B /* SettingsController.swift */; };
+		711BAADF20B233AC00050B6B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADE20B233AC00050B6B /* Settings.swift */; };
+		711BAAE320B2396400050B6B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAAE220B2396400050B6B /* UserRequest.swift */; };
 		7123864220A79CEB00DE2B44 /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E415FA20A4E28500B8226B /* MyIssuesViewController.swift */; };
 		7123864320A79CEB00DE2B44 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABAD2082D47500FE5447 /* ConfigurableView.swift */; };
 		7123864420A79CEB00DE2B44 /* IssuesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163544B20841EF10099930A /* IssuesSection.swift */; };
@@ -206,6 +209,9 @@
 		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
+		711BAADB20B2335F00050B6B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		711BAADE20B233AC00050B6B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		711BAAE220B2396400050B6B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		7123863D20A79C9400DE2B44 /* projects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
 		7123869620A79CEB00DE2B44 /* RedMock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedMock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7123869820A79F1800DE2B44 /* currentUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentUser.json; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 		7111ABB220A61F8F005ABEA6 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				711BAADA20B2335000050B6B /* Settings */,
 				712B6EC720ACD20000786C9D /* TimeTracker */,
 				7111ABD020A62399005ABEA6 /* NewIssue */,
 				7111ABC820A622CE005ABEA6 /* Profile */,
@@ -538,6 +545,7 @@
 		7111ABC820A622CE005ABEA6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				711BAAE120B2395B00050B6B /* Request */,
 				7111ABCB20A6231E005ABEA6 /* Sections */,
 				7111ABCA20A62318005ABEA6 /* Cells */,
 				7111ABB820A620C0005ABEA6 /* Model */,
@@ -712,6 +720,31 @@
 				7111F2872081B78C003AD03E /* Ambients.swift */,
 			);
 			path = Ambients;
+			sourceTree = "<group>";
+		};
+		711BAADA20B2335000050B6B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				711BAADD20B233A400050B6B /* Model */,
+				711BAADB20B2335F00050B6B /* SettingsController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		711BAADD20B233A400050B6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				711BAADE20B233AC00050B6B /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		711BAAE120B2395B00050B6B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				711BAAE220B2396400050B6B /* UserRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		7123863C20A79C9400DE2B44 /* Mocks */ = {
@@ -1205,6 +1238,7 @@
 				710CA070209BFE6E007A86B7 /* LogoutCell.swift in Sources */,
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				7111ABAD20A4E72C005ABEA6 /* NewIssueViewController.swift in Sources */,
+				711BAAE320B2396400050B6B /* UserRequest.swift in Sources */,
 				71A310FA2081BCCB00D79771 /* SessionController.swift in Sources */,
 				718AC2D120ACD585005A3C64 /* TimeHistoryDetailSection.swift in Sources */,
 				7126A6EB2085A11600054ED2 /* IssueDetailTableViewCell.swift in Sources */,
@@ -1221,6 +1255,7 @@
 				716AAD74209F701C0049C2C3 /* SearchResult.swift in Sources */,
 				71DC52E4209D37EC0067E135 /* LoadMoreViewControllerProtocol.swift in Sources */,
 				7111ABB120A4EBBC005ABEA6 /* TimeTracker.swift in Sources */,
+				711BAADF20B233AC00050B6B /* Settings.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
@@ -1230,6 +1265,7 @@
 				7192B61220857C44007E4C96 /* UserContentLoader.swift in Sources */,
 				71D6ABB02082E0D700FE5447 /* ProjectInfoViewController.swift in Sources */,
 				71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */,
+				711BAADC20B2335F00050B6B /* SettingsController.swift in Sources */,
 				710CA069209BFA15007A86B7 /* ProfileViewController.swift in Sources */,
 				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
 				71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */,
