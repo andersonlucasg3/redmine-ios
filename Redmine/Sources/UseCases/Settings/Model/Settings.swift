@@ -14,7 +14,7 @@ enum ProjectsFilter: String {
 }
 
 class Settings: NSObject {
-    @objc fileprivate var _projectsFilter: String!
+    @objc fileprivate var _projectsFilter: String?
     
     override init() {
         super.init()
@@ -27,6 +27,6 @@ class Settings: NSObject {
     }
     
     func projectsFilter() -> ProjectsFilter {
-        return ProjectsFilter.init(rawValue: self._projectsFilter) ?? .allProjects
+        return ProjectsFilter.init(rawValue: self._projectsFilter ?? "") ?? .allProjects
     }
 }

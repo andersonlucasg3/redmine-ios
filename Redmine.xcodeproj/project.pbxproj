@@ -152,6 +152,7 @@
 		71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3110620824E3F00D79771 /* ApiResultProcessor.swift */; };
 		71A88CD020A280B200A43CD9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */; };
 		71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */; };
+		71B5545120B3BB10004F51A6 /* ProjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */; };
 		71B9123920AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71B9123A20AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
@@ -263,6 +264,7 @@
 		71A3110620824E3F00D79771 /* ApiResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResultProcessor.swift; sourceTree = "<group>"; };
 		71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRequest.swift; sourceTree = "<group>"; };
 		71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSection.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 		7111ABB920A620CC005ABEA6 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				71B5544F20B3BAFA004F51A6 /* Request */,
 				7111ABC120A621C3005ABEA6 /* Sections */,
 				7111ABC020A621BA005ABEA6 /* Cells */,
 				7111ABBC20A620FD005ABEA6 /* Model */,
@@ -874,6 +877,14 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
+		71B5544F20B3BAFA004F51A6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		71D6ABA72082C56000FE5447 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1267,6 +1278,7 @@
 				71A3110720824E3F00D79771 /* ApiResultProcessor.swift in Sources */,
 				711BAADC20B2335F00050B6B /* SettingsController.swift in Sources */,
 				710CA069209BFA15007A86B7 /* ProfileViewController.swift in Sources */,
+				71B5545120B3BB10004F51A6 /* ProjectsRequest.swift in Sources */,
 				7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */,
 				71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */,
 				7111ABAF20A4EA95005ABEA6 /* TimeTrackerController.swift in Sources */,

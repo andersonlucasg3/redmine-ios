@@ -144,6 +144,18 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
     
     // MARK: Requests
     
+    func executeRequest() {
+        #if MOCKED
+        let request = Request.init(url: "", method: .get)
+        self.request(request, didFinishWithContent: self.mockedContent())
+        #else
+        let request = self.createRequest(with: self.requestEndPoint())
+        self.setupRequestHeaders(request)
+        request.start()
+        self.request = request
+        #endif
+    }
+    
     func requestEndPoint() -> String {
         return "" // to be overriden in each class
     }
@@ -170,15 +182,7 @@ class RefreshableTableViewController<RequestResult: BasicResult&SpecificResultPr
         self.removeNoContentBackgroundView()
         HUD.show(.progress)
         
-        #if MOCKED
-        let request = Request.init(url: "", method: .get)
-        self.request(request, didFinishWithContent: self.mockedContent())
-        #else
-        let request = self.createRequest(with: self.requestEndPoint())
-        self.setupRequestHeaders(request)
-        request.start()
-        self.request = request
-        #endif
+        self.executeRequest()
     }
     
     func endRefreshing(with success: Bool) {
