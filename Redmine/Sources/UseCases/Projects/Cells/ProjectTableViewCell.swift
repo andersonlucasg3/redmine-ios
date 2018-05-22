@@ -10,7 +10,6 @@ import UIKit
 import GenericDataSourceSwift
 
 protocol ProjectTableViewCellProtocol: class {
-    func didTapProjectInfoButton(in cell: ProjectTableViewCell)
     func didTapOpenIssuesButton(in cell: ProjectTableViewCell)
 }
 
@@ -28,10 +27,6 @@ class ProjectTableViewCell: UITableViewCell, Setupable {
     func setup(with data: Project) {
         self.titleLabel.text = data.name
         self.subtitleLabel.text = data.subtitle
-    }
-    
-    @IBAction fileprivate func projectInfoButton(sender: UIButton) {
-        self.delegate?.didTapProjectInfoButton(in: self)
     }
     
     @IBAction fileprivate func openIssuesButton(sender: UIButton) {

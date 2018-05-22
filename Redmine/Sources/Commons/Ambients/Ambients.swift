@@ -70,8 +70,8 @@ struct Ambients {
         return self.url(self.getFullUrl(session, path: self.projectsPath), with: self.getDefaultParams(limit, page, include))
     }
     
-    static func getProjectPath(with session: SessionController, projectId: String) -> String {
-        return self.url(self.getFullUrl(session, path: self.projectPath(projectId: projectId)), with: nil)
+    static func getProjectPath(with session: SessionController, projectId: String, include: String? = nil) -> String {
+        return self.url(self.getFullUrl(session, path: self.projectPath(projectId: projectId)), with: self.getDefaultParams(nil, nil, include))
     }
     
     static func getIssuesPath(with session: SessionController, forProject project: Project? = nil, assignedTo: String? = nil, limit: Int = ITEMS_PER_PAGE, page: Int = 0, include: String? = nil) -> String {

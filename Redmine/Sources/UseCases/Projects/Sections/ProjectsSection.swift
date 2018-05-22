@@ -10,7 +10,6 @@ import Foundation
 import GenericDataSourceSwift
 
 protocol ProjectsSectionProtocol: class {
-    func openProjectInfo(for project: Project)
     func openIssues(for project: Project)
 }
 
@@ -37,10 +36,6 @@ class ProjectsSection: Section, ProjectTableViewCellProtocol {
     }
     
     // MARK: ProjectTableViewCellProtocol
-    
-    func didTapProjectInfoButton(in cell: ProjectTableViewCell) {
-        self.delegate?.openProjectInfo(for: self.getItem(for: cell.tag))
-    }
     
     func didTapOpenIssuesButton(in cell: ProjectTableViewCell) {
         self.delegate?.openIssues(for: self.getItem(for: cell.tag))

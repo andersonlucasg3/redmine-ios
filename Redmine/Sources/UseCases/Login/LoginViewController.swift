@@ -12,16 +12,17 @@ import PKHUD
 import Reachability
 import Alamofire
 
-class LoginViewController: UIViewController, RequestProtocol {
+class LoginViewController: UIViewController, UserRequestProtocol {
     @IBOutlet fileprivate weak var domainUrlTextField: UITextField!
     @IBOutlet fileprivate weak var usernameTextField: UITextField!
     @IBOutlet fileprivate weak var passwordTextField: UITextField!
     @IBOutlet fileprivate weak var loginButton: UIButton!
     
     fileprivate let defaultDomain: String = "http://redmine.org"
-    fileprivate var loginRequest: Request!
-    
+
     fileprivate let sessionController = SessionController()
+    
+    fileprivate var userRequest: UserRequest!
     
     fileprivate func getDomain() -> String {
         if (self.domainUrlTextField.text ?? "").isEmpty {
@@ -35,16 +36,17 @@ class LoginViewController: UIViewController, RequestProtocol {
         return domain.contains("://") ? domain : "http://\(domain)"
     }
     
-    fileprivate func createRequest() {
-        self.sessionController.domain = self.fixDomainIfNeeded()
-        self.loginRequest = Request(url: Ambients.getLoginPath(with: self.sessionController), method: .get)
-        self.loginRequest.addBasicAuthorizationHeader(username: self.usernameTextField.text ?? "",
-                                                 password: self.passwordTextField.text ?? "")
-        self.loginRequest.delegate = self
-    }
-    
     fileprivate func checkCanLogin() -> Bool {
         return !(self.usernameTextField.text ?? "").isEmpty && !(self.passwordTextField.text ?? "").isEmpty
+    }
+    
+    fileprivate func startRequest() {
+        self.sessionController.domain = self.fixDomainIfNeeded()
+        self.userRequest = UserRequest.init(username: self.usernameTextField.text ?? "",
+                                            password: self.passwordTextField.text ?? "",
+                                            and: self.sessionController)
+        self.userRequest.delegate = self
+        self.userRequest.start()
     }
     
     fileprivate func showFulfillAlert() {
@@ -74,41 +76,27 @@ class LoginViewController: UIViewController, RequestProtocol {
         if self.checkCanLogin() {
             HUD.show(.progress, onView: self.view)
             
-            self.createRequest()
-            self.loginRequest.start()
+            self.startRequest()
         } else {
             self.showFulfillAlert()
         }
         #endif
     }
     
-    // MARK: RequestDelegate
+    // MARK: UserRequestProtocol
     
-    func request(_ request: Request, didFinishWithContent content: String?) {
-        weak var this = self
-        func redirectLoginError() {
-            this?.request(request, didFailWithError: RequestError.statusCode(code: 404, content: nil))
-        }
-        
-        guard let content = content, let userResult: UserResult = ApiResultProcessor.processResult(content: content) else {
-            redirectLoginError()
-            return
-        }
-        
-        self.saveUser(userResult.user)
+    func userRequest(_ request: UserRequest, didFinishWithSuccess user: User) {
+        self.saveUser(user)
         self.openMainTabBarController()
         
         HUD.show(.success, onView: self.view)
         HUD.hide(afterDelay: 1.0)
     }
     
-    func request(_ request: Request, didFailWithError error: Error) {
-        print(#function)
-        print(error)
-        
+    func userRequest(_ request: UserRequest, didFailWithError error: Error) {
         let message: String = Reachability.forInternetConnection().isReachable() ?
             "Wrong Username\nand/or Password." :
-            "Please, check for internet connection."
+        "Please, check for internet connection."
         HUD.show(.labeledError(title: "Login failed", subtitle: message), onView: self.view)
         HUD.hide(afterDelay: 2.0)
     }
