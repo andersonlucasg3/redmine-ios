@@ -55,7 +55,8 @@ class ProjectsRequest: RequestProtocol {
     }
     
     fileprivate func createRequest() {
-        self.request = Request.init(url: Ambients.getProjectPath(with: self.session, projectId: "\(self.currentLoadingId)"), method: .get)
+        let endPoint = Ambients.getProjectPath(with: self.session, projectId: "\(self.currentLoadingId)", include: "memberships")
+        self.request = Request.init(url: endPoint, method: .get)
         self.request.addHeader(for: "X-Redmine-API-Key", with: self.session.user?.apiKey ?? "")
         self.request.delegate = self
     }
