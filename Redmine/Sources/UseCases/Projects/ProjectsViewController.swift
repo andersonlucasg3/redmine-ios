@@ -100,6 +100,7 @@ class ProjectsViewController: SearchableTableViewController<ProjectsResult, Proj
     
     func projectsRequest(_ request: ProjectsRequest, didFinishWithProjects projects: [Project]) {
         self.setupDataSourceIfPossible(with: projects)
+        self.postSetupDataSource()
         self.reloadTableView()
         self.endRefreshing(with: projects.count > 0)
     }
