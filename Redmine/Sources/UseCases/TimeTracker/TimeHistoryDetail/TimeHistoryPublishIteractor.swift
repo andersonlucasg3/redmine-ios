@@ -46,8 +46,12 @@ class TimeHistoryPublishIteractor: TimeHistoryDetailIteractor, TimeTrackPublishC
     }
     
     func timeTrackPublish(_ publisher: TimeTrackPublishController, didFailToPublishNodesWithError error: Error) {
-        print(error)
-        HUD.flash(.labeledError(title: "Redmine", subtitle: "Failed to publish time entry."), delay: 1.0)
+        let error: RequestError = error as! RequestError
+        var message = "Failed to publish time entry."
+        if case let RequestError.statusCode(code, _) = error {
+            message = (code == 403 || code == 422) ? "No permission to publish this time entry." : message
+        }
+        HUD.flash(.labeledError(title: "Redmine", subtitle: message), delay: 1.0)
         self.viewController.navigationController?.popViewController(animated: true)
     }
 }
