@@ -26,6 +26,8 @@ class TimeTrackingSection: Section {
         return TimeTrackingTableViewCell.self
     }
     
+    override func editingStyle(for cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
     
     override func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {

@@ -133,6 +133,15 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func commitEditingStyle(at indexPath: IndexPath, editingStyle style: UITableViewCellEditingStyle) {
+        if case .delete = style {
+            let item: TimeTracker = self.dataSource.getItem(for: indexPath.row)
+            
+            self.timeTrackerController.endTracker(item)
+            self.updateDataSource()
+        }
+    }
+    
     // MARK: TimeHistoryPublishIteractorProtocol
     
     func timeEntryPublished(of tracker: TimeTracker) {
