@@ -17,12 +17,4 @@ class LoadMoreSection: Section {
     override func cellType(for index: Int) -> UITableViewCell.Type {
         return LoadMoreCell.self
     }
-    
-    override func cellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
-    
-    override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
 }

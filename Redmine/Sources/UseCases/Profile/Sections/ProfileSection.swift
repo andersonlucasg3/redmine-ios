@@ -19,12 +19,4 @@ class ProfileSection: Section {
     override func cellType(for index: Int) -> UITableViewCell.Type {
         return LogoutCell.self
     }
-    
-    override func cellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
-    
-    override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
 }

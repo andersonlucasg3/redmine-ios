@@ -26,15 +26,11 @@ class TimeTrackingSection: Section {
         return TimeTrackingTableViewCell.self
     }
     
-    override func cellHeight(for index: Int) -> CGFloat {
-        return 100
+    override func editingStyle(for cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
     
-    override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 100
-    }
-    
-    func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
+    override func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
         guard let cell = cell as? TimeTrackingTableViewCell else { return }
         cell.playPauseButton.tag = indexPath.row
         cell.publishButton.tag = indexPath.row
