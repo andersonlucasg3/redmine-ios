@@ -153,6 +153,10 @@
 		71A88CD020A280B200A43CD9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */; };
 		71A88CD220A280DE00A43CD9 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */; };
 		71B5545120B3BB10004F51A6 /* ProjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */; };
+		71B5545620B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545520B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift */; };
+		71B5545820B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545720B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift */; };
+		71B5545A20B3CC06004F51A6 /* TimeTrackPublishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */; };
+		71B5545C20B3CC51004F51A6 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545B20B3CC51004F51A6 /* TimeEntry.swift */; };
 		71B9123920AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71B9123A20AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71D6ABA32082C42B00FE5447 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */; };
@@ -265,6 +269,10 @@
 		71A88CCF20A280B200A43CD9 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		71A88CD120A280DE00A43CD9 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRequest.swift; sourceTree = "<group>"; };
+		71B5545520B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailIteractor.swift; sourceTree = "<group>"; };
+		71B5545720B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryPublishIteractor.swift; sourceTree = "<group>"; };
+		71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackPublishController.swift; sourceTree = "<group>"; };
+		71B5545B20B3CC51004F51A6 /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		71D6ABA52082C54D00FE5447 /* ProjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsSection.swift; sourceTree = "<group>"; };
@@ -800,6 +808,7 @@
 				71A310FB20823FDC00D79771 /* Models */,
 				71DD8E3A20AD2CE80040BC48 /* Helpers */,
 				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
+				71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */,
 			);
 			path = TimeTracker;
 			sourceTree = "<group>";
@@ -813,6 +822,8 @@
 				718AC2CF20ACD574005A3C64 /* Sections */,
 				712B6EC920ACD30200786C9D /* TimeHistoryDetail.storyboard */,
 				712B6ECB20ACD30F00786C9D /* TimeHistoryDetailViewController.swift */,
+				71B5545520B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift */,
+				71B5545720B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift */,
 			);
 			path = TimeHistoryDetail;
 			sourceTree = "<group>";
@@ -854,6 +865,7 @@
 			children = (
 				71D6ABB62082F17600FE5447 /* Track.swift */,
 				7111ABB020A4EBBC005ABEA6 /* TimeTracker.swift */,
+				71B5545B20B3CC51004F51A6 /* TimeEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1247,6 +1259,7 @@
 				7126A6E620859BE700054ED2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				71D6ABA62082C54D00FE5447 /* ProjectsSection.swift in Sources */,
 				710CA070209BFE6E007A86B7 /* LogoutCell.swift in Sources */,
+				71B5545620B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift in Sources */,
 				71A3110420824D6700D79771 /* Project.swift in Sources */,
 				7111ABAD20A4E72C005ABEA6 /* NewIssueViewController.swift in Sources */,
 				711BAAE320B2396400050B6B /* UserRequest.swift in Sources */,
@@ -1257,6 +1270,7 @@
 				71DD8E4620AD3A040040BC48 /* TimeHistoryProcessor.swift in Sources */,
 				71F8F9CB20A14F870013DFA6 /* UserResult.swift in Sources */,
 				71DD8E3920AD2BB40040BC48 /* TimeHistoryDetailCell.swift in Sources */,
+				71B5545820B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift in Sources */,
 				7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */,
 				716AAD76209F72990049C2C3 /* SearchItem.swift in Sources */,
 				7183E67C20A6BDC000C21B22 /* IssuesTimeTrackingInteractor.swift in Sources */,
@@ -1270,6 +1284,7 @@
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
+				71B5545A20B3CC06004F51A6 /* TimeTrackPublishController.swift in Sources */,
 				7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */,
 				7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */,
 				71F8F9C520A14D070013DFA6 /* User.swift in Sources */,
@@ -1283,6 +1298,7 @@
 				71DD8E3E20AD2FB20040BC48 /* TimeHistoryDetailHeader.swift in Sources */,
 				7111ABAF20A4EA95005ABEA6 /* TimeTrackerController.swift in Sources */,
 				7111F2652081A560003AD03E /* AppDelegate.swift in Sources */,
+				71B5545C20B3CC51004F51A6 /* TimeEntry.swift in Sources */,
 				7130AA5320ADB7F800AE0638 /* String+slugify.swift in Sources */,
 				71635452208424650099930A /* DateStringProcessor.swift in Sources */,
 				7163544E20841F4B0099930A /* IssueTableViewCell.swift in Sources */,

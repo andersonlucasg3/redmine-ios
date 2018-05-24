@@ -29,6 +29,7 @@ struct Ambients {
     fileprivate static let projectsPath = "/projects.json"
     fileprivate static let issuesPath = "/issues.json"
     fileprivate static let searchPath = "/search.json"
+    fileprivate static let timeEntriesPath = "/time_entries.json"
     
     fileprivate static func projectPath(projectId: String) -> String { return "/projects/\(projectId).json" }
     fileprivate static func searchProjectIssuesPath(projectIdentifier: String) -> String { return "/projects/\(projectIdentifier)/search.json" }
@@ -110,5 +111,9 @@ struct Ambients {
     static func getIssuesSearchPath(with session: SessionController, for project: Project, query: String, limit: Int = ITEMS_PER_PAGE, page: Int = 0, searchType: SearchType) -> String {
         let params = self.getSearchParams(query: query, limit: limit, page: page, include: nil, searchType: searchType)
         return self.url(self.getFullUrl(session, path: self.searchProjectIssuesPath(projectIdentifier: project.identifier ?? "unknown")), with: params)
+    }
+    
+    static func getTimeEntriesPath(with session: SessionController) -> String {
+        return self.url(self.getFullUrl(session, path: self.timeEntriesPath), with: nil)
     }
 }
