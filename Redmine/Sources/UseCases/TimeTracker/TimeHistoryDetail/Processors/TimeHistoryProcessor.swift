@@ -29,4 +29,34 @@ class TimeHistoryProcessor {
             return dateFormatter.string(from: date)
         })
     }
+    
+    func filterTimeNodesForPublishing(from tracker: TimeTracker, of user: User) -> [TimeEntry: [TimeNode]] {
+        guard let nodes = tracker.timeNodes else { return [:] }
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let resultDict = nodes.reduce([:], { (result, node) -> [TimeEntry: [TimeNode]] in
+            var result = result
+            let nodeStartDate = dateFormatter.string(from: Date.init(timeIntervalSince1970: node.startTime))
+            if let keyValue = result.first(where: {$0.key.spentOn == nodeStartDate}) {
+                var value = keyValue.value
+                value.append(node)
+                result[keyValue.key] = value
+            } else {
+                let timeEntry = TimeEntry.init()
+                timeEntry.hours = 0.0
+                timeEntry.issueId = tracker.issue?.id ?? 0
+                timeEntry.userId = user.id
+                timeEntry.spentOn = nodeStartDate
+                result[timeEntry] = [node]
+            }
+            return result
+        })
+        
+        resultDict.forEach({
+            let seconds = $0.value.reduce(0.0, {$0 + $1.duration()})
+            $0.key.hours = seconds / 1.hour
+        })
+
+        return resultDict
+    }
 }

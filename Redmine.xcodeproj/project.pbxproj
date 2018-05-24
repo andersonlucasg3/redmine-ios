@@ -155,7 +155,7 @@
 		71B5545120B3BB10004F51A6 /* ProjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */; };
 		71B5545620B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545520B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift */; };
 		71B5545820B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545720B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift */; };
-		71B5545A20B3CC06004F51A6 /* TimePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545920B3CC06004F51A6 /* TimePublisher.swift */; };
+		71B5545A20B3CC06004F51A6 /* TimeTrackPublishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */; };
 		71B5545C20B3CC51004F51A6 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5545B20B3CC51004F51A6 /* TimeEntry.swift */; };
 		71B9123920AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
 		71B9123A20AE8DCB0070DFE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */; };
@@ -271,7 +271,7 @@
 		71B5545020B3BB10004F51A6 /* ProjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRequest.swift; sourceTree = "<group>"; };
 		71B5545520B3C88B004F51A6 /* TimeHistoryDetailIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryDetailIteractor.swift; sourceTree = "<group>"; };
 		71B5545720B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHistoryPublishIteractor.swift; sourceTree = "<group>"; };
-		71B5545920B3CC06004F51A6 /* TimePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePublisher.swift; sourceTree = "<group>"; };
+		71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackPublishController.swift; sourceTree = "<group>"; };
 		71B5545B20B3CC51004F51A6 /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		71B9123820AE8DCB0070DFE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71D6ABA22082C42B00FE5447 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
@@ -808,7 +808,7 @@
 				71A310FB20823FDC00D79771 /* Models */,
 				71DD8E3A20AD2CE80040BC48 /* Helpers */,
 				7111ABAE20A4EA95005ABEA6 /* TimeTrackerController.swift */,
-				71B5545920B3CC06004F51A6 /* TimePublisher.swift */,
+				71B5545920B3CC06004F51A6 /* TimeTrackPublishController.swift */,
 			);
 			path = TimeTracker;
 			sourceTree = "<group>";
@@ -1284,7 +1284,7 @@
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
-				71B5545A20B3CC06004F51A6 /* TimePublisher.swift in Sources */,
+				71B5545A20B3CC06004F51A6 /* TimeTrackPublishController.swift in Sources */,
 				7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */,
 				7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */,
 				71F8F9C520A14D070013DFA6 /* User.swift in Sources */,

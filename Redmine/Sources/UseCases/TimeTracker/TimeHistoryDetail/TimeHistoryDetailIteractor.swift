@@ -9,9 +9,11 @@
 import GenericDataSourceSwift
 
 class TimeHistoryDetailIteractor {
-    fileprivate let processor = TimeHistoryProcessor.init()
     fileprivate var delegateDataSource: GenericDelegateDataSource!
     
+    let processor = TimeHistoryProcessor.init()
+    
+    weak var viewController: TimeHistoryDetailViewController!
     weak var tableView: UITableView!
     weak var timeTracker: TimeTracker!
     weak var totalDurationLabel: UILabel!

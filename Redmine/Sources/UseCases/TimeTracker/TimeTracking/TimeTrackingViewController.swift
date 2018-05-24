@@ -10,7 +10,8 @@ import UIKit
 import SwiftyTimer
 import GenericDataSourceSwift
 
-class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol, GenericDelegateDataSourceProtocol {
+class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCellProtocol,
+        GenericDelegateDataSourceProtocol, TimeHistoryPublishIteractorProtocol {
     fileprivate let sessionController = SessionController.init()
     fileprivate lazy var timeTrackerController = TimeTrackerController.init(with: self.sessionController)
     
@@ -104,7 +105,16 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
     }
     
     func publishAction(for tracker: TimeTracker) {
+        if tracker == self.timeTrackerController.runningTracker {
+            self.timeTrackerController.pauseTracker(tracker)
+        }
         
+        let controller = TimeHistoryDetailViewController.instantiate()!
+        controller.timeTracker = tracker
+        let iteractor = TimeHistoryPublishIteractor.init()
+        controller.iteractor = iteractor
+        iteractor.delegate = self
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func state(for item: TimeTracker) -> PlayPauseAction {
@@ -121,5 +131,12 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
         let controller = TimeHistoryDetailViewController.instantiate()!
         controller.timeTracker = item
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: TimeHistoryPublishIteractorProtocol
+    
+    func timeEntryPublished(of tracker: TimeTracker) {
+        self.timeTrackerController.endTracker(tracker)
+        self.updateDataSource()
     }
 }

@@ -30,6 +30,11 @@ fileprivate func createBasicCredentials(_ username: String, _ password: String) 
 
 typealias RequestParameters = (params: Parameters, encoding: ParameterEncoding)
 
+enum RequestBodyType {
+    case formUrlEncoded
+    case json
+}
+
 class Request: NSObject {
     fileprivate var dataRequest: DataRequest?
     
@@ -38,6 +43,8 @@ class Request: NSObject {
     
     var parameters: RequestParameters?
     var headers: HTTPHeaders?
+    var bodyType: RequestBodyType = .formUrlEncoded
+    var bodyContent: Data?
     
     weak var delegate: RequestProtocol?
     
@@ -75,31 +82,11 @@ class Request: NSObject {
         
         print("[Request.swift] headers: \(self.headers ?? [:])")
         print("[Request.swift] parameters: \(self.parameters?.params ?? [:])")
-        self.dataRequest = SessionManager.default.request(self.url,
-                                                          method: self.method,
-                                                          parameters: self.parameters?.params,
-                                                          encoding: self.parameters?.encoding ?? URLEncoding.default,
-                                                          headers: self.headers)
-        if let dr = self.dataRequest { print(dr) }
-        self.dataRequest?.responseString(completionHandler: { [weak self] response in
-            print("\(#file)-\(#function)-\(#line)")
-            print(response)
-            
-            self?.dispatchResponse(response.response)
-            
-            let statusCode = response.response?.statusCode ?? 0
-            guard statusCode >= 200 && statusCode <= 299 else {
-                self?.dispatchError(.statusCode(code: statusCode, content: response.result.value))
-                return
-            }
-            
-            switch response.result {
-            case .success(let value):
-                self?.dispatchSuccess(value)
-            case .failure(let error):
-                self?.dispatchError(.failure(error: error))
-            }
-        })
+        
+        switch self.bodyType {
+        case .formUrlEncoded: self.startRequestUrlFormEncoded()
+        case .json: self.startJson()
+        }
     }
     
     func pause() {
@@ -113,6 +100,45 @@ class Request: NSObject {
             request.cancel()
             self.dataRequest = nil
         }
+    }
+    
+    fileprivate func completionHandler(_ response: DataResponse<String>) {
+        print("\(#file)-\(#function)-\(#line)")
+        print(response)
+        
+        self.dispatchResponse(response.response)
+        
+        let statusCode = response.response?.statusCode ?? 0
+        guard statusCode >= 200 && statusCode <= 299 else {
+            self.dispatchError(.statusCode(code: statusCode, content: response.result.value))
+            return
+        }
+        
+        switch response.result {
+        case .success(let value):
+            self.dispatchSuccess(value)
+        case .failure(let error):
+            self.dispatchError(.failure(error: error))
+        }
+    }
+    
+    fileprivate func startRequestUrlFormEncoded() {
+        self.dataRequest = SessionManager.default.request(self.url,
+                                                          method: self.method,
+                                                          parameters: self.parameters?.params,
+                                                          encoding: self.parameters?.encoding ?? URLEncoding.default,
+                                                          headers: self.headers)
+        if let dr = self.dataRequest { print(dr) }
+        self.dataRequest?.responseString(completionHandler: { [weak self] response in self?.completionHandler(response) })
+    }
+    
+    fileprivate func startJson() {
+        self.dataRequest = SessionManager.default.upload(self.bodyContent!,
+                                                         to: self.url,
+                                                         method: self.method,
+                                                         headers: self.headers)
+        if let dr = self.dataRequest { print(dr) }
+        self.dataRequest?.responseString(completionHandler: { [weak self] response in self?.completionHandler(response) })
     }
     
     fileprivate func checkSuccess(_ response: HTTPURLResponse?) -> Bool {

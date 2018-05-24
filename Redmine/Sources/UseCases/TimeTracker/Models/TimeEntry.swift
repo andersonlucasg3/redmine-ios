@@ -13,9 +13,8 @@ class TimeEntryBottle: NSObject {
 }
 
 class TimeEntry: NSObject {
-    @objc var issueId: String?
+    @objc var issueId: Int = 0
+    @objc var userId: Int = 0
     @objc var spentOn: String?
     @objc var hours: Double = 0.0
-    @objc var comments: String?
-    @objc var activityId: Int = 0
 }

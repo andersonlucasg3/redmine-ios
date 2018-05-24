@@ -11,13 +11,13 @@ import GenericDataSourceSwift
 class TimeHistoryDetailViewController: UITableViewController {
     @IBOutlet fileprivate weak var totalDurationLabel: UILabel!
     
-    var iteractor: TimeHistoryDetailIteractor!
+    var iteractor: TimeHistoryDetailIteractor! = TimeHistoryDetailIteractor.init()
     weak var timeTracker: TimeTracker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.createIteractor()
+        self.setupIteractor()
         
         self.iteractor.registerHeaders()
         self.iteractor.createDataSources()
@@ -25,8 +25,8 @@ class TimeHistoryDetailViewController: UITableViewController {
         self.iteractor.updateData()
     }
     
-    fileprivate func createIteractor() {
-        self.iteractor = TimeHistoryDetailIteractor.init()
+    fileprivate func setupIteractor() {
+        self.iteractor.viewController = self
         self.iteractor.tableView = self.tableView
         self.iteractor.timeTracker = self.timeTracker
         self.iteractor.totalDurationLabel = self.totalDurationLabel
