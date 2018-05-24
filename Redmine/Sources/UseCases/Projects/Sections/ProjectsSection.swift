@@ -20,15 +20,7 @@ class ProjectsSection: Section, ProjectTableViewCellProtocol {
         return ProjectTableViewCell.self
     }
     
-    override func cellHeight(for index: Int) -> CGFloat {
-        return 88
-    }
-    
-    override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 88
-    }
-    
-    func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
+    override func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
         let projectCell = cell as! ProjectTableViewCell
         projectCell.tag = indexPath.row
         projectCell.delegate = self

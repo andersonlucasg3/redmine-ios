@@ -14,14 +14,14 @@ class IssueDetailSection: Section {
     }
     
     override func cellHeight(for index: Int) -> CGFloat {
-        return 32
+        return 40
     }
     
     override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 32
+        return 40
     }
     
-    func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
+    override func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
         (cell as? IssueDetailTableViewCell)?.lineView.isHidden = indexPath.row == (self.itemCount() - 1)
     }
 }

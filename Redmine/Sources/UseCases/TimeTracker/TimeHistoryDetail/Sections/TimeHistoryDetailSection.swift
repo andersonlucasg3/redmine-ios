@@ -24,25 +24,17 @@ class TimeHistoryDetailSection: Section {
         return TimeHistoryDetailCell.self
     }
     
-    override func cellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
-    
-    override func estimatedCellHeight(for index: Int) -> CGFloat {
-        return 44
-    }
-    
-    func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
+    override func cellPostConfiguration(for cell: UITableViewCell, at indexPath: IndexPath) {
         cell.configureBackground(at: indexPath)
     }
     
     // MARK: Header configuration
     
-    func headerType() -> UITableViewHeaderFooterView.Type {
+    override func headerType() -> UITableViewHeaderFooterView.Type {
         return TimeHistoryDetailHeader.self
     }
     
-    func headerHeight() -> CGFloat {
+    override func headerHeight() -> CGFloat {
         return 44
     }
 }
