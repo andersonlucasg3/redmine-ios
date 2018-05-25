@@ -133,6 +133,7 @@ class TimeTrackerController {
                 node.endTime += node.startTime + 1.hour
                 return node
             })
+            return tracker
         }
         #endif
         guard let issueTracker = self.currentTimeTrackers.first(where: {$0.issue?.id == issue.id}) else {
