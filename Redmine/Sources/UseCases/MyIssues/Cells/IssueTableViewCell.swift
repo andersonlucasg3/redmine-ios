@@ -20,6 +20,12 @@ class IssueTableViewCell: UITableViewCell, Setupable {
     
     fileprivate var issueDetailDataSource: GenericDelegateDataSource!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.tableView.register(cellClass: IssueDetailTableViewCell.self)
+    }
+    
     func setup(with data: Issue) {
         self.ticketLabel.text = "\(data.id)"
         self.titleLabel.text = data.subject

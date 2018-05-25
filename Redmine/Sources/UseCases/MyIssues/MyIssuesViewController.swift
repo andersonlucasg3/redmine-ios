@@ -17,6 +17,16 @@ class MyIssuesViewController: SearchableTableViewController<IssuesResult, Issue,
         return .issues
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.registerCells()
+    }
+    
+    fileprivate func registerCells() {
+        self.tableView.register(cellClass: IssueTableViewCell.self)
+    }
+    
     override func loadMoreItemsName() -> String {
         return "Issues"
     }

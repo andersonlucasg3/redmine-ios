@@ -9,10 +9,22 @@
 import Foundation
 
 extension UITableView {
-    func animateRemoveItem(at indexPath: IndexPath, dataSourceUpdateBlock block: os_block_t) {
+    fileprivate func commonUpdates(_ indexPath: IndexPath, _ tvUpdateBlock: os_block_t, _ dtUpdateBlock: os_block_t) {
         self.beginUpdates()
-        block()
-        self.deleteRows(at: [indexPath], with: .automatic)
+        dtUpdateBlock()
+        tvUpdateBlock()
         self.endUpdates()
+    }
+    
+    func animateRemoveItem(at indexPath: IndexPath, dataSourceUpdateBlock block: os_block_t) {
+        self.commonUpdates(indexPath, { [unowned self] in
+            self.deleteRows(at: [indexPath], with: .automatic)
+        }, block)
+    }
+    
+    func animateInsertItem(at indexPath: IndexPath, dataSourceUpdateBlock block: os_block_t) {
+        self.commonUpdates(indexPath, { [unowned self] in
+            self.insertRows(at: [indexPath], with: .automatic)
+        }, block)
     }
 }
