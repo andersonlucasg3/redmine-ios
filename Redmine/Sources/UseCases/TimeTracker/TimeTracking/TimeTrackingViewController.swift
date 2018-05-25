@@ -138,7 +138,9 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
             let item: TimeTracker = self.dataSource.getItem(for: indexPath.row)
             
             self.timeTrackerController.endTracker(item)
-            self.updateDataSource()
+            self.tableView.animateRemoveItem(at: indexPath) { [unowned self] in
+                self.dataSource.items = self.timeTrackerController.currentTimeTrackers
+            }
         }
     }
     
