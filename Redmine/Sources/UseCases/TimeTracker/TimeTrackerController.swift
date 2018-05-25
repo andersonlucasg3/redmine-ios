@@ -90,6 +90,11 @@ class TimeTrackerController {
         }
     }
     
+    func remove(nodes: [TimeNode], from tracker: TimeTracker) {
+        tracker.timeNodes = Array(Set(tracker.timeNodes ?? []).subtracting(nodes))
+        self.saveTracker(tracker)
+    }
+    
     fileprivate func sortTrackers() {
         self.currentTimeTrackers.sort(by: self.timeTrackersSortBlock)
     }
