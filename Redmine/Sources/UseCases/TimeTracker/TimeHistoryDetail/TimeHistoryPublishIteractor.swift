@@ -11,6 +11,7 @@ import PKHUD
 
 protocol TimeHistoryPublishIteractorProtocol: class {
     func timeEntryPublished(of tracker: TimeTracker)
+    func timeEntryPartialPublish(nodes: [TimeNode], of tracker: TimeTracker)
 }
 
 class TimeHistoryPublishIteractor: TimeHistoryDetailIteractor, TimeTrackPublishControllerProtocol {
@@ -33,15 +34,17 @@ class TimeHistoryPublishIteractor: TimeHistoryDetailIteractor, TimeTrackPublishC
     // MARK: TimeTrackPublishControllerProtocol
     
     func timeTrackPublish(_ publisher: TimeTrackPublishController, didPublishNodes nodes: [TimeNode]) {
-        self.timeTracker.timeNodes = Array(Set(self.timeTracker.timeNodes ?? []).subtracting(nodes))
+        self.delegate?.timeEntryPartialPublish(nodes: nodes, of: self.timeTracker)
+        
         self.createDataSources()
         self.setTotalDuration()
         super.updateData()
     }
     
     func timeTrackPublishingAllNodes(_ publisher: TimeTrackPublishController) {
-        HUD.flash(.success, delay: 1.0)
         self.delegate?.timeEntryPublished(of: self.timeTracker)
+        
+        HUD.flash(.success, delay: 1.0)
         self.viewController.navigationController?.popViewController(animated: true)
     }
     
