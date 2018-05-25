@@ -44,4 +44,13 @@ class MyIssuesViewController: SearchableTableViewController<IssuesResult, Issue,
         return try? String.init(contentsOfFile: Bundle.main.path(forResource: "issues", ofType: "json") ?? "path")
     }
     #endif
+    
+    // MARK: GenericDelegateDataSourceProtocol
+    
+    override func didSelectItem(at indexPath: IndexPath) {
+        let issue: Issue = self.dataSource.getItem(for: indexPath.row)
+        let details = IssueDetailsViewController.instantiate()!
+        details.issue = issue
+        self.navigationController?.pushViewController(details, animated: true)
+    }
 }
