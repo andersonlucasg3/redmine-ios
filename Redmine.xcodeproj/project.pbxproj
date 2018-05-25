@@ -27,6 +27,7 @@
 		7111F2822081AB71003AD03E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2812081AB71003AD03E /* Request.swift */; };
 		7111F2852081B0C0003AD03E /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2842081B0C0003AD03E /* GlobalFunc.swift */; };
 		7111F2882081B78C003AD03E /* Ambients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111F2872081B78C003AD03E /* Ambients.swift */; };
+		71131AB420B7A87F0083D98D /* UITableView+reloadDataAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71131AB320B7A87F0083D98D /* UITableView+reloadDataAnimated.swift */; };
 		711BAADC20B2335F00050B6B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADB20B2335F00050B6B /* SettingsController.swift */; };
 		711BAADF20B233AC00050B6B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADE20B233AC00050B6B /* Settings.swift */; };
 		711BAAE320B2396400050B6B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAAE220B2396400050B6B /* UserRequest.swift */; };
@@ -214,6 +215,7 @@
 		7111F2842081B0C0003AD03E /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		7111F2872081B78C003AD03E /* Ambients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ambients.swift; sourceTree = "<group>"; };
 		7111F2892081B876003AD03E /* Redmine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redmine.entitlements; sourceTree = "<group>"; };
+		71131AB320B7A87F0083D98D /* UITableView+reloadDataAnimated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reloadDataAnimated.swift"; sourceTree = "<group>"; };
 		711BAADB20B2335F00050B6B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		711BAADE20B233AC00050B6B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		711BAAE220B2396400050B6B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				7111F27E2081A751003AD03E /* NSObject+className.swift */,
 				71DD8E4220AD37D90040BC48 /* UITableViewCell+Zebra.swift */,
 				7130AA5220ADB7F800AE0638 /* String+slugify.swift */,
+				71131AB320B7A87F0083D98D /* UITableView+reloadDataAnimated.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1269,6 +1272,7 @@
 				7111F27D2081A73C003AD03E /* UIViewController+instantiate.swift in Sources */,
 				71DD8E4620AD3A040040BC48 /* TimeHistoryProcessor.swift in Sources */,
 				71F8F9CB20A14F870013DFA6 /* UserResult.swift in Sources */,
+				71131AB420B7A87F0083D98D /* UITableView+reloadDataAnimated.swift in Sources */,
 				71DD8E3920AD2BB40040BC48 /* TimeHistoryDetailCell.swift in Sources */,
 				71B5545820B3CA62004F51A6 /* TimeHistoryPublishIteractor.swift in Sources */,
 				7126A6E92085A0F800054ED2 /* IssueDetailSection.swift in Sources */,
