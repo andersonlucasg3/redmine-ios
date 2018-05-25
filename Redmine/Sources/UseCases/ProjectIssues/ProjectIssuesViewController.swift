@@ -37,10 +37,15 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         super.viewDidLoad()
         
         self.updateProjectName()
+        self.registerCells()
     }
     
     fileprivate func updateProjectName() {
         self.title = self.project?.name
+    }
+    
+    fileprivate func registerCells() {
+        self.tableView.register(cellClass: IssueTableViewCell.self)
     }
     
     override func loadMoreItemsName() -> String {
