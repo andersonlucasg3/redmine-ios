@@ -9,6 +9,7 @@
 import Foundation
 import FileKit
 import Swift_Json
+import SwiftyTimer
 
 class TimeTrackerController {
     fileprivate static var timeTrackers: [TimeTracker]!
@@ -116,6 +117,19 @@ class TimeTrackerController {
     }
     
     fileprivate func createOrRecoverTracker(_ issue: Issue) -> TimeTracker {
+        #if DEBUG
+        if CREATE_FAKE_TRACKERS {
+            let tracker = TimeTracker.init()
+            tracker.issue = issue
+            tracker.fileName = "\(UUID.init().uuidString).tracker"
+            tracker.timeNodes = (1...10).map({ i  -> TimeNode in
+                let node = TimeNode.init()
+                node.startTime = Date.init().timeIntervalSince1970 + TimeInterval(i).day
+                node.endTime += node.startTime + 1.hour
+                return node
+            })
+        }
+        #endif
         guard let issueTracker = self.currentTimeTrackers.first(where: {$0.issue?.id == issue.id}) else {
             let tracker = TimeTracker.init()
             tracker.fileName = "\(UUID.init().uuidString).tracker"
