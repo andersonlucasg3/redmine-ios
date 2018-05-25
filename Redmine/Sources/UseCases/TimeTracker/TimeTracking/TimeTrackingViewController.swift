@@ -144,6 +144,10 @@ class TimeTrackingViewController: UITableViewController, TimeTrackingTableViewCe
     
     // MARK: TimeHistoryPublishIteractorProtocol
     
+    func timeEntryPartialPublish(nodes: [TimeNode], of tracker: TimeTracker) {
+        self.timeTrackerController.remove(nodes: nodes, from: tracker)
+    }
+    
     func timeEntryPublished(of tracker: TimeTracker) {
         self.timeTrackerController.endTracker(tracker)
         self.updateDataSource()
