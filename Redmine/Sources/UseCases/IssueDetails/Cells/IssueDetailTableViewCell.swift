@@ -9,15 +9,15 @@
 import UIKit
 import GenericDataSourceSwift
 
-typealias IssueDetailKeyValue = (key: String, value: String?)
-
 class IssueDetailTableViewCell: UITableViewCell, Setupable {
     typealias DataType = IssueDetailKeyValue
     
+    @IBOutlet fileprivate(set) weak var keyLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var valueLabel: UILabel!
     @IBOutlet fileprivate(set) weak var lineView: UIView!
     
     func setup(with data: IssueDetailKeyValue) {
-        self.textLabel?.text = data.key
-        self.detailTextLabel?.text = data.value
+        self.keyLabel?.text = data.key
+        self.valueLabel?.text = data.value
     }
 }

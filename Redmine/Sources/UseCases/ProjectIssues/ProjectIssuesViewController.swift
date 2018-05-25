@@ -101,4 +101,13 @@ class ProjectIssuesViewController: SearchableTableViewController<IssuesResult, I
         self.projectRequest = nil
         super.request(request, didFailWithError: error)
     }
+    
+    // MARK: GenericDelegateDataSourceProtocol
+    
+    override func didSelectItem(at indexPath: IndexPath) {
+        let issue: Issue = self.dataSource.getItem(for: indexPath.row)
+        let details = IssueDetailsViewController.instantiate()!
+        details.issue = issue
+        self.navigationController?.pushViewController(details, animated: true)
+    }
 }

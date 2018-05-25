@@ -31,6 +31,9 @@
 		71131AB620B7AEAF0083D98D /* IssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71131AB520B7AEAF0083D98D /* IssueTableViewCell.xib */; };
 		71131AB820B7AF9E0083D98D /* UITableView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71131AB720B7AF9E0083D98D /* UITableView+register.swift */; };
 		71131ABA20B7B0670083D98D /* IssueDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71131AB920B7B0670083D98D /* IssueDetailTableViewCell.xib */; };
+		71131ABF20B7B2B30083D98D /* IssueDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71131ABE20B7B2B30083D98D /* IssueDetails.storyboard */; };
+		71131AC120B7B2D30083D98D /* IssueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71131AC020B7B2D30083D98D /* IssueDetailsViewController.swift */; };
+		71131AC420B7B3200083D98D /* IssueResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71131AC320B7B3200083D98D /* IssueResult.swift */; };
 		711BAADC20B2335F00050B6B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADB20B2335F00050B6B /* SettingsController.swift */; };
 		711BAADF20B233AC00050B6B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAADE20B233AC00050B6B /* Settings.swift */; };
 		711BAAE320B2396400050B6B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BAAE220B2396400050B6B /* UserRequest.swift */; };
@@ -220,6 +223,9 @@
 		71131AB520B7AEAF0083D98D /* IssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueTableViewCell.xib; sourceTree = "<group>"; };
 		71131AB720B7AF9E0083D98D /* UITableView+register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+register.swift"; sourceTree = "<group>"; };
 		71131AB920B7B0670083D98D /* IssueDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailTableViewCell.xib; sourceTree = "<group>"; };
+		71131ABE20B7B2B30083D98D /* IssueDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetails.storyboard; sourceTree = "<group>"; };
+		71131AC020B7B2D30083D98D /* IssueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsViewController.swift; sourceTree = "<group>"; };
+		71131AC320B7B3200083D98D /* IssueResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResult.swift; sourceTree = "<group>"; };
 		711BAADB20B2335F00050B6B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		711BAADE20B233AC00050B6B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		711BAAE220B2396400050B6B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 				7111ABC520A62231005ABEA6 /* ProjectIssues */,
 				7111ABC420A6221D005ABEA6 /* ProjectInfo */,
 				7111ABBD20A62149005ABEA6 /* MyIssues */,
+				71131ABB20B7B2670083D98D /* IssueDetails */,
 				7111ABBB20A620E1005ABEA6 /* Main */,
 				7111ABB920A620CC005ABEA6 /* Projects */,
 				7111ABB720A620AA005ABEA6 /* Login */,
@@ -541,8 +548,6 @@
 		7111ABC520A62231005ABEA6 /* ProjectIssues */ = {
 			isa = PBXGroup;
 			children = (
-				7111ABCD20A62350005ABEA6 /* Sections */,
-				7111ABCC20A62340005ABEA6 /* Cells */,
 				7163544F20841F710099930A /* ProjectIssues.storyboard */,
 				71D6ABB12082E0F300FE5447 /* ProjectIssuesViewController.swift */,
 			);
@@ -583,23 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				710CA06C209BFDB0007A86B7 /* ProfileSection.swift */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
-		7111ABCC20A62340005ABEA6 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */,
-				71131AB920B7B0670083D98D /* IssueDetailTableViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		7111ABCD20A62350005ABEA6 /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -739,6 +727,43 @@
 				7111F2872081B78C003AD03E /* Ambients.swift */,
 			);
 			path = Ambients;
+			sourceTree = "<group>";
+		};
+		71131ABB20B7B2670083D98D /* IssueDetails */ = {
+			isa = PBXGroup;
+			children = (
+				71131ABC20B7B2730083D98D /* Sections */,
+				71131ABD20B7B2780083D98D /* Cells */,
+				71131AC220B7B3130083D98D /* Model */,
+				71131ABE20B7B2B30083D98D /* IssueDetails.storyboard */,
+				71131AC020B7B2D30083D98D /* IssueDetailsViewController.swift */,
+			);
+			path = IssueDetails;
+			sourceTree = "<group>";
+		};
+		71131ABC20B7B2730083D98D /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				7126A6E82085A0F800054ED2 /* IssueDetailSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		71131ABD20B7B2780083D98D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7126A6EA2085A11600054ED2 /* IssueDetailTableViewCell.swift */,
+				71131AB920B7B0670083D98D /* IssueDetailTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71131AC220B7B3130083D98D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71131AC320B7B3200083D98D /* IssueResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		711BAADA20B2335000050B6B /* Settings */ = {
@@ -1061,6 +1086,7 @@
 				7111F26C2081A562003AD03E /* Assets.xcassets in Resources */,
 				71E415F920A4E17D00B8226B /* MyIssues.storyboard in Resources */,
 				714C2A1320A628B400BE3947 /* TimeTracking.storyboard in Resources */,
+				71131ABF20B7B2B30083D98D /* IssueDetails.storyboard in Resources */,
 				71DD8E4020AD36EE0040BC48 /* TimeHistoryDetailHeader.xib in Resources */,
 				7163545420842C090099930A /* NoContent.storyboard in Resources */,
 				7111F26A2081A560003AD03E /* Login.storyboard in Resources */,
@@ -1293,7 +1319,9 @@
 				711BAADF20B233AC00050B6B /* Settings.swift in Sources */,
 				7111F27F2081A751003AD03E /* NSObject+className.swift in Sources */,
 				712B6ECC20ACD30F00786C9D /* TimeHistoryDetailViewController.swift in Sources */,
+				71131AC120B7B2D30083D98D /* IssueDetailsViewController.swift in Sources */,
 				7111F2672081A560003AD03E /* LoginViewController.swift in Sources */,
+				71131AC420B7B3200083D98D /* IssueResult.swift in Sources */,
 				71B5545A20B3CC06004F51A6 /* TimeTrackPublishController.swift in Sources */,
 				7183E67F20A72C8A00C21B22 /* TimeTrackingTableViewCell.swift in Sources */,
 				7183E67820A697D600C21B22 /* UIViewController+showAlert.swift in Sources */,
